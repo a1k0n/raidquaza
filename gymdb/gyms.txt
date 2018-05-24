@@ -1,630 +1,183 @@
-{"gym_name": "1930s Antique Broom Maker", "latitude": -121.785072, "longitude": 37.655452000000004}
-{"gym_name": "4 Kids on a Tree Statue", "latitude": -121.888201, "longitude": 37.594374}
-{"gym_name": "50 Foot Slide", "latitude": -121.872208, "longitude": 37.649696}
-{"gym_name": "6140 Building Water Fountain", "latitude": -121.923254, "longitude": 37.697472}
-{"gym_name": "ABC Slide", "latitude": -121.911111, "longitude": 37.724146000000005}
-{"gym_name": "Aahmes Shriners Statue", "latitude": -121.808685, "longitude": 37.697191}
-{"gym_name": "Ace Train Pleasanton Station", "latitude": -121.88238, "longitude": 37.658502}
-{"gym_name": "Advanced Water Reclamation Plant Plaque", "latitude": -121.806646, "longitude": 37.69018}
-{"gym_name": "Al Caffodio Park Play Structure", "latitude": -121.78657100000001, "longitude": 37.692382}
-{"gym_name": "Alameda County Fair County Plaza", "latitude": -121.88744399999999, "longitude": 37.6621}
-{"gym_name": "Alameda Creek Regional Trail Niles Staging Area", "latitude": -121.96639900000001, "longitude": 37.579127}
-{"gym_name": "Albus Sculpture", "latitude": -121.881375, "longitude": 37.652017}
-{"gym_name": "Alcosta Trail Water Tower", "latitude": -121.923205, "longitude": 37.747012000000005}
-{"gym_name": "Alden's Cows", "latitude": -121.78454500000001, "longitude": 37.655086}
-{"gym_name": "Alien Playground", "latitude": -121.89394600000001, "longitude": 37.67064}
-{"gym_name": "Alison Adobe Building", "latitude": -121.913159, "longitude": 37.660931}
-{"gym_name": "Alviso Adobe Community Park", "latitude": -121.911197, "longitude": 37.65967}
-{"gym_name": "Amador Fountain", "latitude": -121.93705600000001, "longitude": 37.705719}
-{"gym_name": "Amador Pavilion Dedication Plaque", "latitude": -121.88615999999999, "longitude": 37.661661}
-{"gym_name": "Amador Valley Community Park", "latitude": -121.872773, "longitude": 37.672451}
-{"gym_name": "Amador Valley Hotel", "latitude": -121.938473, "longitude": 37.70111}
-{"gym_name": "Amaral Park", "latitude": -121.862648, "longitude": 37.692353}
-{"gym_name": "Anza Expedition of 1776", "latitude": -121.966076, "longitude": 37.579347}
-{"gym_name": "Armstrong Garden Center Statue", "latitude": -121.93803, "longitude": 37.70535}
-{"gym_name": "Arroyo Bike Trail Entrance", "latitude": -121.78999099999999, "longitude": 37.680023999999996}
-{"gym_name": "Arroyo Mocho Trail", "latitude": -121.80509599999999, "longitude": 37.680369999999996}
-{"gym_name": "Artist Ray Carrington", "latitude": -121.818191, "longitude": 37.696146000000006}
-{"gym_name": "Artistic Shed", "latitude": -121.914514, "longitude": 37.690706999999996}
-{"gym_name": "Atlas the Turtle", "latitude": -121.899281, "longitude": 37.704299}
-{"gym_name": "Augustin Bernal Park", "latitude": -121.90423799999999, "longitude": 37.635487}
-{"gym_name": "Augustine Bernal Park", "latitude": -121.904561, "longitude": 37.635532999999995}
-{"gym_name": "Augustine Bernal Ridgeline Gate", "latitude": -121.90685099999999, "longitude": 37.630811}
-{"gym_name": "Autobahn Fountain", "latitude": -121.909598, "longitude": 37.70625}
-{"gym_name": "BJ's Mural", "latitude": -121.851732, "longitude": 37.702836}
-{"gym_name": "BOOMERS!", "latitude": -121.80986800000001, "longitude": 37.699489}
-{"gym_name": "Balloons Flying Mural", "latitude": -121.862726, "longitude": 37.67038}
-{"gym_name": "Barber Shop Bear", "latitude": -121.76755700000001, "longitude": 37.680460000000004}
-{"gym_name": "Bear on a Bike", "latitude": -121.904687, "longitude": 37.697614}
-{"gym_name": "Beary Best Breakfast", "latitude": -121.90391500000001, "longitude": 37.697685}
-{"gym_name": "Beautiful from Head 2 Toe", "latitude": -121.76515500000001, "longitude": 37.680339}
-{"gym_name": "Bellinger Wilkey Memorial Play Area", "latitude": -121.891046, "longitude": 37.682193000000005}
-{"gym_name": "Bent Knee Hang", "latitude": -121.946451, "longitude": 37.713612}
-{"gym_name": "Bernal Avenue Bridge", "latitude": -121.90480099999999, "longitude": 37.65545}
-{"gym_name": "Bernal Community Park Sundial", "latitude": -121.88814799999999, "longitude": 37.654182}
-{"gym_name": "Bernal Community Park", "latitude": -121.889693, "longitude": 37.652997000000006}
-{"gym_name": "Bethel Family Christian Center", "latitude": -121.778955, "longitude": 37.685138}
-{"gym_name": "Bicentennial Park", "latitude": -121.876497, "longitude": 37.683324}
-{"gym_name": "Bike Sculpture", "latitude": -121.763636, "longitude": 37.677364000000004}
-{"gym_name": "Bill Simpson Memorial Bench", "latitude": -121.87719399999999, "longitude": 37.672351}
-{"gym_name": "Biology Progress", "latitude": -121.895919, "longitude": 37.691986}
-{"gym_name": "Birch Lakes Fountain", "latitude": -121.90091500000001, "longitude": 37.661233}
-{"gym_name": "Bird Watch", "latitude": -121.889911, "longitude": 37.651168000000006}
-{"gym_name": "Black Diamonds", "latitude": -121.882717, "longitude": 37.704943}
-{"gym_name": "Black Pool", "latitude": -121.910606, "longitude": 37.724341}
-{"gym_name": "Blacksmith Square", "latitude": -121.76952, "longitude": 37.68315}
-{"gym_name": "Blue Bird Mosaic", "latitude": -121.864968, "longitude": 37.718829}
-{"gym_name": "Blue Door Antiques", "latitude": -121.77318700000001, "longitude": 37.684983}
-{"gym_name": "Blue Oak Knoll Trail", "latitude": -121.913975, "longitude": 37.638594}
-{"gym_name": "Blue Star Memorial Plaque", "latitude": -121.762713, "longitude": 37.625665999999995}
-{"gym_name": "Bocce Courts", "latitude": -121.881016, "longitude": 37.651717000000005}
-{"gym_name": "Bocce Field", "latitude": -121.862516, "longitude": 37.711467}
-{"gym_name": "Boomer Fountain", "latitude": -121.809977, "longitude": 37.700336}
-{"gym_name": "Boon Acres Park", "latitude": -121.946061, "longitude": 37.736616}
-{"gym_name": "Boy With Grapes", "latitude": -121.864718, "longitude": 37.711670000000005}
-{"gym_name": "Boy With Wheat Statue", "latitude": -121.866736, "longitude": 37.711985}
-{"gym_name": "Bronze Family", "latitude": -121.900996, "longitude": 37.683969}
-{"gym_name": "Bus Stop Mural", "latitude": -121.87380900000001, "longitude": 37.675864000000004}
-{"gym_name": "Bus Stop Mural", "latitude": -121.879537, "longitude": 37.658455999999994}
-{"gym_name": "California Plants", "latitude": -121.832909, "longitude": 37.672961}
-{"gym_name": "Camp Arroyo Environmental Education Center", "latitude": -121.755168, "longitude": 37.618528000000005}
-{"gym_name": "Camp Parks", "latitude": -121.910092, "longitude": 37.729051000000005}
-{"gym_name": "Campo di Bocce Fountain", "latitude": -121.803562, "longitude": 37.650755000000004}
-{"gym_name": "Carnation Painted Box", "latitude": -121.779825, "longitude": 37.676185000000004}
-{"gym_name": "Cartwheel Kids", "latitude": -121.87548799999999, "longitude": 37.661309}
-{"gym_name": "Carved Stone", "latitude": -121.902015, "longitude": 37.658147}
-{"gym_name": "Casa Orozco Bell Mural", "latitude": -121.936348, "longitude": 37.706}
-{"gym_name": "Cattleman's Welcome Wagon", "latitude": -121.816775, "longitude": 37.699088999999994}
-{"gym_name": "Cayetano Park Gazebo", "latitude": -121.79292699999999, "longitude": 37.705956}
-{"gym_name": "Cayetano Park", "latitude": -121.794172, "longitude": 37.70616699999999}
-{"gym_name": "Cedar Grove Community Church", "latitude": -121.768551, "longitude": 37.674299999999995}
-{"gym_name": "Chaparral Trail", "latitude": -121.909968, "longitude": 37.639126}
-{"gym_name": "Child Holding Grain", "latitude": -121.863329, "longitude": 37.711399}
-{"gym_name": "Children's Memorial Bridge", "latitude": -121.898862, "longitude": 37.67673799999999}
-{"gym_name": "Chinese Church In Christ", "latitude": -121.909729, "longitude": 37.695155}
-{"gym_name": "Christ Church", "latitude": -121.902089, "longitude": 37.662161000000005}
-{"gym_name": "Christian Turner Dedication Bench", "latitude": -121.781645, "longitude": 37.628003}
-{"gym_name": "Church of Christ", "latitude": -121.943035, "longitude": 37.697585000000004}
-{"gym_name": "Church of Christ", "latitude": -121.945811, "longitude": 37.697528000000005}
-{"gym_name": "Church of Latter Day Saints Livermore", "latitude": -121.784019, "longitude": 37.673080999999996}
-{"gym_name": "City of Dublin Marker", "latitude": -121.93550699999999, "longitude": 37.70204}
-{"gym_name": "City of Livermore Multi Service Center", "latitude": -121.75513500000001, "longitude": 37.676064999999994}
-{"gym_name": "Civic Center Station", "latitude": -121.87684899999999, "longitude": 37.656988}
-{"gym_name": "Clock Tower at the Dublin Civic Center", "latitude": -121.917288, "longitude": 37.703498}
-{"gym_name": "Clock Tower", "latitude": -121.885222, "longitude": 37.659656999999996}
-{"gym_name": "Clorox Fountain", "latitude": -121.90677099999999, "longitude": 37.693807}
-{"gym_name": "Clorox Ribbon", "latitude": -121.90677600000001, "longitude": 37.694094}
-{"gym_name": "Club Sport Blue Bike Rack", "latitude": -121.91911800000001, "longitude": 37.699575}
-{"gym_name": "Colldweih", "latitude": -121.774898, "longitude": 37.695431}
-{"gym_name": "Colonial Mural", "latitude": -121.875151, "longitude": 37.6616}
-{"gym_name": "Concannon Water Tank", "latitude": -121.783356, "longitude": 37.660922}
-{"gym_name": "Congregation Beth Emek", "latitude": -121.856544, "longitude": 37.667083000000005}
-{"gym_name": "Connolly Fountain", "latitude": -121.928713, "longitude": 37.702348}
-{"gym_name": "Cornerstone Fellowship", "latitude": -121.810432, "longitude": 37.703352}
-{"gym_name": "Cornerstone Fountain", "latitude": -121.811101, "longitude": 37.703251}
-{"gym_name": "Country Club Play Structure", "latitude": -121.94048000000001, "longitude": 37.729969}
-{"gym_name": "Courtyard Gazebo", "latitude": -121.81509, "longitude": 37.70369899999999}
-{"gym_name": "Creekside Park Sign", "latitude": -121.88535200000001, "longitude": 37.692348}
-{"gym_name": "Creekside Park", "latitude": -121.883043, "longitude": 37.690687000000004}
-{"gym_name": "Cresta Blanca Winery", "latitude": -121.75626000000001, "longitude": 37.62332}
-{"gym_name": "Cross at St Augustine's Cemetery", "latitude": -121.87972900000001, "longitude": 37.647258}
-{"gym_name": "Cross of Trinity Church", "latitude": -121.793725, "longitude": 37.681939}
-{"gym_name": "Daffodil Boxes", "latitude": -121.790965, "longitude": 37.677541}
-{"gym_name": "Dairy Bunkhouse", "latitude": -121.91303799999999, "longitude": 37.661348000000004}
-{"gym_name": "David D. Emmenger House", "latitude": -121.766749, "longitude": 37.679604}
-{"gym_name": "David Hartman", "latitude": -121.91172399999999, "longitude": 37.660283}
-{"gym_name": "Dear Statues", "latitude": -121.895836, "longitude": 37.637396}
-{"gym_name": "Dedication Plaque to the Dominican Sisters of San Rafael", "latitude": -121.76370999999999, "longitude": 37.68284800000001}
-{"gym_name": "Dedication Sidewalk", "latitude": -121.874771, "longitude": 37.665372000000005}
-{"gym_name": "Del Prado Park", "latitude": -121.905723, "longitude": 37.668710000000004}
-{"gym_name": "Del Prado Park", "latitude": -121.906953, "longitude": 37.668498}
-{"gym_name": "Descriptive Plant Placard", "latitude": -121.898981, "longitude": 37.678564}
-{"gym_name": "Disco Horse", "latitude": -121.865712, "longitude": 37.704184000000005}
-{"gym_name": "Dog Metal Carving", "latitude": -121.879815, "longitude": 37.7138}
-{"gym_name": "Doggie Statue", "latitude": -121.876137, "longitude": 37.659763000000005}
-{"gym_name": "Dogs Metal Structure", "latitude": -121.91451, "longitude": 37.717508}
-{"gym_name": "Dolan Park Sculpture", "latitude": -121.94661699999999, "longitude": 37.713274}
-{"gym_name": "Dolan Park", "latitude": -121.94561800000001, "longitude": 37.714157}
-{"gym_name": "Dolores Bengtson Aquatic Center Sign", "latitude": -121.87661399999999, "longitude": 37.672279}
-{"gym_name": "Donlan Point Trail Marker", "latitude": -121.96947399999999, "longitude": 37.702096}
-{"gym_name": "Duarte Garage", "latitude": -121.77555, "longitude": 37.69071}
-{"gym_name": "Dublin Blvd Fountain", "latitude": -121.887759, "longitude": 37.70648}
-{"gym_name": "Dublin CHP Officer Memorial", "latitude": -121.883726, "longitude": 37.714321999999996}
-{"gym_name": "Dublin Helix", "latitude": -121.909012, "longitude": 37.704705}
-{"gym_name": "Dublin Ranch Golf Course", "latitude": -121.857317, "longitude": 37.725206}
-{"gym_name": "Dublin Spider Park", "latitude": -121.937071, "longitude": 37.715617}
-{"gym_name": "Dubney Clock", "latitude": -121.940534, "longitude": 37.70084000000001}
-{"gym_name": "Earl Anthony's Dublin Bowl", "latitude": -121.93301000000001, "longitude": 37.701241}
-{"gym_name": "Eiffel Tower", "latitude": -121.939765, "longitude": 37.699999}
-{"gym_name": "El Gallo Mural West", "latitude": -121.871927, "longitude": 37.699211999999996}
-{"gym_name": "El Gallo Mural", "latitude": -121.871689, "longitude": 37.699101}
-{"gym_name": "El Padro Park", "latitude": -121.792361, "longitude": 37.664612999999996}
-{"gym_name": "Eliston Built 1890", "latitude": -121.890485, "longitude": 37.601181}
-{"gym_name": "Ellie Mae Fountain", "latitude": -121.901145, "longitude": 37.685902}
-{"gym_name": "Elliston Vineyards Fountain", "latitude": -121.890668, "longitude": 37.601414}
-{"gym_name": "Emerald Glen Little League Field", "latitude": -121.877749, "longitude": 37.712298}
-{"gym_name": "Emerald Glen Park Fountain", "latitude": -121.872949, "longitude": 37.710241}
-{"gym_name": "Emerald Glen Park Map Stone", "latitude": -121.875366, "longitude": 37.712033}
-{"gym_name": "Emerald Vista Playground", "latitude": -121.911578, "longitude": 37.712737}
-{"gym_name": "Entrance Fountain", "latitude": -121.80865, "longitude": 37.704797}
-{"gym_name": "Entrance to the Sunol Water Park", "latitude": -121.882224, "longitude": 37.592802000000006}
-{"gym_name": "Ethel M. Flynn Dedication Plaque", "latitude": -121.762994, "longitude": 37.62659000000001}
-{"gym_name": "Fairground Wine Garden", "latitude": -121.885028, "longitude": 37.660454}
-{"gym_name": "Fairlands Park", "latitude": -121.866001, "longitude": 37.696501}
-{"gym_name": "Fairlands Park", "latitude": -121.873539, "longitude": 37.695240000000005}
-{"gym_name": "Fairlands Park", "latitude": -121.875918, "longitude": 37.691876}
-{"gym_name": "Fallon Sports Park Little League Field", "latitude": -121.856208, "longitude": 37.714347}
-{"gym_name": "Fallon Water Tank", "latitude": -121.856087, "longitude": 37.728411}
-{"gym_name": "Fallon Water Tower", "latitude": -121.851582, "longitude": 37.73138599999999}
-{"gym_name": "Fawn Hills Park Play Structure", "latitude": -121.89686800000001, "longitude": 37.650293000000005}
-{"gym_name": "Fibonacci Seat", "latitude": -121.881783, "longitude": 37.643784999999994}
-{"gym_name": "Fire Pit", "latitude": -121.898184, "longitude": 37.657503}
-{"gym_name": "Fire Station 18", "latitude": -121.85460400000001, "longitude": 37.715303}
-{"gym_name": "Firehouse Mural on Bus Stop", "latitude": -121.87412, "longitude": 37.659688}
-{"gym_name": "First Church of Christ Scientist", "latitude": -121.773309, "longitude": 37.678736}
-{"gym_name": "First Presbyterian Church", "latitude": -121.769968, "longitude": 37.678666}
-{"gym_name": "Fit Trail #2", "latitude": -121.94627, "longitude": 37.714327000000004}
-{"gym_name": "Flags and Fountain at Emerald", "latitude": -121.88702500000001, "longitude": 37.709996}
-{"gym_name": "Florence Broadhurst Plaque", "latitude": -121.869047, "longitude": 37.661238}
-{"gym_name": "Food Court Fountain", "latitude": -121.84510200000001, "longitude": 37.698263000000004}
-{"gym_name": "Fossil Fern Stone", "latitude": -121.872995, "longitude": 37.710662}
-{"gym_name": "Fossil Fish Stone", "latitude": -121.87436199999999, "longitude": 37.711622000000006}
-{"gym_name": "Fountain At Barones", "latitude": -121.87529500000001, "longitude": 37.664013000000004}
-{"gym_name": "Fountain At The 4 Points", "latitude": -121.902631, "longitude": 37.696709}
-{"gym_name": "Fountain Christian Fellowship", "latitude": -121.87691099999999, "longitude": 37.68706}
-{"gym_name": "Fountain Pond", "latitude": -121.866713, "longitude": 37.734027}
-{"gym_name": "Fountain at 6601", "latitude": -121.907923, "longitude": 37.697843999999996}
-{"gym_name": "Fountain at Hacienda West", "latitude": -121.902469, "longitude": 37.683460000000004}
-{"gym_name": "Fountain at Tralee Apartments", "latitude": -121.911839, "longitude": 37.70496}
-{"gym_name": "Fountain on Ray Street", "latitude": -121.87305500000001, "longitude": 37.664046}
-{"gym_name": "Fountain", "latitude": -121.895535, "longitude": 37.688328}
-{"gym_name": "Fountain", "latitude": -121.900179, "longitude": 37.70518}
-{"gym_name": "Fountain", "latitude": -121.901551, "longitude": 37.66155}
-{"gym_name": "Fred Alvarado Cabinet", "latitude": -121.795593, "longitude": 37.677049}
-{"gym_name": "Frederick Ragsdale Stone Bench", "latitude": -121.937329, "longitude": 37.681289}
-{"gym_name": "Frog, Boy at the Tree Statue", "latitude": -121.877521, "longitude": 37.657258}
-{"gym_name": "GET $50 OF ITEMS FREE", "latitude": -121.908158, "longitude": 37.699884999999995}
-{"gym_name": "Gardella Greens", "latitude": -121.75630600000001, "longitude": 37.674427}
-{"gym_name": "Garden Balls", "latitude": -121.85158700000001, "longitude": 37.703694}
-{"gym_name": "Gateway Church", "latitude": -121.784845, "longitude": 37.683763000000006}
-{"gym_name": "Gateway Seminary", "latitude": -121.96346700000001, "longitude": 37.56679}
-{"gym_name": "Gazebo at San Ramon Senior Center Garden", "latitude": -121.92340200000001, "longitude": 37.733852}
-{"gym_name": "Gazebo", "latitude": -121.949084, "longitude": 37.69619899999999}
-{"gym_name": "Get $100 In Pok\u00e9Coins Free", "latitude": -121.851213, "longitude": 37.70426}
-{"gym_name": "Girl Scout Tiles", "latitude": -121.764849, "longitude": 37.686440999999995}
-{"gym_name": "Glass Mosaic Art", "latitude": -121.763832, "longitude": 37.625073}
-{"gym_name": "God's Ten Commandments", "latitude": -121.76329000000001, "longitude": 37.681571999999996}
-{"gym_name": "Gold Creek", "latitude": -121.928967, "longitude": 37.687231000000004}
-{"gym_name": "Golden Eagle Trail", "latitude": -121.908561, "longitude": 37.639775}
-{"gym_name": "Golden Gate Railroad Museum", "latitude": -121.92039, "longitude": 37.59764}
-{"gym_name": "Golden Sand Harbor Village Mosaic 2", "latitude": -121.93440000000001, "longitude": 37.707317}
-{"gym_name": "Golf Palace", "latitude": -121.81026200000001, "longitude": 37.700243}
-{"gym_name": "Good News Family Fellowship", "latitude": -121.90999500000001, "longitude": 37.703442}
-{"gym_name": "Grace United Methodist Church", "latitude": -121.95208099999999, "longitude": 37.736459}
-{"gym_name": "Grafton Station Fountain", "latitude": -121.866052, "longitude": 37.70483}
-{"gym_name": "Great American Main Street", "latitude": -121.767032, "longitude": 37.681900999999996}
-{"gym_name": "Greenwood Whale Murals", "latitude": -121.805723, "longitude": 37.691195}
-{"gym_name": "Ground Circle", "latitude": -121.770993, "longitude": 37.695769}
-{"gym_name": "Gurgling Spigots", "latitude": -121.924451, "longitude": 37.698536000000004}
-{"gym_name": "HP Gleason Plaque", "latitude": -121.887962, "longitude": 37.716031}
-{"gym_name": "Hacienda Crossings Fountain", "latitude": -121.885093, "longitude": 37.703337}
-{"gym_name": "Hacienda Crossings Fountain", "latitude": -121.887613, "longitude": 37.705981}
-{"gym_name": "Hacienda Lakes Water Fall South", "latitude": -121.896889, "longitude": 37.687681}
-{"gym_name": "Hacienda Lakes Water Fountain", "latitude": -121.896404, "longitude": 37.688314}
-{"gym_name": "Hacienda Medical Office Mural", "latitude": -121.898932, "longitude": 37.690844}
-{"gym_name": "Hagemann Park", "latitude": -121.795367, "longitude": 37.682685}
-{"gym_name": "Hagemann Park", "latitude": -121.796104, "longitude": 37.681141}
-{"gym_name": "Hank Smith Plaque", "latitude": -121.78241299999999, "longitude": 37.650444}
-{"gym_name": "Hansen Park", "latitude": -121.893314, "longitude": 37.669534}
-{"gym_name": "Happy Caterpillar Statue", "latitude": -121.78561499999999, "longitude": 37.655046}
-{"gym_name": "Happy Valley Church", "latitude": -121.886525, "longitude": 37.637478}
-{"gym_name": "Harlan Family History Board", "latitude": -121.938561, "longitude": 37.698827}
-{"gym_name": "Harriet Ann Smith Memorial Bench", "latitude": -121.95265, "longitude": 37.669148}
-{"gym_name": "Hawaiian Signage", "latitude": -121.857798, "longitude": 37.657109}
-{"gym_name": "Heavy Metal", "latitude": -121.772423, "longitude": 37.683164}
-{"gym_name": "Heritage Park and Museum Information Board", "latitude": -121.938831, "longitude": 37.700573}
-{"gym_name": "Historic Livermore Rodeo", "latitude": -121.759296, "longitude": 37.668342}
-{"gym_name": "Historic Orchard Plaque", "latitude": -121.913506, "longitude": 37.661249}
-{"gym_name": "Historic Raboli Winery", "latitude": -121.769908, "longitude": 37.68058}
-{"gym_name": "Historic Water Station", "latitude": -121.77239, "longitude": 37.689097}
-{"gym_name": "Holdener Park Bike Trail", "latitude": -121.755809, "longitude": 37.649815999999994}
-{"gym_name": "Holy Spirit", "latitude": -121.901581, "longitude": 37.677249}
-{"gym_name": "Hopyard Arch", "latitude": -121.90307200000001, "longitude": 37.691247000000004}
-{"gym_name": "Horse And Wheel Art", "latitude": -121.91007400000001, "longitude": 37.707671}
-{"gym_name": "Horse Racing Mural", "latitude": -121.88516600000001, "longitude": 37.661771}
-{"gym_name": "Humane Society Memorial Wall", "latitude": -121.860968, "longitude": 37.665889}
-{"gym_name": "Ida Holm Park", "latitude": -121.80343, "longitude": 37.664836}
-{"gym_name": "Iglesia Ni Cristo", "latitude": -121.760718, "longitude": 37.686716000000004}
-{"gym_name": "Imperial Guardian Lions", "latitude": -121.782658, "longitude": 37.680026}
-{"gym_name": "In Living Memory", "latitude": -121.796843, "longitude": 37.66563}
-{"gym_name": "In Memory of James A Nocolay", "latitude": -121.784566, "longitude": 37.68576899999999}
-{"gym_name": "Inglewood Fountain", "latitude": -121.901225, "longitude": 37.687743999999995}
-{"gym_name": "Inman Masonic Marker", "latitude": -121.774091, "longitude": 37.695428}
-{"gym_name": "Iron Horse Regional Trail Information Sign", "latitude": -121.87196899999999, "longitude": 37.723226000000004}
-{"gym_name": "Iron Horse Regional Trail", "latitude": -121.895771, "longitude": 37.700076}
-{"gym_name": "Iron Horse Regional Trail", "latitude": -121.903482, "longitude": 37.705515}
-{"gym_name": "Iron Horse Regional Trail", "latitude": -121.926289, "longitude": 37.726716}
-{"gym_name": "Iron Horse Trail Sign", "latitude": -121.891152, "longitude": 37.69659}
-{"gym_name": "Iron Horse Trail at Park Sierra", "latitude": -121.910826, "longitude": 37.711456999999996}
-{"gym_name": "Iron Horse Trail", "latitude": -121.871664, "longitude": 37.682366}
-{"gym_name": "Iron Horse Trail", "latitude": -121.87675800000001, "longitude": 37.685841}
-{"gym_name": "Iron Horse Trail", "latitude": -121.88007200000001, "longitude": 37.688682}
-{"gym_name": "Iron Horse Trail", "latitude": -121.904162, "longitude": 37.706064999999995}
-{"gym_name": "Iron Horse Trail", "latitude": -121.914272, "longitude": 37.714137}
-{"gym_name": "Iron Horse Trail", "latitude": -121.929606, "longitude": 37.730677}
-{"gym_name": "Iron Horse Trail", "latitude": -121.93826899999999, "longitude": 37.740516}
-{"gym_name": "Iron Horse", "latitude": -121.87800299999999, "longitude": 37.659953}
-{"gym_name": "J O Osorio", "latitude": -121.76811599999999, "longitude": 37.683017}
-{"gym_name": "J. W. Kottinger\u2019s Barn", "latitude": -121.872486, "longitude": 37.663236}
-{"gym_name": "Jack Williams Park", "latitude": -121.78896999999999, "longitude": 37.658431}
-{"gym_name": "Jack Williams Park", "latitude": -121.790762, "longitude": 37.658471999999996}
-{"gym_name": "Jester", "latitude": -121.767707, "longitude": 37.684096999999994}
-{"gym_name": "Jesus I Trust in You Painting", "latitude": -121.762846, "longitude": 37.681755}
-{"gym_name": "Joe's Rock Collection", "latitude": -121.774822, "longitude": 37.69166}
-{"gym_name": "John Knox Presbyterian Church", "latitude": -121.94281699999999, "longitude": 37.705102}
-{"gym_name": "Johnston and Johnson", "latitude": -121.879396, "longitude": 37.646688}
-{"gym_name": "Justin Kehl Bench", "latitude": -121.764022, "longitude": 37.627246}
-{"gym_name": "Karl Wente Park", "latitude": -121.776246, "longitude": 37.663526}
-{"gym_name": "Keep Smiling", "latitude": -121.87367499999999, "longitude": 37.665181999999994}
-{"gym_name": "Kellman Fields", "latitude": -121.782234, "longitude": 37.649471}
-{"gym_name": "Ken Burge Dedication Plaque", "latitude": -121.894409, "longitude": 37.636299}
-{"gym_name": "Ken Mercer Sports Park", "latitude": -121.885262, "longitude": 37.684486}
-{"gym_name": "Kids with Kites", "latitude": -121.92854000000001, "longitude": 37.695784999999994}
-{"gym_name": "Knights Ball Fountain", "latitude": -121.917895, "longitude": 37.698287}
-{"gym_name": "Kolb Exercise Circuit Rings", "latitude": -121.92958800000001, "longitude": 37.718139}
-{"gym_name": "Kolb Park Druid Circle", "latitude": -121.929546, "longitude": 37.718742}
-{"gym_name": "Kottinger Community Park", "latitude": -121.858846, "longitude": 37.656317}
-{"gym_name": "Kottinger Community Park", "latitude": -121.863637, "longitude": 37.659197999999996}
-{"gym_name": "Kottinger Park Playlot", "latitude": -121.867858, "longitude": 37.662641}
-{"gym_name": "Kottinger Village Park", "latitude": -121.86751100000001, "longitude": 37.662962}
-{"gym_name": "Lady With a Harp 2", "latitude": -121.864638, "longitude": 37.711307999999995}
-{"gym_name": "Laguna Vista Playground", "latitude": -121.90360600000001, "longitude": 37.65139}
-{"gym_name": "Lakeside Picnic Ground", "latitude": -121.841031, "longitude": 37.668638}
-{"gym_name": "Larry Faltings Field", "latitude": -121.79763700000001, "longitude": 37.662808}
-{"gym_name": "Las Positas Center Clock", "latitude": -121.773141, "longitude": 37.697429}
-{"gym_name": "Las Positas", "latitude": -121.81811499999999, "longitude": 37.697562}
-{"gym_name": "Laurel Creek Park", "latitude": -121.933654, "longitude": 37.689071}
-{"gym_name": "LazyDog Tree Trunk Chandelier", "latitude": -121.887415, "longitude": 37.70429300000001}
-{"gym_name": "Lighthouse Baptist Church", "latitude": -121.873144, "longitude": 37.659406}
-{"gym_name": "Lion King Guardians", "latitude": -121.879341, "longitude": 37.697153}
-{"gym_name": "Lit Horse, Dublin", "latitude": -121.928994, "longitude": 37.693711}
-{"gym_name": "Little Brown Church", "latitude": -121.889984, "longitude": 37.596458000000005}
-{"gym_name": "Livermore Archway", "latitude": -121.84781, "longitude": 37.697043}
-{"gym_name": "Livermore Canine Park", "latitude": -121.755763, "longitude": 37.668903}
-{"gym_name": "Livermore Canine Park", "latitude": -121.77019499999999, "longitude": 37.695758}
-{"gym_name": "Livermore Canine Park", "latitude": -121.785895, "longitude": 37.68732}
-{"gym_name": "Livermore Casino", "latitude": -121.757231, "longitude": 37.688305}
-{"gym_name": "Livermore Center Clock Tower", "latitude": -121.78469199999999, "longitude": 37.687690999999994}
-{"gym_name": "Livermore Cinemas", "latitude": -121.766965, "longitude": 37.683478}
-{"gym_name": "Livermore Community Farmland M", "latitude": -121.770862, "longitude": 37.679854999999996}
-{"gym_name": "Livermore First St. Fountain", "latitude": -121.768369, "longitude": 37.681850000000004}
-{"gym_name": "Livermore Ornate Pergola", "latitude": -121.84268200000001, "longitude": 37.696695}
-{"gym_name": "Livermore Painted Bus Stop", "latitude": -121.75849, "longitude": 37.675982000000005}
-{"gym_name": "Livermore Rodeo Gate B", "latitude": -121.758228, "longitude": 37.668946}
-{"gym_name": "Livermore Seventh-Day Adventist Church", "latitude": -121.758844, "longitude": 37.688974}
-{"gym_name": "Livermore Town Gazebo", "latitude": -121.75572299999999, "longitude": 37.675734999999996}
-{"gym_name": "Livermore Valley Stadium", "latitude": -121.760765, "longitude": 37.669034999999994}
-{"gym_name": "Livermore Valley Winery Map", "latitude": -121.874058, "longitude": 37.660866}
-{"gym_name": "Livermore WRP Fountain", "latitude": -121.806138, "longitude": 37.689312}
-{"gym_name": "Livermore's First Library", "latitude": -121.769656, "longitude": 37.681492}
-{"gym_name": "Living Tree Gazebo", "latitude": -121.90699400000001, "longitude": 37.669627}
-{"gym_name": "Longview Water Tank", "latitude": -121.90977199999999, "longitude": 37.644078}
-{"gym_name": "Lutheran Church - Missouri Synod", "latitude": -121.81568000000001, "longitude": 37.702307}
-{"gym_name": "Lynnewood United Methodist Church", "latitude": -121.87651000000001, "longitude": 37.67207500000001}
-{"gym_name": "Magpie Nature Loop", "latitude": -121.781706, "longitude": 37.642869}
-{"gym_name": "Mape Memorial Park Dedication Plaque", "latitude": -121.939305, "longitude": 37.70648}
-{"gym_name": "Mar Thoma Church of San Francisco", "latitude": -121.76796300000001, "longitude": 37.687506}
-{"gym_name": "Marilyn Murphy Kane Trailhead", "latitude": -121.903641, "longitude": 37.654977}
-{"gym_name": "Marina View Picnic Area", "latitude": -121.83895799999999, "longitude": 37.668538}
-{"gym_name": "Martin Canyon Creek Trail", "latitude": -121.959637, "longitude": 37.709313}
-{"gym_name": "Mayor Bosco", "latitude": -121.887923, "longitude": 37.593376}
-{"gym_name": "Meadowlark Park - Regency", "latitude": -121.909898, "longitude": 37.664919000000005}
-{"gym_name": "Meadowlark Park Small Structure", "latitude": -121.909438, "longitude": 37.665429}
-{"gym_name": "Meadows Park", "latitude": -121.858608, "longitude": 37.695852}
-{"gym_name": "Metal Caduceus V", "latitude": -121.775406, "longitude": 37.680273}
-{"gym_name": "Metal Deer 2", "latitude": -121.877183, "longitude": 37.656751}
-{"gym_name": "Metallic Vortex", "latitude": -121.89834499999999, "longitude": 37.702387}
-{"gym_name": "Mighty Mite Park", "latitude": -121.878141, "longitude": 37.710567000000005}
-{"gym_name": "Miniature Water System Art", "latitude": -121.96943, "longitude": 37.696736}
-{"gym_name": "Mission Hills Park South", "latitude": -121.871015, "longitude": 37.648391}
-{"gym_name": "Mocho Park", "latitude": -121.781126, "longitude": 37.673018}
-{"gym_name": "Moller Park", "latitude": -121.928165, "longitude": 37.686884}
-{"gym_name": "Monsignor Robert Adams Field", "latitude": -121.764264, "longitude": 37.683256}
-{"gym_name": "Montage", "latitude": -121.800045, "longitude": 37.708165}
-{"gym_name": "Monument To Peace", "latitude": -121.757261, "longitude": 37.675236}
-{"gym_name": "Morning Star Valley Hotel", "latitude": -121.771263, "longitude": 37.6807}
-{"gym_name": "Mosaic Bulbs", "latitude": -121.897383, "longitude": 37.704353999999995}
-{"gym_name": "Mother Mary Statue", "latitude": -121.76463600000001, "longitude": 37.682406}
-{"gym_name": "Mother Mary Statue", "latitude": -121.77835200000001, "longitude": 37.658203}
-{"gym_name": "Murdell Stones", "latitude": -121.801216, "longitude": 37.676366}
-{"gym_name": "Murdock Water Fountain", "latitude": -121.763153, "longitude": 37.680093}
-{"gym_name": "Murray - Green Homes", "latitude": -121.93677, "longitude": 37.700825}
-{"gym_name": "Native American Xm Seeker", "latitude": -121.87457400000001, "longitude": 37.697582}
-{"gym_name": "Native Plant Trail", "latitude": -121.802935, "longitude": 37.711493}
-{"gym_name": "Nature's Way Plaque", "latitude": -121.807201, "longitude": 37.689742}
-{"gym_name": "Nesting Hen Mural", "latitude": -121.93742, "longitude": 37.704967}
-{"gym_name": "Nevis Pavilion Commemorative Heritage Plaque", "latitude": -121.876217, "longitude": 37.659992}
-{"gym_name": "New Beginnings International Church", "latitude": -121.876218, "longitude": 37.686765}
-{"gym_name": "New Castle", "latitude": -121.867034, "longitude": 37.73341800000001}
-{"gym_name": "New Life Church", "latitude": -121.91533600000001, "longitude": 37.708552000000005}
-{"gym_name": "Nielsen Park", "latitude": -121.870401, "longitude": 37.688656}
-{"gym_name": "Niles Canyon Mobile Estates", "latitude": -121.966762, "longitude": 37.578864}
-{"gym_name": "Niles Canyon Railway Chiodo Art No. 3146", "latitude": -121.968044, "longitude": 37.573024}
-{"gym_name": "Niles Canyon Railway Marker", "latitude": -121.878404, "longitude": 37.656024}
-{"gym_name": "Niles Canyon Railway", "latitude": -121.888794, "longitude": 37.594094999999996}
-{"gym_name": "Niles Memorial Picture", "latitude": -121.96788, "longitude": 37.572885}
-{"gym_name": "None Shall Pass", "latitude": -121.892366, "longitude": 37.604634999999995}
-{"gym_name": "Norris Family Sign", "latitude": -121.937975, "longitude": 37.699492}
-{"gym_name": "North Amador Lakes Fountain", "latitude": -121.922445, "longitude": 37.725875}
-{"gym_name": "North Ridge Trail", "latitude": -121.933115, "longitude": 37.660786}
-{"gym_name": "Nursery Water Fountain", "latitude": -121.84497, "longitude": 37.664653}
-{"gym_name": "Oak Tree Trail", "latitude": -121.889507, "longitude": 37.612291}
-{"gym_name": "Oak Tree and Woodland Trail Marker", "latitude": -121.884448, "longitude": 37.615147}
-{"gym_name": "Old Ranch Park", "latitude": -121.919828, "longitude": 37.734612999999996}
-{"gym_name": "Old Veterans Administration Building", "latitude": -121.774921, "longitude": 37.633317000000005}
-{"gym_name": "Olive Grove on Ridge Line Trail Marker", "latitude": -121.891838, "longitude": 37.614467000000005}
-{"gym_name": "Olivina Trail", "latitude": -121.778165, "longitude": 37.636973000000005}
-{"gym_name": "Olivina Vineyards", "latitude": -121.768154, "longitude": 37.645081999999995}
-{"gym_name": "Open Book Sculptures", "latitude": -121.91855, "longitude": 37.702594999999995}
-{"gym_name": "Oracle Water Fountain", "latitude": -121.891073, "longitude": 37.700209}
-{"gym_name": "Orloff Park", "latitude": -121.870454, "longitude": 37.678596}
-{"gym_name": "Orloff Park", "latitude": -121.873715, "longitude": 37.676913}
-{"gym_name": "Outback Palms Mural", "latitude": -121.874146, "longitude": 37.663291}
-{"gym_name": "Outdoor Theater", "latitude": -121.802279, "longitude": 37.710643}
-{"gym_name": "Owens Plaza Pagoda", "latitude": -121.887675, "longitude": 37.695303}
-{"gym_name": "Owens Plaza Park Sign", "latitude": -121.88833, "longitude": 37.694663}
-{"gym_name": "Owens Plaza Park", "latitude": -121.887428, "longitude": 37.695509}
-{"gym_name": "Painted Recycle Can", "latitude": -121.767853, "longitude": 37.683233}
-{"gym_name": "Painting Child Statue", "latitude": -121.863485, "longitude": 37.710136}
-{"gym_name": "Palo Alto Medical Foundation Fountain", "latitude": -121.87253, "longitude": 37.705219}
-{"gym_name": "Panera Water Fountain", "latitude": -121.929148, "longitude": 37.706647000000004}
-{"gym_name": "Par Course Series 3", "latitude": -121.90302, "longitude": 37.662715000000006}
-{"gym_name": "Par Course Series 4", "latitude": -121.90516299999999, "longitude": 37.661916}
-{"gym_name": "Pat's Bench", "latitude": -121.86021, "longitude": 37.658457}
-{"gym_name": "Path to Picasso", "latitude": -121.76703499999999, "longitude": 37.684828}
-{"gym_name": "Phantom Zone", "latitude": -121.896624, "longitude": 37.69193}
-{"gym_name": "Planetary Sculpture", "latitude": -121.851394, "longitude": 37.704273}
-{"gym_name": "Playful Pups", "latitude": -121.861205, "longitude": 37.666073999999995}
-{"gym_name": "Plaza Pillars", "latitude": -121.923611, "longitude": 37.697776999999995}
-{"gym_name": "Plaza at the North Canyons Fountain", "latitude": -121.81147499999999, "longitude": 37.705149}
-{"gym_name": "Pleasanton  Sports  & Recreation  Park", "latitude": -121.887135, "longitude": 37.682098}
-{"gym_name": "Pleasanton Avenue Bison", "latitude": -121.884307, "longitude": 37.658226}
-{"gym_name": "Pleasanton BMX Facility", "latitude": -121.853453, "longitude": 37.670671}
-{"gym_name": "Pleasanton Bart Station Platform", "latitude": -121.898568, "longitude": 37.701637000000005}
-{"gym_name": "Pleasanton Bear Mural", "latitude": -121.90431699999999, "longitude": 37.697843999999996}
-{"gym_name": "Pleasanton Centennial Time Capsule", "latitude": -121.878363, "longitude": 37.656829}
-{"gym_name": "Pleasanton City of Planned Progress", "latitude": -121.91089, "longitude": 37.63491}
-{"gym_name": "Pleasanton Civic Center", "latitude": -121.878856, "longitude": 37.658423}
-{"gym_name": "Pleasanton Evangelical Free Church", "latitude": -121.910183, "longitude": 37.675518999999994}
-{"gym_name": "Pleasanton Painted Box", "latitude": -121.87031499999999, "longitude": 37.66303}
-{"gym_name": "Pleasanton Pioneer Cemetery", "latitude": -121.88120699999999, "longitude": 37.64667600000001}
-{"gym_name": "Pleasanton Ridge Park Kilkare Entrance", "latitude": -121.920096, "longitude": 37.636663}
-{"gym_name": "Pleasanton Ridge Park", "latitude": -121.881697, "longitude": 37.614482}
-{"gym_name": "Pleasanton Senior Center and Centennial Park", "latitude": -121.880328, "longitude": 37.652743}
-{"gym_name": "Pleasanton Sports & Recreation Park", "latitude": -121.89147700000001, "longitude": 37.682431}
-{"gym_name": "Pleasanton Sports Memorial", "latitude": -121.893922, "longitude": 37.681258}
-{"gym_name": "Pleasanton Sports Park Playground", "latitude": -121.8853, "longitude": 37.685167}
-{"gym_name": "Pleasanton Sports and Recreation Community Park", "latitude": -121.899607, "longitude": 37.677847}
-{"gym_name": "Pleasanton Sports and Recreation Park", "latitude": -121.895445, "longitude": 37.680248}
-{"gym_name": "Pleasanton Sports and Recreation Park", "latitude": -121.896976, "longitude": 37.679719999999996}
-{"gym_name": "Pleasanton Tennis & Community Park", "latitude": -121.89986900000001, "longitude": 37.674836}
-{"gym_name": "Pleasanton Tennis Parks", "latitude": -121.89303799999999, "longitude": 37.675276999999994}
-{"gym_name": "Pleasanton Tennis and Community Park", "latitude": -121.898006, "longitude": 37.675208000000005}
-{"gym_name": "Pleasanton Trail #8", "latitude": -121.903141, "longitude": 37.680208}
-{"gym_name": "Pleasanton Trail Gate #4", "latitude": -121.913375, "longitude": 37.685618}
-{"gym_name": "Pleasanton Trail Gate 23", "latitude": -121.883858, "longitude": 37.667939999999994}
-{"gym_name": "Pleasanton Trail", "latitude": -121.920631, "longitude": 37.699193}
-{"gym_name": "Pleasure Island Park", "latitude": -121.80102400000001, "longitude": 37.671941}
-{"gym_name": "Pope John Paul II Activity Center", "latitude": -121.87527800000001, "longitude": 37.68718}
-{"gym_name": "Portola Meadows Fountain", "latitude": -121.77716600000001, "longitude": 37.69212099999999}
-{"gym_name": "Portola Meadows Gazebo", "latitude": -121.777173, "longitude": 37.695373000000004}
-{"gym_name": "Portola Park", "latitude": -121.77331699999999, "longitude": 37.69094}
-{"gym_name": "Portola Village Fountain", "latitude": -121.77345999999999, "longitude": 37.69142600000001}
-{"gym_name": "Positano Hills Park Playground Structure", "latitude": -121.845618, "longitude": 37.724141}
-{"gym_name": "Positano Hills Park", "latitude": -121.84590200000001, "longitude": 37.723492}
-{"gym_name": "Positano With Plant Pots", "latitude": -121.85199, "longitude": 37.714423}
-{"gym_name": "Powell 1948", "latitude": -121.880781, "longitude": 37.646921}
-{"gym_name": "Pyramid Garden", "latitude": -121.866174, "longitude": 37.711307999999995}
-{"gym_name": "R-Place Guitar", "latitude": -121.766119, "longitude": 37.684535}
-{"gym_name": "Radioactive Collaboration", "latitude": -121.767941, "longitude": 37.681952}
-{"gym_name": "Ravenswood Historic Site", "latitude": -121.768397, "longitude": 37.652426000000006}
-{"gym_name": "Ravenswood Park", "latitude": -121.771876, "longitude": 37.653038}
-{"gym_name": "Red Monkey Bars", "latitude": -121.80157100000001, "longitude": 37.710941}
-{"gym_name": "Reflections Park", "latitude": -121.86561599999999, "longitude": 37.668619}
-{"gym_name": "Regional Park Boundary Line", "latitude": -121.96417799999999, "longitude": 37.581102}
-{"gym_name": "Regional Parks Fishing Information Board", "latitude": -121.839031, "longitude": 37.668344}
-{"gym_name": "Ricard Nikolaisen", "latitude": -121.938862, "longitude": 37.698851}
-{"gym_name": "Richard Fahey Village Green", "latitude": -121.930717, "longitude": 37.727788000000004}
-{"gym_name": "Ridge Line Trail Top", "latitude": -121.889224, "longitude": 37.612624000000004}
-{"gym_name": "Ridge Line to Olive Grove Trail Marker", "latitude": -121.890828, "longitude": 37.613693000000005}
-{"gym_name": "Ridgeline Trail", "latitude": -121.90253, "longitude": 37.627216000000004}
-{"gym_name": "Rincon Branch Library", "latitude": -121.78483800000001, "longitude": 37.686799}
-{"gym_name": "Ring Around Sculpture", "latitude": -121.90057100000001, "longitude": 37.683915}
-{"gym_name": "Riparian Restoration Sign", "latitude": -121.778649, "longitude": 37.629756}
-{"gym_name": "Riparian Restoration Sign", "latitude": -121.780651, "longitude": 37.628833}
-{"gym_name": "Riparian Restoration in Progress 1", "latitude": -121.778488, "longitude": 37.633784}
-{"gym_name": "Robert Barnett M.D. Dedication", "latitude": -121.763162, "longitude": 37.700043}
-{"gym_name": "Robert Livermore", "latitude": -121.774983, "longitude": 37.69105}
-{"gym_name": "Robertson Park Synthetic Turf Field", "latitude": -121.755263, "longitude": 37.668551}
-{"gym_name": "Robertson Park", "latitude": -121.76794, "longitude": 37.670826000000005}
-{"gym_name": "Rock Filet Fountain", "latitude": -121.91055700000001, "longitude": 37.706406}
-{"gym_name": "Rock Fountain", "latitude": -121.900048, "longitude": 37.659809}
-{"gym_name": "Rock Fountain", "latitude": -121.901857, "longitude": 37.661445}
-{"gym_name": "Rock Garden", "latitude": -121.801055, "longitude": 37.711831}
-{"gym_name": "Rock, Paper, Scissors", "latitude": -121.875693, "longitude": 37.663874}
-{"gym_name": "Rockin' Jump", "latitude": -121.89154500000001, "longitude": 37.71214}
-{"gym_name": "Rolling Hills Trail", "latitude": -121.889466, "longitude": 37.744130000000006}
-{"gym_name": "Rolling Water Fountain", "latitude": -121.924298, "longitude": 37.697987999999995}
-{"gym_name": "Rose a Most Noble Example of Life", "latitude": -121.880298, "longitude": 37.64656599999999}
-{"gym_name": "Rotary Club Bench", "latitude": -121.84693100000001, "longitude": 37.671423999999995}
-{"gym_name": "Rubino Fountain", "latitude": -121.820843, "longitude": 37.654055}
-{"gym_name": "Rubino Picnic Area Fountain", "latitude": -121.820884, "longitude": 37.653292}
-{"gym_name": "Ruby Hill Community Park", "latitude": -121.807126, "longitude": 37.647388}
-{"gym_name": "Ruby Hill Fountain", "latitude": -121.806752, "longitude": 37.651500999999996}
-{"gym_name": "Ryan's Bench", "latitude": -121.911843, "longitude": 37.685095}
-{"gym_name": "Saint Clare's Episcopal Church", "latitude": -121.90026999999999, "longitude": 37.677713999999995}
-{"gym_name": "San Francisco Premium Outlet Rock Fountain", "latitude": -121.840326, "longitude": 37.698344}
-{"gym_name": "San Ramon Boundary Statue", "latitude": -121.93, "longitude": 37.726548}
-{"gym_name": "San Ramon Compas Point", "latitude": -121.885178, "longitude": 37.746849000000005}
-{"gym_name": "San Ramon Compass Point", "latitude": -121.885576, "longitude": 37.746860999999996}
-{"gym_name": "San Ramon Marker", "latitude": -121.910071, "longitude": 37.731297999999995}
-{"gym_name": "San Ramon Police Badge", "latitude": -121.889676, "longitude": 37.744881}
-{"gym_name": "Schween", "latitude": -121.879886, "longitude": 37.646331999999994}
-{"gym_name": "Sculpture at the Dublin Civic", "latitude": -121.91707600000001, "longitude": 37.703863}
-{"gym_name": "Secret Door", "latitude": -121.929239, "longitude": 37.709613}
-{"gym_name": "Selby Play Structure", "latitude": -121.79574500000001, "longitude": 37.709227999999996}
-{"gym_name": "Senior Center Fountain", "latitude": -121.881345, "longitude": 37.652234}
-{"gym_name": "Senior Par Course", "latitude": -121.880909, "longitude": 37.653092}
-{"gym_name": "Shadow Cliffs Park", "latitude": -121.844948, "longitude": 37.671592000000004}
-{"gym_name": "Shadow Cliffs Regional Park Vineyard Gate", "latitude": -121.84218100000001, "longitude": 37.665875}
-{"gym_name": "Shadow Cliffs Regional Recreation Area", "latitude": -121.85305299999999, "longitude": 37.669748000000006}
-{"gym_name": "Shadow Cliffs", "latitude": -121.84070999999999, "longitude": 37.672138000000004}
-{"gym_name": "Shea Center", "latitude": -121.80515100000001, "longitude": 37.706171}
-{"gym_name": "Signal Hill Waterfalls Fountain", "latitude": -121.858121, "longitude": 37.726366}
-{"gym_name": "Silver Art", "latitude": -121.934388, "longitude": 37.706649}
-{"gym_name": "Sister City Program", "latitude": -121.81729000000001, "longitude": 37.696259999999995}
-{"gym_name": "Sit, Rest, Observe.  Be At Peace", "latitude": -121.89777500000001, "longitude": 37.644462}
-{"gym_name": "Site of Dougherty Station Hotel", "latitude": -121.93864, "longitude": 37.701457}
-{"gym_name": "Skateboard Track", "latitude": -121.898117, "longitude": 37.677504000000006}
-{"gym_name": "Ski Bench", "latitude": -121.87892000000001, "longitude": 37.698964}
-{"gym_name": "South Livermore Trail", "latitude": -121.768372, "longitude": 37.653251}
-{"gym_name": "Split and Tied", "latitude": -121.75528899999999, "longitude": 37.675415}
-{"gym_name": "Sri Sai Temple Pleasanton", "latitude": -121.90988, "longitude": 37.696755}
-{"gym_name": "St Francis", "latitude": -121.90941600000001, "longitude": 37.674888}
-{"gym_name": "St. Augustine Catholic Church", "latitude": -121.860815, "longitude": 37.654253}
-{"gym_name": "St. Augustine Catholic Church", "latitude": -121.863287, "longitude": 37.654271}
-{"gym_name": "St. Bartholomew's Episcopal Church", "latitude": -121.768986, "longitude": 37.689708}
-{"gym_name": "St. Bartholomew's Rock Fountain", "latitude": -121.768798, "longitude": 37.690094}
-{"gym_name": "St. Charles Borromed Catholic Community Church", "latitude": -121.777805, "longitude": 37.658894}
-{"gym_name": "St. Elizabeth Seton Catholic Church", "latitude": -121.873275, "longitude": 37.687864000000005}
-{"gym_name": "St. Michael's Plaque", "latitude": -121.76386, "longitude": 37.68193}
-{"gym_name": "St. Philip Lutheran Church and School", "latitude": -121.937005, "longitude": 37.723845}
-{"gym_name": "Stanley Boulevard Bay-Friendly Streetscape", "latitude": -121.805943, "longitude": 37.675931999999996}
-{"gym_name": "Stanley Boulevard Streetscape Info", "latitude": -121.831195, "longitude": 37.67313}
-{"gym_name": "Starbucks", "latitude": -121.77359999999999, "longitude": 37.691444000000004}
-{"gym_name": "Starbucks", "latitude": -121.777205, "longitude": 37.680400999999996}
-{"gym_name": "Starbucks", "latitude": -121.84525599999999, "longitude": 37.698494}
-{"gym_name": "Starbucks", "latitude": -121.852958, "longitude": 37.703711}
-{"gym_name": "Starbucks", "latitude": -121.87353499999999, "longitude": 37.705549999999995}
-{"gym_name": "Starbucks", "latitude": -121.87392, "longitude": 37.675125}
-{"gym_name": "Starbucks", "latitude": -121.90232999999999, "longitude": 37.689125}
-{"gym_name": "Starbucks", "latitude": -121.93137999999999, "longitude": 37.72951}
-{"gym_name": "Starry Starry Windows", "latitude": -121.771293, "longitude": 37.681211}
-{"gym_name": "Station Square Sculpture", "latitude": -121.773265, "longitude": 37.683197}
-{"gym_name": "Station Square Sculpture", "latitude": -121.77492799999999, "longitude": 37.682728}
-{"gym_name": "Steel Horse", "latitude": -121.76600499999999, "longitude": 37.68330100000001}
-{"gym_name": "Stone Ridge Creek Waterfall", "latitude": -121.855721, "longitude": 37.699158}
-{"gym_name": "Stoneridge Creek Neighborhood Park", "latitude": -121.853165, "longitude": 37.696211999999996}
-{"gym_name": "Strange Grapevine Wall", "latitude": -121.80509599999999, "longitude": 37.677523}
-{"gym_name": "Sun Sculpture", "latitude": -121.873092, "longitude": 37.66114}
-{"gym_name": "Sunflower Box Mural", "latitude": -121.77993000000001, "longitude": 37.674286}
-{"gym_name": "Sunol Paintball", "latitude": -121.85145, "longitude": 37.598682999999994}
-{"gym_name": "Sunol Park Archway", "latitude": -121.888593, "longitude": 37.594492}
-{"gym_name": "Sunol Valley Golf Course", "latitude": -121.88585300000001, "longitude": 37.575311}
-{"gym_name": "Sunol Water Temple California Historic Civil Engineering Landmark", "latitude": -121.885463, "longitude": 37.585806}
-{"gym_name": "Sunol Water Temple", "latitude": -121.885433, "longitude": 37.58545}
-{"gym_name": "Super Franks Miniature Buildings", "latitude": -121.904122, "longitude": 37.700336}
-{"gym_name": "Sutter Gate Park", "latitude": -121.88344, "longitude": 37.68702699999999}
-{"gym_name": "Swan Fountain", "latitude": -121.940933, "longitude": 37.714561}
-{"gym_name": "Sycamore Grove Park Bulletin Board", "latitude": -121.78131499999999, "longitude": 37.644594}
-{"gym_name": "Sycamore Grove Park and Veterans Park Information Board", "latitude": -121.78122499999999, "longitude": 37.644338}
-{"gym_name": "Sycamore Grove Park", "latitude": -121.782223, "longitude": 37.645077}
-{"gym_name": "Taco Bell Mural", "latitude": -121.784717, "longitude": 37.678181}
-{"gym_name": "Taqueria Consuelito", "latitude": -121.77897700000001, "longitude": 37.682756000000005}
-{"gym_name": "Tassajara Creek Regional Park", "latitude": -121.871662, "longitude": 37.723188}
-{"gym_name": "Tassajara Creek Regional Trail Marker", "latitude": -121.87614599999999, "longitude": 37.713729}
-{"gym_name": "Tassajara Creek Regional Trail Sign", "latitude": -121.878676, "longitude": 37.705819}
-{"gym_name": "Tassajara Creek Trail", "latitude": -121.879138, "longitude": 37.708827}
-{"gym_name": "Ted Fairfield Park", "latitude": -121.865357, "longitude": 37.718320999999996}
-{"gym_name": "That Guy on the Ladder Mural", "latitude": -121.925719, "longitude": 37.705475}
-{"gym_name": "The Church of Jesus Christ of Latter Day Saints", "latitude": -121.85780500000001, "longitude": 37.662634}
-{"gym_name": "The Delinquent Dog", "latitude": -121.767068, "longitude": 37.682635999999995}
-{"gym_name": "The Firefighter's Parade", "latitude": -121.76701200000001, "longitude": 37.682856}
-{"gym_name": "The Historic \"Twin Palms\" Hotel", "latitude": -121.768888, "longitude": 37.674696}
-{"gym_name": "The Johnston Building", "latitude": -121.876017, "longitude": 37.660354999999996}
-{"gym_name": "The Perserve Park At Laurel Canyon", "latitude": -121.94029400000001, "longitude": 37.692601}
-{"gym_name": "The Preserve Staging Area", "latitude": -121.933534, "longitude": 37.688001}
-{"gym_name": "The Sunol Water Temple Sign", "latitude": -121.885094, "longitude": 37.586000999999996}
-{"gym_name": "The Villas Tuckaway Playground", "latitude": -121.86631799999999, "longitude": 37.707798}
-{"gym_name": "The Watermark Fountain", "latitude": -121.783858, "longitude": 37.677126}
-{"gym_name": "The Well Church", "latitude": -121.814279, "longitude": 37.698434000000006}
-{"gym_name": "Theory", "latitude": -121.846989, "longitude": 37.699101999999996}
-{"gym_name": "Thermalito Trail", "latitude": -121.904517, "longitude": 37.626329}
-{"gym_name": "Thermo Fisher Fountain", "latitude": -121.883964, "longitude": 37.642711999999996}
-{"gym_name": "Three Cranes Statue", "latitude": -121.90295, "longitude": 37.695324}
-{"gym_name": "Three Sat Dishes", "latitude": -121.89672700000001, "longitude": 37.66165}
-{"gym_name": "Timber Wagon", "latitude": -121.779518, "longitude": 37.678053}
-{"gym_name": "Toby Coles Plaque", "latitude": -121.801408, "longitude": 37.710273}
-{"gym_name": "Toyon Trail", "latitude": -121.91216399999999, "longitude": 37.64348}
-{"gym_name": "Trader Joe's Mural", "latitude": -121.781767, "longitude": 37.679984}
-{"gym_name": "Trail Gate 16", "latitude": -121.907693, "longitude": 37.673288}
-{"gym_name": "Tralee Fountain", "latitude": -121.912048, "longitude": 37.704156}
-{"gym_name": "Tree Trunk Marker", "latitude": -121.775558, "longitude": 37.695107}
-{"gym_name": "Tri-Valley Golf Center Structure", "latitude": -121.83666, "longitude": 37.700647000000004}
-{"gym_name": "Tri-Valley Horseshoe Club", "latitude": -121.891769, "longitude": 37.661206}
-{"gym_name": "Tri-Valley Watershed", "latitude": -121.84710700000001, "longitude": 37.69455}
-{"gym_name": "Trinity Church", "latitude": -121.793691, "longitude": 37.682688}
-{"gym_name": "Trinity Lutheran Church", "latitude": -121.88361800000001, "longitude": 37.668475}
-{"gym_name": "Troop 048", "latitude": -121.90968000000001, "longitude": 37.634221}
-{"gym_name": "Truth Liberty Toleration", "latitude": -121.80158600000001, "longitude": 37.710405}
-{"gym_name": "Tulancingo - Sister City Plaque", "latitude": -121.897301, "longitude": 37.665110999999996}
-{"gym_name": "US Post Office", "latitude": -121.90184, "longitude": 37.694987999999995}
-{"gym_name": "US Post Office, East Airway Boulevard", "latitude": -121.785352, "longitude": 37.696312}
-{"gym_name": "Ulferts Center Fountain", "latitude": -121.875817, "longitude": 37.704796}
-{"gym_name": "Under The Sea Mural", "latitude": -121.914828, "longitude": 37.712302}
-{"gym_name": "Underwater Mural Bus Stop", "latitude": -121.784752, "longitude": 37.695168}
-{"gym_name": "Val Vista Community Park", "latitude": -121.911545, "longitude": 37.683861}
-{"gym_name": "Val Vista Park Mural", "latitude": -121.91325599999999, "longitude": 37.684681999999995}
-{"gym_name": "Val Vista Park", "latitude": -121.914339, "longitude": 37.689242}
-{"gym_name": "Vallejo mill marker", "latitude": -121.967415, "longitude": 37.572219}
-{"gym_name": "Valley Christian Center", "latitude": -121.951858, "longitude": 37.702017}
-{"gym_name": "Valley Community Church", "latitude": -121.877594, "longitude": 37.666965000000005}
-{"gym_name": "Valley Oak", "latitude": -121.817173, "longitude": 37.696861999999996}
-{"gym_name": "Valley Pool Water Slide", "latitude": -121.771122, "longitude": 37.683074}
-{"gym_name": "Valley Trails Park", "latitude": -121.902288, "longitude": 37.67768}
-{"gym_name": "Valley View Trail", "latitude": -121.777009, "longitude": 37.629698}
-{"gym_name": "ValleyCare Fountain", "latitude": -121.780354, "longitude": 37.678501}
-{"gym_name": "ValleyCare Obelisk", "latitude": -121.87889, "longitude": 37.692274}
-{"gym_name": "Vanishing Edges", "latitude": -121.882768, "longitude": 37.698536000000004}
-{"gym_name": "Veeva Waffle", "latitude": -121.90085200000001, "longitude": 37.692305}
-{"gym_name": "Vegan Paradise", "latitude": -121.869659, "longitude": 37.699822}
-{"gym_name": "Veterans Dedication Plaque", "latitude": -121.76581399999999, "longitude": 37.626389}
-{"gym_name": "Veterans Memorial", "latitude": -121.87705600000001, "longitude": 37.658646000000005}
-{"gym_name": "Veterans Park", "latitude": -121.758613, "longitude": 37.625145}
-{"gym_name": "Veterans Plaza Memorial Plaque", "latitude": -121.87704000000001, "longitude": 37.662001}
-{"gym_name": "Veterans Plaza Park", "latitude": -121.876903, "longitude": 37.66178}
-{"gym_name": "Victorio Jacobo Dedication Plaque", "latitude": -121.92469, "longitude": 37.698522000000004}
-{"gym_name": "Victory Baptist Church", "latitude": -121.76987899999999, "longitude": 37.68817}
-{"gym_name": "Video Wine Party", "latitude": -121.926418, "longitude": 37.711562}
-{"gym_name": "Vietnam War Dedication Plaque", "latitude": -121.79145899999999, "longitude": 37.688928000000004}
-{"gym_name": "Vine Cinema", "latitude": -121.774801, "longitude": 37.679950000000005}
-{"gym_name": "Vineyard Architectural Wall", "latitude": -121.825621, "longitude": 37.658727}
-{"gym_name": "Vintage Hills Park", "latitude": -121.84894499999999, "longitude": 37.657211}
-{"gym_name": "Voila", "latitude": -121.93924, "longitude": 37.700607000000005}
-{"gym_name": "W. A. Mitchell House", "latitude": -121.769078, "longitude": 37.676822}
-{"gym_name": "Walnut Trail", "latitude": -121.776097, "longitude": 37.637831}
-{"gym_name": "Walt Disney School Park", "latitude": -121.937406, "longitude": 37.740953}
-{"gym_name": "Wash Time Clock", "latitude": -121.87298200000001, "longitude": 37.665513000000004}
-{"gym_name": "Water Fountain", "latitude": -121.894118, "longitude": 37.693525}
-{"gym_name": "Water Fountain", "latitude": -121.89894600000001, "longitude": 37.682978}
-{"gym_name": "Water Fountain", "latitude": -121.901869, "longitude": 37.681483}
-{"gym_name": "Water Marker Obelisk B27", "latitude": -121.89860300000001, "longitude": 37.622749}
-{"gym_name": "Water Monument B36", "latitude": -121.91036199999999, "longitude": 37.633528000000005}
-{"gym_name": "Water Tank", "latitude": -121.859319, "longitude": 37.636459}
-{"gym_name": "Waterfalls", "latitude": -121.925474, "longitude": 37.698519}
-{"gym_name": "Waterford Passage", "latitude": -121.874168, "longitude": 37.707876999999996}
-{"gym_name": "Wavy Gazebo", "latitude": -121.91454999999999, "longitude": 37.691207}
-{"gym_name": "Welcome To Moller Ranch Trails", "latitude": -121.937107, "longitude": 37.682877}
-{"gym_name": "Welcome to Livermore", "latitude": -121.78280299999999, "longitude": 37.651213999999996}
-{"gym_name": "Wellspring Church", "latitude": -121.86623300000001, "longitude": 37.674186}
-{"gym_name": "West Dublin BART Station", "latitude": -121.92809100000001, "longitude": 37.69975}
-{"gym_name": "Western Corral", "latitude": -121.770751, "longitude": 37.680927000000004}
-{"gym_name": "Wheels Vacation", "latitude": -121.78309, "longitude": 37.676024}
-{"gym_name": "Wild Rose Park Sign", "latitude": -121.89575900000001, "longitude": 37.655719}
-{"gym_name": "Willow Fountain", "latitude": -121.89896300000001, "longitude": 37.693751999999996}
-{"gym_name": "Willow Tree Water Wall", "latitude": -121.932161, "longitude": 37.700345}
-{"gym_name": "Wine Bearers Statue", "latitude": -121.75676200000001, "longitude": 37.623937}
-{"gym_name": "Wine Country Mosaic", "latitude": -121.76856799999999, "longitude": 37.681473000000004}
-{"gym_name": "Wixson Bridge", "latitude": -121.88418899999999, "longitude": 37.667741}
-{"gym_name": "Yotsukaido Cherry Trees", "latitude": -121.756697, "longitude": 37.674742}
-{"gym_name": "\"History of the San Ramon Valley\" Mosaic", "latitude": -121.944192, "longitude": 37.724468}
+{"gym_name": "6140 Building Water Fountain", "url": "http://lh3.ggpht.com/mev8nseWrhphX1JmENNvPpquvXU9He-wyD0pT-5gDVSThfItw4WBsc_qxGfFVUTKup0ty47Bvv3pHQZ_fQs", "enabled": true, "longitude": -121.923254, "latitude": 37.697472, "id": "5c79dd8c"}
+{"gym_name": "Ace Train Pleasanton Station", "url": "http://lh6.ggpht.com/owkO-HoR3HKD9O1at-_PU5B0IKH4U9-x8Rsr7GKA-3Nu7fEl1YWpq6iwJJs9CyGLxw9WDsAqeqkicqVB2FzaDg", "enabled": true, "longitude": -121.88238, "latitude": 37.658502, "id": "ee8ce20e"}
+{"gym_name": "Alameda County Fair County Plaza", "url": "http://lh6.ggpht.com/018cS8HMBuI7ns1TVHqmUPpHcUWAfucrxijYz4NqaYvy6MD97RmobrqFyU7QdQ4BgKww-41HUxfBotvoBo0", "enabled": true, "longitude": -121.887444, "latitude": 37.6621, "id": "d24fe245"}
+{"gym_name": "Albus Sculpture", "url": "http://lh6.ggpht.com/5Lby2J_ZR1OjVQkk_oVdEeUfxPdvFoO-qCgLXLIhK9zZdCGRYPFdtcEZJT64xm8b9QnZc14HDdcQwtpVvL16", "enabled": true, "longitude": -121.881375, "latitude": 37.652017, "id": "e150e12d"}
+{"gym_name": "Amador Valley Community Park", "url": "http://lh5.ggpht.com/CflpN4rIp89N7vStkLiuo9YRBpXopMUFwTpWFLwBPD3aUJuXKYCesT-jO0Bc6pGvJNWsWS6OggcGgggI18ET", "enabled": true, "longitude": -121.872773, "latitude": 37.672451, "id": "5a62915b"}
+{"gym_name": "Angel Sculpture", "url": "http://lh4.ggpht.com/u8x5irkAdfWYnilTorzUyERG-jLgmDKaRY4x4275MWBAv_bnBrTPdTnFxjYPQkutJ7jAiTMam8sh9TFXu9g", "enabled": true, "longitude": -121.917056, "latitude": 37.704337, "id": "154ebc11"}
+{"gym_name": "Arlington Park", "url": "http://lh3.googleusercontent.com/z1SibpVCsj1eWaVQXMeg90Vd_Kdt0Q-3gtvEAkm7H0J8xwyovQSCKwNydeAkIFQ42v4tOA-vKVC_hzXWt08", "enabled": true, "longitude": -121.892702, "latitude": 37.74764, "id": "463e9043"}
+{"gym_name": "Artistic Shed", "url": "http://lh5.ggpht.com/_pWPIFq7wvdLAGZuApllAUHeEoxV_cYd-vKHcQhuKObqe7thUSAcVHfC4cBNaT6F8LoifUkLTOezjyOSHJ-Wrg", "enabled": true, "longitude": -121.914514, "latitude": 37.690707, "id": "7c85d67c"}
+{"gym_name": "Augustine Bernal Park", "url": "http://lh5.ggpht.com/Vh_9B-wXTePFMe1zdBiGU-cfkfVf6fT0adOazpRfMf0KqjzrPeuCTte06gqrg_Pgdjfmlqyuhigfii5xzoGH7Q", "enabled": true, "longitude": -121.904561, "latitude": 37.635533, "id": "0306af8f"}
+{"gym_name": "Balloons Flying Mural", "url": "http://lh6.ggpht.com/iK8-SemcVW3KUiw1nwSfFDP7cwVIUR77SSt3wWuk10ShIC1MER8gVTdjfHJDik0IzM6QR3r5zDnYFa4lLVk", "enabled": true, "longitude": -121.862726, "latitude": 37.67038, "id": "225788d2"}
+{"gym_name": "Beary Best Breakfast", "url": "http://lh6.ggpht.com/5GBdPbBnul2JVEStM1yfA_819mBKhD2HlAhu5MEazu_jHKk6Oc5UwTgnFrvJs3mf40FWb5uEEKgy_1zoQYg", "enabled": true, "longitude": -121.903915, "latitude": 37.697685, "id": "92d3942f"}
+{"gym_name": "Bernal Avenue Bridge", "url": "http://lh3.googleusercontent.com/FmHw7UlsrSZkUnV97HLqmvomBAswMbJ1Zkjy6xDLaQJAS--YCHosKku-3avOWP4MTuTIW0Y6kGgS8terhNgn", "enabled": true, "longitude": -121.904801, "latitude": 37.65545, "id": "1da13293"}
+{"gym_name": "Bernal Community Park", "url": "http://lh6.ggpht.com/te02AxXNLtqu7UqbpSjT2nTUuUSZnVMaYxhk9jRrlaHWv0ZGW2AncZJahtAt00VwaQ1MuskI8tqSDEBXYx4", "enabled": true, "longitude": -121.889693, "latitude": 37.652997, "id": "e020e62f"}
+{"gym_name": "Bicentennial Park", "url": "http://lh6.ggpht.com/fq90DRWqO4zkiEEK50LPENPoB8T6-OZRkgixDnGnBK3AvE4XSUxbi-sTYILsAq06M6lbG1Y-tIp89WbeAC7T", "enabled": true, "longitude": -121.876497, "latitude": 37.683324, "id": "94899ba0"}
+{"gym_name": "Bill Simpson Memorial Bench", "url": "http://lh4.ggpht.com/Tlo_GrJ9T-RpWfkIK1Ce7ptOooj6A7EjJEQ0Vw9PXRqgUA3hwcPhGz1umAffGGUbm3DtSTSQpEIVJytuzjrl", "enabled": true, "longitude": -121.877194, "latitude": 37.672351, "id": "a86fe7f0"}
+{"gym_name": "Birch Lakes Fountain", "url": "http://lh3.ggpht.com/sMNI7STdv_RqgqOuTUDsFNr6eMvyZrdnASI2ZlWYysm7QiS4iH9qQIwij7ZKkZTCp4-hTqDlnu6rHt9-Nh0", "enabled": true, "longitude": -121.900915, "latitude": 37.661233, "id": "7068cad7"}
+{"gym_name": "Black Pool", "url": "http://lh3.ggpht.com/zuxH_pWlopBxgtZIKnDsoxrAqsUqPEJWP1RdyaqqfpD1CVNFHOVWuNVApTZ7K63j04-6zlxQzfG4bxe26-rOFg", "enabled": true, "longitude": -121.910606, "latitude": 37.724341, "id": "a4999f0a"}
+{"gym_name": "Blue Oak Knoll Trail", "url": "http://lh5.ggpht.com/uCHzbkXekGN25FfQLmINa35gtXrhMjH4LAm8kOUwxIJ-RZ_Sfs_uKwrhMOxctGG9a85weWQXW3af1sl9_NQn", "enabled": true, "longitude": -121.913975, "latitude": 37.638594, "id": "ca125300"}
+{"gym_name": "Boy With Wheat Statue", "url": "http://lh5.ggpht.com/TJaoripw0CyIFglJjSL69JO1vyQX7lmGCxFUI2-384ZAnUek7UQADOQMNiqEILdqyGbMsCjgiDO-kX6a1x94", "enabled": true, "longitude": -121.866736, "latitude": 37.711985, "id": "d19d1ef8"}
+{"gym_name": "Bronze Family", "url": "http://lh5.ggpht.com/2jsC00bjtkFcI8SQb_znAwn9-9I4WZLHApWJhdlCbAWevv3WZS85MmzedS1QBt-YJM2Syxv_cOnzQhRavEE", "enabled": true, "longitude": -121.900996, "latitude": 37.683969, "id": "61b995c7"}
+{"gym_name": "Bus Stop Mural", "url": "http://lh6.ggpht.com/Jbp-R2RqEUvr7wA4hKOE7SEqo5KVlFfnUndc3UwmquTMqvokihAHvedcP_-WQ2lPRksBLKRuWzOL2m-nnfJr", "enabled": true, "longitude": -121.879537, "latitude": 37.658456, "id": "5ec4d6de"}
+{"gym_name": "California Plants", "url": "http://lh3.ggpht.com/V4hrJPt6WuP8IZt79Bhj20yBlEeEDJuJXWq2q2u1r3aQbkBXAWKkA3CNx5-d_mkE7xAL3OpWZwuDbevdbQIk", "enabled": true, "longitude": -121.832909, "latitude": 37.672961, "id": "9df8518f"}
+{"gym_name": "Cattleman's Welcome Wagon", "url": "http://lh3.ggpht.com/XLr9TWmXNdzeVPZTlVmuEycIvEbhHj2drJE0A5QIKP1ISLTaS1lkeKXBr2nQvMsOZ5XgOBZdFbi_wjx5Vg", "enabled": true, "longitude": -121.816775, "latitude": 37.699089, "id": "e8e91b04"}
+{"gym_name": "Child Holding Grain", "url": "http://lh3.ggpht.com/gtQ6wC9iS2CBR_CFA6MrotOjufejWDcuozDtMARTkqAZVMLThPEhGQb-UFpGWOjXMJWInjdDqXY02xk2pzJQ", "enabled": true, "longitude": -121.863329, "latitude": 37.711399, "id": "3c66d82f"}
+{"gym_name": "Clock Tower", "url": "http://lh3.ggpht.com/RWBdCff--qubX_i5P1qM58qli7WUoPIVidMOoHbulV4kT_ngKDSB8Ohhy_A8W49Rbx1_JK9PlxgvoD-6Mm4", "enabled": true, "longitude": -121.885222, "latitude": 37.659657, "id": "3cfd8eb5"}
+{"gym_name": "Colonial Mural", "url": "http://lh5.ggpht.com/6dTP79dh4UhlzO1_PTOwXe30EclRn6vvU5uqAKguxw9JPurOf3jzc74-2r3qyfS1EQXCaCGcBNibFI4ira1O", "enabled": true, "longitude": -121.875151, "latitude": 37.6616, "id": "3b7aaba9"}
+{"gym_name": "Connolly Fountain", "url": "http://lh6.ggpht.com/WKEPlxBoi0DKQyDaDAARvFqQgIkvwHezz4hXJ9SP7MLqXH5AqHGJOTNdovh6_1f2W2Lm_-8yXr5Z6NxInD90", "enabled": true, "longitude": -121.928713, "latitude": 37.702348, "id": "885e0cdf"}
+{"gym_name": "Creekside Park Sign", "url": "http://lh5.ggpht.com/Kmpqqn-L6je-BffAzh--6S8WbAcfwLEB-P22d6zs-UvOFtUKuMjbu0b9FRTKwPXuky20kyPcgQu1DLlnw6q9zZIJpDBosCc0CUMcNwgx_h6_FjdQsQ", "enabled": true, "longitude": -121.885352, "latitude": 37.692348, "id": "74ad58fe"}
+{"gym_name": "Creekside Park", "url": "http://lh5.ggpht.com/WfGVCx9euXUnAX9yx7iuKxlbD4h9KnGPn5n6EXMK8TkKDacG6eBqDzx6auXxxLQGQUDH7Uakt5dc7VQd9qmBdg", "enabled": true, "longitude": -121.883043, "latitude": 37.690687, "id": "28f489c4"}
+{"gym_name": "Dairy Bunkhouse", "url": "http://lh6.ggpht.com/TkBrsUjr70Nog1dbPgvxBFasEp5PSK-id3ugOWm3El82dIH9YXkXxAmHmmrnlgtW63wadABb5wC7-JOk2F4", "enabled": true, "longitude": -121.913038, "latitude": 37.661348, "id": "a880badb"}
+{"gym_name": "David Hartman", "url": "http://lh3.ggpht.com/AX_-acOPbI5FTQM3oxIMNg4Q9IpKaZlyMUpAAFPg1R9l-PqZjrCswkmVxFDY_lbU44ag6S2ATvqEJg5ZcGyXMg", "enabled": true, "longitude": -121.911724, "latitude": 37.660283, "id": "2deacdfa"}
+{"gym_name": "Dogs Metal Structure", "url": "http://lh6.ggpht.com/kne8A4UTIU1gePY5KMKKB5703MrLUapTglDOwJa82LNOzc3NE-5E1Nqxl4_y4JTbP996sRULoDDcI42Zk_3cSw", "enabled": true, "longitude": -121.91451, "latitude": 37.717508, "id": "c11eb12c"}
+{"gym_name": "Dublin CHP Officer Memorial", "url": "http://lh5.ggpht.com/WenE3UzbCZbL_mmXA_kgqu76qO-8Kyecu-_aTV9Rb5lNOVaeDav-ys-8BL4byAsyCRX1c8Ubl9cULt_ZTvg", "enabled": true, "longitude": -121.883726, "latitude": 37.714322, "id": "36fd4a22"}
+{"gym_name": "Dublin Corporate Center Fountain", "url": "http://lh3.ggpht.com/sUYnlM-16512mI13ui1eYToo-p6z9M2zRiSNqC08k0En6ryHBfZfekQo01ZJZNRxOhdckT7iZHLQtpy01naQHA", "enabled": true, "longitude": -121.874472, "latitude": 37.703559, "id": "53e3559b"}
+{"gym_name": "Dublin Helix", "url": "http://lh6.ggpht.com/-xiOOaWF_XgEH5rJyULjBNcx1K_B6bfX-kgl5NGAOSWkPUyFI5mi1htcQvG0cwPMwlAnkY6q0pbeQsTCct3D", "enabled": true, "longitude": -121.909012, "latitude": 37.704705, "id": "945b9933"}
+{"gym_name": "Earl Anthony's Dublin Bowl", "url": "http://lh6.ggpht.com/MU131zU5n3Hp09yzgS4isbNj3EzaWCrRY4tNI5kcxtTa0TvzvJQszDnpbCdeV_cGcI-NX--z-orAKc-AEuU", "enabled": true, "longitude": -121.93301, "latitude": 37.701241, "id": "0ed8256e"}
+{"gym_name": "El Gallo Mural", "url": "http://lh3.ggpht.com/dBl_dLhftMf_2oY0vPDqLiG5lElVs3l2_BGM5hG5XnFMOoCwlVDuaF5t3_wlDh0kVkcyAaTIO7ih56QHAwk", "enabled": true, "longitude": -121.871689, "latitude": 37.699101, "id": "99a265f7"}
+{"gym_name": "Emerald Glen Park Fountain", "url": "http://lh3.ggpht.com/hrkZ2jJGQ9TKKCCIqIbXQOHKunbBssKE-qHm_tGqZLGU63P0uAsMfNiPcReF6ShpR8e6PrvOrQjVlJNOHC2i2bngBnFBhGscOwdNcu82slnTPlQ", "enabled": true, "longitude": -121.872949, "latitude": 37.710241, "id": "2a260476"}
+{"gym_name": "Emerald Glen Park Rose Garden", "url": "http://lh5.ggpht.com/DFRUfjX3lfZAtVMp9v7LqEnVcnvr-CUuJxnrRLZo5I8VH-Viwnr_NNPGzoosGleNycQFz3oaEB3YOFpoUYI", "enabled": true, "longitude": -121.873681, "latitude": 37.711043, "id": "db079d40"}
+{"gym_name": "Emerald Vista Playground", "url": "http://lh3.googleusercontent.com/JioGPPOAEjx5zA79YWfd0cGgOgiOqRpx2MjpuaZuuTrjK1z3kBZR5of0_URENhOdOdvHCEbSSZRxyBCGbbA", "enabled": true, "longitude": -121.911578, "latitude": 37.712737, "id": "0e3a34ca"}
+{"gym_name": "Fairlands Park", "url": "http://lh4.ggpht.com/0MRLcplqzK5HaiQ5VvG1OW4gccwdNz2ONbylsfE7BHbMOE5KmvLku--h8fxw1xqiH9Ku62HI2qcC3UKXDkvd", "enabled": true, "longitude": -121.875918, "latitude": 37.691876, "id": "7b658532"}
+{"gym_name": "Fawn Hills Park Play Structure", "url": "http://lh3.ggpht.com/cDAIKp-4DxVULdswBBreexrl6jpPIZrqaQlvSfCDtf4_QSzOw900d5ZM1-8tn7Dq7bXB6jWdOo9XGmcfa6gNIQ", "enabled": true, "longitude": -121.896868, "latitude": 37.650293, "id": "5fad1aae"}
+{"gym_name": "Find shiny deals at Sprint 1", "url": "http://lh3.googleusercontent.com/Z8SMkezP2GFfgWfnC1vtct_a04y9s2cOzUdbkYDqLB7BRwTBIAUYP7Ax14Z_VziocAH4dBOli20FRxFuS5FQJw", "enabled": true, "longitude": -121.908158, "latitude": 37.699885, "id": "62a4e809"}
+{"gym_name": "Find shiny deals at Sprint 2", "url": "http://lh3.googleusercontent.com/Z8SMkezP2GFfgWfnC1vtct_a04y9s2cOzUdbkYDqLB7BRwTBIAUYP7Ax14Z_VziocAH4dBOli20FRxFuS5FQJw", "enabled": true, "longitude": -121.8512128, "latitude": 37.7042598, "id": "1ce4945d"}
+{"gym_name": "Fire Pit", "url": "http://lh3.ggpht.com/hENB63czhqJhOv413rWKj6jBLStmQWM1gryTmnnXeUBqwK9MFvoUIXJwKRWJ5YwjyIEHlmpAiIj-GSK2FcEwl5m_8gMM77NGx7_zrsrRQ4iUJCsp", "enabled": true, "longitude": -121.898184, "latitude": 37.657503, "id": "830971a7"}
+{"gym_name": "Fire Station 18", "url": "http://lh4.ggpht.com/G9nbjlRlTm6xxy2QGVGtQvmazBS5HBWleke17gxnuwEh8gV8UOSz5GXXNK4q7hl3if7rfIIwtL3DAdsJ2HtC", "enabled": true, "longitude": -121.854604, "latitude": 37.715303, "id": "94c774b3"}
+{"gym_name": "Flags and Fountain at Emerald", "url": "http://lh5.ggpht.com/QZ6HIYcENbr5TMlwPHBELYakGdRkILgSpyYLzpuEsfOxOufHSJgL9TQlebpnU59XfKJRU9wyO3qXgeFk144FUZtK868vcXibbO9RDOSz96fVry_4", "enabled": true, "longitude": -121.887025, "latitude": 37.709996, "id": "8bce3bbc"}
+{"gym_name": "Food Court Fountain", "url": "http://lh5.ggpht.com/X8LvkKg0VsiX3IIeffFQ985BZ4iaBny6wyDY9aufwnaq2JLxd2BYPvW2yZASdN1Vof6rNraJnpGkn6DHmXo", "enabled": true, "longitude": -121.845102, "latitude": 37.698263, "id": "4f800791"}
+{"gym_name": "Fountain Pond", "url": "http://lh5.ggpht.com/VsezbbN-HMbCb8wI6E7pDqeWOt4x_AtJoN8E21FH3H85El4yoJcFJA6EiECfcnKz4Bs6uxV4NJ9Lw__u9Dr2", "enabled": true, "longitude": -121.866713, "latitude": 37.734027, "id": "0b70bf67"}
+{"gym_name": "Fountain at 6601", "url": "http://lh3.ggpht.com/dFfD8UZv7SUQX_e7lGTEMMk9pa1rI6jpF0PkvXg5r_h5emijyf8Qkqgkf9cZcQBOLhQb74RqrclB73XX_AK2", "enabled": true, "longitude": -121.907923, "latitude": 37.697844, "id": "004bf9b0"}
+{"gym_name": "Fountain at Hacienda West", "url": "http://lh6.ggpht.com/KqmY0Jq6yT99FAiSF6GuUL--HZO9u6Opk9O1sKWZU0fU7ZjHc5Q5IrFvnC9hJIIaoHrZWQUTkxs1gywhJTbK-TNSvlqyQvOl9vAS20lS29FTxx8", "enabled": true, "longitude": -121.902469, "latitude": 37.68346, "id": "65436892"}
+{"gym_name": "Fountain", "url": "http://lh6.ggpht.com/eTUjaKNoqoMCygj2Qagjwu6zvTPFCrPyCrE35rsCyjMqpYf_UT0h_czE-cWxUlYYrk4tYMSVwKoIvsilpFM", "enabled": true, "longitude": -121.895535, "latitude": 37.688328, "id": "41c3c191"}
+{"gym_name": "Frog, Boy at the Tree Statue", "url": "http://lh6.ggpht.com/F1Kr973S5raP_qMAvmZ5lz09udw7G5ORBA7UH44-FtQ8zg_E96v15nV10fK7kajXhse7j3dANHbWXmQS_-A", "enabled": true, "longitude": -121.877521, "latitude": 37.657258, "id": "fb052b51"}
+{"gym_name": "Golden Eagle Trail", "url": "http://lh5.ggpht.com/UEARvzCY0HiJG0Y86UNOsugQkq0nTOQj1POGK40KxfJGXhtUcWJqO8heKW0NFY7xN6AApEoORNIQGME1eLi0", "enabled": true, "longitude": -121.908561, "latitude": 37.639775, "id": "5bf065da"}
+{"gym_name": "Grafton Station Fountain", "url": "http://lh4.ggpht.com/2_-ttq8ONevL9a9kBD56gdtaEGnwktofDSy5MTNutVtoYr0rYDS3SlRs7kIMeGvJZ2gMIXsTfJFF1YMsEjQ", "enabled": true, "longitude": -121.866052, "latitude": 37.70483, "id": "1a1db22f"}
+{"gym_name": "Gurgling Spigots", "url": "http://lh6.ggpht.com/he1JALuZZsbSl2DdZqG5SgYyhdg1sFc_MCh2r_NG-vq0Sr4X6NKs9liysjgxiGYimigC3OtQXhDINfOuMhTr", "enabled": true, "longitude": -121.924451, "latitude": 37.698536, "id": "c027a104"}
+{"gym_name": "Hacienda Crossings Fountain 1", "url": "http://lh3.ggpht.com/V9Bbmn4MqedX9nV5o2D-m0HTbaiYBpWowNinXoeTZ8dIEE3c47brbmiJ786wDz13fm1cGuiKbGW6QUPqI_5K", "enabled": true, "longitude": -121.887613, "latitude": 37.705981, "id": "a5726fc2"}
+{"gym_name": "Hacienda Crossings Fountain 2", "url": "http://lh3.googleusercontent.com/oefvBzbYzbcWTbHVEDq6HMiyWSvf-K07MQgMxAMGftJRrr4GK5iNPQ-ionYgRuBI0oHMzRN_3x3fPbxpcd0o", "enabled": true, "longitude": -121.885093, "latitude": 37.703337, "id": "f87a6be6"}
+{"gym_name": "Hacienda Lakes Water Fall South", "url": "http://lh5.ggpht.com/Y2LoFiHmJhftp15EgpwRuRnEKLXA7-QlVIaYXh0NEnEf3OkbUBA0nmqpQvAitwiLDW8op_DpsxdnMZYkoVWH", "enabled": true, "longitude": -121.896889, "latitude": 37.687681, "id": "a7e067bc"}
+{"gym_name": "Hacienda Lakes Water Fountain", "url": "http://lh5.ggpht.com/aZ7Vhluqz0wDoEd8IxQ2g_RtC4CsOLPI6wEPPA8tVwsBu9UTyke6tPd_Tq6d3aCPgSirgSQoljtWc8fV0H0", "enabled": true, "longitude": -121.896404, "latitude": 37.688314, "id": "d17e9c4e"}
+{"gym_name": "Hansen Park", "url": "http://lh6.ggpht.com/S0PLfAb2Hact4jbEiccJwtMU_F0MSoi0exnmeYzcqKHhDlzh9fXOshKCZBA7k7xIl1uTz7V3ysdaHSodqaCdmA", "enabled": true, "longitude": -121.893314, "latitude": 37.669534, "id": "8a654530"}
+{"gym_name": "Historic Orchard Plaque", "url": "http://lh4.ggpht.com/hdvI97AvOXMO2oN1VrEah8iONLsReTzCEszdTmO6gPF6drl6FNtBIMMl_G3pv0AlhaA-i6Elb_wAUaEDPQ0", "enabled": true, "longitude": -121.913506, "latitude": 37.661249, "id": "ce6a4dc7"}
+{"gym_name": "Holy Spirit", "url": "http://lh4.ggpht.com/eAmBxzslf2CGi5i58PlJmsgs5aLejXu_xxGDjSWG60nYENnMcJnN4DGYp7oKuLG7C5fjO4a-4XPxPUfNBLxx", "enabled": true, "longitude": -121.901581, "latitude": 37.677249, "id": "bb2195af"}
+{"gym_name": "Hopyard Arch", "url": "http://lh6.ggpht.com/8qmzYQm0m74aVRRVCXHo2Eaek9wwSpincJ_MtG9YwkeJkd6RhZ0-7z5IriNc199VuiI5PMmLPoi_6aLtUBjD5w", "enabled": true, "longitude": -121.903072, "latitude": 37.691247, "id": "ab7d0ea0"}
+{"gym_name": "Horse And Wheel Art", "url": "http://lh6.ggpht.com/PgKOmtXVTAXlXt-ebxvuDkITkMg5GUJTZZQn5gUiC0w6Soh5GkCcMUV2LUL10m3NUJssP4uHxy_qsrAHwx4", "enabled": true, "longitude": -121.910074, "latitude": 37.707671, "id": "36c24127"}
+{"gym_name": "Horse Racing Mural", "url": "http://lh4.ggpht.com/zAmldbHoNOsR0hTA8i27d2ty-_f0f7tBLfv8BKkLLd3zKT9KEM4AhJxDC74rsCg3LFy3PD3JUEjZWYjdw1EW", "enabled": true, "longitude": -121.885166, "latitude": 37.661771, "id": "dad7d638"}
+{"gym_name": "Humane Society Memorial Wall", "url": "http://lh3.googleusercontent.com/f7YihW9IJN9V2zwVcTFEropj6vxqydMsoq2K3225Kz2R-DCY1ttRe4P8_V5MQFFB_hs754nFNc3jIF6M4x839g", "enabled": true, "longitude": -121.860968, "latitude": 37.665889, "id": "cad65033"}
+{"gym_name": "Iron Horse Regional Trail 1", "url": "http://lh6.ggpht.com/OVWUGSgvMlbaDbk0DDDdMTrbMD1hE9UaodMDm8qoLnZPKnKe5dcPw5cyEugYFIXDiKu_rO9s_KXrMOsgMPuu", "enabled": true, "longitude": -121.895771, "latitude": 37.700076, "id": "e221d4b5"}
+{"gym_name": "Iron Horse Regional Trail 2", "url": "http://lh4.ggpht.com/ybs_SzlCWRlybIBWeu0LMeHqXnOwERDNCaukE9Xj0hyk7KQCPLXT-mHzdy1DO7rvnGUZIQ8ZYECqvlIm4hk", "enabled": true, "longitude": -121.903482, "latitude": 37.705515, "id": "5d2449cb"}
+{"gym_name": "Iron Horse Regional Trail 3", "url": "http://lh6.ggpht.com/09ULYVWmOAl2_vBKKwjxfl9KeYAA4qwS8_Wlecp9XKxCPiJ0o-lh93oG9MbjPG7HwjqtVD0VbGHlO3LtwT-a", "enabled": true, "longitude": -121.926289, "latitude": 37.726716, "id": "536ad900"}
+{"gym_name": "Iron Horse Trail 1", "url": "http://lh3.ggpht.com/Sb9oN2SugMkpRMUzMkHSmoHVi0uPFsTZJLNZcXP4uJAegJPBJm_Am116S0RWpgLTFNLiIWkckrkPB7goJgU", "enabled": true, "longitude": -121.871664, "latitude": 37.682366, "id": "03da968d"}
+{"gym_name": "Iron Horse Trail 2", "url": "http://lh6.ggpht.com/9PWxuBbJ-C-95gjjj7xSp988iTaXOYhAkRstax20NskzORq0kGUA2s1mCM7anfFWG1tGoziBb_rI6rwQ2YP0", "enabled": true, "longitude": -121.876758, "latitude": 37.685841, "id": "36dd025f"}
+{"gym_name": "Iron Horse Trail 3", "url": "http://lh5.ggpht.com/cjVsKl2S7coiCKHUwbmk4R0HVFJ_85ZYepj0ElUZnpHS-UEQ3a0xh2RhrJ9HR5-9mhjIQ9pGBVYUm2ZkAio", "enabled": true, "longitude": -121.929606, "latitude": 37.730677, "id": "d8b6a69f"}
+{"gym_name": "Iron Horse Trail Sign", "url": "http://lh4.ggpht.com/mz0bExtzfxN7SjXrj0nbEUCysJdqQM29NnYrRRZaUJv5frtMiIwZOBNImOfloSJi9-motKAzrIBwibs63f9T", "enabled": true, "longitude": -121.891152, "latitude": 37.69659, "id": "e4921ce4"}
+{"gym_name": "J. W. Kottinger\u2019s Barn", "url": "http://lh6.ggpht.com/0bVdemiNGzoTDNCom65iRPa-lmQ5t8paVSfrvP2xQTMeQ5vQj88tnAUJN0aD-nI_g5z1t9rVwNPZe2X27v2rVw", "enabled": true, "longitude": -121.872486, "latitude": 37.663236, "id": "a89b5761"}
+{"gym_name": "Keep Smiling", "url": "http://lh5.ggpht.com/5EKmm14mX3NHU5vYKhWjX7pm88xknoYq3ZQjGsSiTXbqXU4paoG16IMWhkLMHCJHYtI_B4N30xq-pI0eVz6I", "enabled": true, "longitude": -121.873675, "latitude": 37.665182, "id": "f7ee763e"}
+{"gym_name": "Ken Burge Dedication Plaque", "url": "http://lh5.ggpht.com/gKSlfogjATyUMLCkdPVthXdxkz6H_ck1nzvgjDez_ynmbV6H1eAqzdWE2amZHWhjVztd7p3a1A1BgQuSsJo", "enabled": true, "longitude": -121.894409, "latitude": 37.636299, "id": "b390c160"}
+{"gym_name": "Kids with Kites", "url": "http://lh3.ggpht.com/alcMxOwtvQZUu9n4pkcm9F2DNTM6TlqVGxyFBhm3FkuFo7IAKSBHt6in_rmnVp_t7PtM9RJZYMY5Xw3BDgP4Aw", "enabled": true, "longitude": -121.92854, "latitude": 37.695785, "id": "fefa1a82"}
+{"gym_name": "Kolb Park Druid Circle", "url": "http://lh6.ggpht.com/q-T5fFfdNpQVsFpTSNQ1hn9ctvheNOCgj4PgyxcpxrMfjm9Lp41NZNgl1GpHZzOHRjLOs_SjRvwUtnTtGc8", "enabled": true, "longitude": -121.929546, "latitude": 37.718742, "id": "1d340e15"}
+{"gym_name": "Kottinger Community Park 1", "url": "http://lh5.ggpht.com/VeN-7IXo-SOYL1xMjWQddVTvcuH0lBTf61WA1u86gtuwBP0vajmGhXWfN-Lyv2tOughOLMNz4E0THjApZFoF3A", "enabled": true, "longitude": -121.858846, "latitude": 37.656317, "id": "0f523a7b"}
+{"gym_name": "Kottinger Community Park 2", "url": "http://lh3.ggpht.com/RVP_8UVRqygpxRtCp0ZQ8QJiRoiVzID5TF4zpVvQkGh77BiY1HJ9vM4NOrF2MmkQnUj9dDRAquP3VcVdJqPYlQ", "enabled": true, "longitude": -121.863637, "latitude": 37.659198, "id": "4c12d6c6"}
+{"gym_name": "Kottinger Village Park", "url": "http://lh3.ggpht.com/8t295m09ckALCpiIldaC6n_y0IUeL11qtwaFNNcnKpwvEVo2EVfkGCpbgBmSmutAG6s6GgD0ac0VhiVQrtaQ", "enabled": true, "longitude": -121.867511, "latitude": 37.662962, "id": "68b0b573"}
+{"gym_name": "Kottinger Water Tower", "url": "http://lh5.ggpht.com/yweuKHVDjtZAIuk8bzG-L5ecapqXHgiidOKSe1J2_HMKrv_uzjzZWgXTwXCvdTA0N1bjvwD0tbrjG6kFM1oC7w", "enabled": true, "longitude": -121.866286, "latitude": 37.659165, "id": "aa8685d9"}
+{"gym_name": "LazyDog Tree Trunk Chandelier", "url": "http://lh3.ggpht.com/t23nzEAOImK7IXDXUYNV_yb4rz_G_M3aCg6dcLXdVyHNTtKDh_YaE_megw6z2XZHxPRUGrlzka_l1KLgBxEe", "enabled": true, "longitude": -121.890502, "latitude": 37.700615, "id": "cbd4139c"}
+{"gym_name": "Lighthouse Baptist Church", "url": "http://lh4.ggpht.com/4NgxZErqQHaKhqMBAdvbHxOL533WgJOTWcyQpLhK77J3ybe_qKeqJqcxuLp_L7uB5sxr7ANOn_FtsecatZU", "enabled": true, "longitude": -121.873144, "latitude": 37.659406, "id": "db9b4155"}
+{"gym_name": "Lion King Guardians", "url": "http://lh3.ggpht.com/YZgNfs1BbVUgiHV5rjx8XG_jmn2OD-U5SvgaqjYZhKdbWejHBjGe6aO0fD_nSmqDYzoc2XCPUKMt3jUIALxl", "enabled": true, "longitude": -121.879341, "latitude": 37.697153, "id": "0be5e7f9"}
+{"gym_name": "Lit Horse, Dublin", "url": "http://lh4.ggpht.com/SIj75AR7I3V6a16x6wdEDXNhxHvskDG1gTZY7fdNlDmNtoks24psOMeg2NaFcaz0cYX8lLMLRLSPPSObeDWd", "enabled": true, "longitude": -121.928994, "latitude": 37.693711, "id": "fa63182d"}
+{"gym_name": "Livermore Ornate Pergola", "url": "http://lh3.ggpht.com/Ve57N62WEHzhFUnOSpHrC8E3iWGs9Uwww-rFyW9VRHzMA35x4wjUOZw_PpK2dpK-0RtpFDw0LWfO6xQqWu5-Xw", "enabled": true, "longitude": -121.842682, "latitude": 37.696695, "id": "c8695272"}
+{"gym_name": "Living Tree Gazebo", "url": "http://lh5.ggpht.com/g9IIXm4uChY0c7z7PVZRPZrcnx8CptespdTFyCvLrBSt6HRbBa_873Ay36tu7QHMliHBg3Eb-8H_xX5x6LU", "enabled": true, "longitude": -121.906994, "latitude": 37.669627, "id": "e0fb0a2f"}
+{"gym_name": "Longview Water Tank", "url": "http://lh5.ggpht.com/C0D6W32VZLU8hGCu_R9SGC0b22TUBPflLjbY3Iail8HSrhTRoqkwOSs6ZUWOrrUrweSEPGn9CnpYn8R2Bl5evg", "enabled": true, "longitude": -121.909772, "latitude": 37.644078, "id": "2c6fd2e0"}
+{"gym_name": "Meadowlark Park - Regency", "url": "http://lh5.ggpht.com/5Sbvvo1AoTIj_wmEG7jd1jJrylK-fL-dAUqjX2ePSKggLjLiXe1kYkrdDiZLymqz1fzm3_LM40qYTLQnakRP", "enabled": true, "longitude": -121.909898, "latitude": 37.664919, "id": "2938b7a6"}
+{"gym_name": "Meadows Park", "url": "http://lh3.ggpht.com/jdvZviDu05f5aUJiy0RRSzXyN8I1fPcV5_SxQ3MW6YVUgiWg7Xc4q4hdihj_uIrAo6103P2sPjtpcKMFoPlT", "enabled": true, "longitude": -121.858608, "latitude": 37.695852, "id": "75ac6970"}
+{"gym_name": "Metal Deer 2", "url": "http://lh5.ggpht.com/mKYnpBErghUm_h-MvoVlvAgN4TYejzriD6SmoyP4yq2IETZ8m5C7QdOU4yBOGOy9j6UohETwKuWAK_2SoT59kQ", "enabled": true, "longitude": -121.877183, "latitude": 37.656751, "id": "0357b020"}
+{"gym_name": "Metallic Vortex", "url": "http://lh4.ggpht.com/WlxK5Mk4ZS3sdLz0o3XtniS_y-6a_XcUrvoqXHYcgNaG16HDEd6T3gdQcGuP1siNX_Vjbff81OIwcLWLgG5kWg", "enabled": true, "longitude": -121.898345, "latitude": 37.702387, "id": "805a7a0f"}
+{"gym_name": "Mighty Mite Park", "url": "http://lh4.ggpht.com/iICAe1rhIOa9n4eAsIWKyXBv9Pval-UI1A1rHcLE9ImuJ9M-YPq_vufRunz_ONFNuuRFUubWHW2ucge3UOOT", "enabled": true, "longitude": -121.878141, "latitude": 37.710567, "id": "cb292164"}
+{"gym_name": "Mission Hills Park South", "url": "http://lh5.ggpht.com/Zlx1wbOfFil14MNWQ5RljCOPbRgAny5riAR3vl5jhn7EluirDv7gD3h08VOfxNTj7MCWSSB9e-7EgSORKfDo", "enabled": true, "longitude": -121.871015, "latitude": 37.648391, "id": "bebfee41"}
+{"gym_name": "Moller Park", "url": "http://lh3.ggpht.com/e5wa4ySnq6zuQHjDnpneQj_g5ofjvTwgjNu5FdhveN6_XL3bWgaMPd4uBQ75dI2YW4M5pMYiTlvknKNe7-o", "enabled": true, "longitude": -121.928165, "latitude": 37.686884, "id": "8ea39391"}
+{"gym_name": "Native American Xm Seeker", "url": "http://lh3.ggpht.com/3wuvDsTm9lhFbEiLECA887pH3TM9T0egj-wcorH4mQUntdZpxYNM4Un17b5kukKNxzRsPL4D5mSGDxcuQO8", "enabled": true, "longitude": -121.874574, "latitude": 37.697582, "id": "c23e9606"}
+{"gym_name": "North Amador Lakes Fountain", "url": "http://lh5.ggpht.com/x5AUIBREu9yDGn6zWEJ6lO9KiUCOxejdfV6Eug8mmPR4ABrGcSHNPnXy2463Oj4A3f34S_zvBnl2NtOMEmgr", "enabled": true, "longitude": -121.922445, "latitude": 37.725875, "id": "8229b0b5"}
+{"gym_name": "Old Ranch Park", "url": "http://lh4.ggpht.com/sJuw7b5mxx6IoKiOI_TxEFVC80je3_BXvLKGvUyfaOEHvneyDek90X_02vt5rc2BwazY4vlfPudMHqN0yMNa", "enabled": true, "longitude": -121.919828, "latitude": 37.734613, "id": "237a1c72"}
+{"gym_name": "Open Book Sculptures", "url": "http://lh4.ggpht.com/uodoylJdwqtNLz4_tJibMd8W_vaQ58xIdHQhmo-jUiycjNcH0mY-PL7gdbX1BChsSVfuJyOpolgoDrN4seky", "enabled": true, "longitude": -121.91855, "latitude": 37.702595, "id": "9501f8d3"}
+{"gym_name": "Orloff Park", "url": "http://lh4.ggpht.com/S4cBNf4Qn0zmIVNH3EtZQ-AwnI2rwXBU0NquwrfX22yjrkEDfD6jYtFEerMd6a3bbXOZR4BwmHNBkdyIGkI", "enabled": true, "longitude": -121.873715, "latitude": 37.676913, "id": "c7496227"}
+{"gym_name": "Owens Plaza Park Sign", "url": "http://lh4.ggpht.com/rSyOV5G69jAAKXIwYoYNq7N7gF1nhdeWCDZPBVMhJGWTGf8iClrMySq5-Z7Bq3eynRgwODHS05ZkAwFYquUPZ3y3cPVfdyxKwozxnmBQ7o1cPMMVyQ", "enabled": true, "longitude": -121.88833, "latitude": 37.694663, "id": "ffac7328"}
+{"gym_name": "Owens Plaza Park", "url": "http://lh3.ggpht.com/imxQFJyMtfitzu73NRPQ6H0GCait_Vu0OoMQp2QaVSo4EoajCSTm-lLYgL60lOKrbdColy0glPuQDl_r4alN", "enabled": true, "longitude": -121.887428, "latitude": 37.695509, "id": "5e07524a"}
+{"gym_name": "Painting Child Statue", "url": "http://lh5.ggpht.com/deGF-7B0DpPAwKzinMmT8hoxZ-8AW4V_CdLLfmerWiA67owjbwhoxXkSTw_i8DXUd_69JGrFfjS1L0yyhUUP", "enabled": true, "longitude": -121.863485, "latitude": 37.710136, "id": "d4c20b4c"}
+{"gym_name": "Palo Alto Medical Foundation Fountain", "url": "http://lh4.ggpht.com/ozIJpK1bfwtB_0M0nP0QeSBE33AIq4vJDZKeL-S3OMVsu3vTV-Uvoe9FEfjqh6Kh8NbbnvGtLjhGX6bkyx70mA", "enabled": true, "longitude": -121.87253, "latitude": 37.705219, "id": "7ee50481"}
+{"gym_name": "Par Course Series 3", "url": "http://lh4.ggpht.com/XqHePn7ziPgmQ6Jr1XNfnEEED2zeo-6AsY-4-F1U58azwoWff2XCJNKbDoGoGN9a_yB_5CDSS6eTCTV9CJC1Pg", "enabled": true, "longitude": -121.90302, "latitude": 37.662715, "id": "14fefc70"}
+{"gym_name": "Patelco Sports Complex", "url": "http://lh3.googleusercontent.com/rO_C878KLHRikXBguTLnk5D4BNhoOZb2b8yWMqPH_7X1UHgGv_3jhz3a9yqPOunMJBFHhtXSOMbc6Wwn8X26Uw", "enabled": true, "longitude": -121.890875, "latitude": 37.652079, "id": "a72eef79"}
+{"gym_name": "Planetary Sculpture", "url": "http://lh3.ggpht.com/0d6O1rSCgpyEM-d1yCLsiv4z-EsjNxCtbryTtrb8DNZQjKU7NGpNOznAg7ftDWFXbuyf2Bj5MkDW5cBY0nf0FQ", "enabled": true, "longitude": -121.851394, "latitude": 37.704273, "id": "185081e1"}
+{"gym_name": "Pleasanton  Sports  & Recreation  Park", "url": "http://lh5.ggpht.com/saga-PY8x2XMdVAeeWtQSxszP2EoSMtv1Gq4x_ee1Ab-TddG-4ez9vQKCaXTiNdNPGnvg4BsJm4xj2yV9Zk", "enabled": true, "longitude": -121.887135, "latitude": 37.682098, "id": "c65d1485"}
+{"gym_name": "Pleasanton Avenue Bison", "url": "http://lh3.ggpht.com/kbUMJSMi6ek9W58vhsMi5QH5Jc1ncW7PMgYL5oBLf8uemAes5CPZAgjuz3kPXf_Z_tcol2dURaeunYI2c-5y", "enabled": true, "longitude": -121.884307, "latitude": 37.658226, "id": "c5a1ca7f"}
+{"gym_name": "Pleasanton BMX Facility", "url": "http://lh3.googleusercontent.com/iL43arVJjeTDasNMU3JENMZi-iOXHcm0Rup-lZPKiveZ3Jmb9f27G3ZTZ9ivtF7JelUMcH2wuvQw-NdyZ-tWGA", "enabled": true, "longitude": -121.853453, "latitude": 37.670671, "id": "f992d1c5"}
+{"gym_name": "Pleasanton Bart Station Platform", "url": "http://lh4.ggpht.com/hDoHxuWGSajQSbt4_uVfSfyTNsCiNvfQhihFJEisdNMH0lcSzwtltwnGTJ_uyXLJ-po9V41ZRe54JfeZ1hG-rRMaOHtdfTfL9ydWLoGjOqYkONUuYA", "enabled": true, "longitude": -121.898568, "latitude": 37.701637, "id": "b98778ed"}
+{"gym_name": "Pleasanton Bear Mural", "url": "http://lh4.ggpht.com/lOM5yr_padeEPToU3T7-5Bh2FYSxwM0_2pN7IXl0nwJ3PAzl7xBTOQwaDHDzGHp-G91nm_UqoOzSSR4-h301", "enabled": true, "longitude": -121.904317, "latitude": 37.697844, "id": "36fc67a1"}
+{"gym_name": "Pleasanton Centennial Time Capsule", "url": "http://lh3.ggpht.com/od3empJDYiWI5fayi3OYesaaz9rRZX0390uoXDnjCp0M34PpAWPOqhVoY6zhPPixx2vsNUANEblj56sUCgNCKQ", "enabled": true, "longitude": -121.878363, "latitude": 37.656829, "id": "039b0c3d"}
+{"gym_name": "Pleasanton Evangelical Free Church", "url": "http://lh5.ggpht.com/uIEas-QIk8e03sDvZRbuCA9PEFg6YayE23udrBiDuVCpmDUhubYkcaXyYQs4C_LOtAkbbbZjPbYsFtE5OmHWeg", "enabled": true, "longitude": -121.910183, "latitude": 37.675519, "id": "1f9a6945"}
+{"gym_name": "Pleasanton Pioneer Cemetery", "url": "http://lh5.ggpht.com/hHGEZ_j37DbrnxYK3axFFNX-P0ixlf6n2GaZBU5ByvffZwwfYhKpLAEHQDjDyj2gqo5tig2Ploje4EFq7yEs", "enabled": true, "longitude": -121.881207, "latitude": 37.646676, "id": "f2f3daed"}
+{"gym_name": "Pleasanton Sports Memorial", "url": "http://lh5.ggpht.com/oOlTtJWRLhOQgFH77_w8YowokilEWjagcK-uuRDRCU5QOvQoCJM1I8uUokqZa7SF4IrW9j8pc1OX-ToYw4s", "enabled": true, "longitude": -121.893922, "latitude": 37.681258, "id": "053cb84f"}
+{"gym_name": "Pleasanton Sports and Recreation Community Park", "url": "http://lh3.ggpht.com/s0hpxD5X0WdOQIiVibHWSD3HEUY-RDlQ9twbjI93Fz3GxsaQqQtfjlCzdWbR7OLR4Umg8X2UnxeAGQeAubPY", "enabled": true, "longitude": -121.899607, "latitude": 37.677847, "id": "2fd683bc"}
+{"gym_name": "Pleasanton Sports and Recreation Park", "url": "http://lh3.googleusercontent.com/NEyOL7REn5_Af87HKAJA5BkzphukN8X35EmhgrG1ESg6g87Yaytcw1xcxtGKERBh24Ud7wXqS2dlEXULur4", "enabled": true, "longitude": -121.895445, "latitude": 37.680248, "id": "35492340"}
+{"gym_name": "Pleasanton Tennis Parks", "url": "http://lh5.ggpht.com/OiyQ3xJLcv-1ZkKdRYVDoXCqje2X3VSmBAGjzIaMPEGim6J6CfBV5ZtXXdWz-f62xQluO0344kmEess1RHlAxw", "enabled": true, "longitude": -121.893038, "latitude": 37.675277, "id": "84959dde"}
+{"gym_name": "Pleasanton Tennis and Community Park", "url": "http://lh4.ggpht.com/PXTxVJzU4PBLjvRvpGdlStWfxHBD0wjNWQIxnzEH7GzXXAtA8D3ieeDhgFA38oktARkt8LNqM2eyLXMeDakb", "enabled": true, "longitude": -121.898006, "latitude": 37.675208, "id": "c0720cf5"}
+{"gym_name": "Pope John Paul II Activity Center", "url": "http://lh6.ggpht.com/fYUuu8LRRgRrsLSwrQuE8BPwYdfoIs0Bm-T7VU_xDLei_TvGzo4PD16xKk2cYI4AfnglWBIY6CbCreArIPA", "enabled": true, "longitude": -121.875278, "latitude": 37.68718, "id": "eebd91fe"}
+{"gym_name": "Positano Hills Park", "url": "http://lh4.ggpht.com/R9_7VmT55x3SOgst-ZBv5__M6AjH0Kd3rvPdH5sdQakNBCiuwxOEbpLCp1OJy4AK4lxZigZYHcpo9uYXiPbC", "enabled": true, "longitude": -121.845902, "latitude": 37.723492, "id": "297faaed"}
+{"gym_name": "Regional Parks Fishing Information Board", "url": "http://lh3.googleusercontent.com/bPzm4PKB9dhtjtvZWYYSvaPqotFhFfq3nUmF0d2Bw1kJjJG-aMKn1DJhJIfAI3I_SrJcqRixgmD3ZR_CsAgx", "enabled": true, "longitude": -121.839031, "latitude": 37.668344, "id": "d0c1ff19"}
+{"gym_name": "Richard Fahey Village Green", "url": "http://lh4.ggpht.com/jtWj4GfO1M5wskrrbMVP9Rkds2QtZRIA6chymLlSHC0AKfkJHtNy_8mk265V6_W6wz0qisPy8FuBE2CGirg6", "enabled": true, "longitude": -121.930717, "latitude": 37.727788, "id": "68b8343c"}
+{"gym_name": "Ridgeline Trail", "url": "http://lh5.ggpht.com/AnTPk6-G492lNj0si2cp6gvr2Zr3YfoN7HgHtSEEJfRU8XsJaGpeBju6HxZuLdJ-31UCj14jL4wa_HRKBeGOPg", "enabled": true, "longitude": -121.90253, "latitude": 37.627216, "id": "c1720f4c"}
+{"gym_name": "Ring Around Sculpture", "url": "http://lh3.ggpht.com/Kdh_stnWAIUs6wVea-oiyz13ALlqxG0slmMA0FaqD5Od0o6gXmHf9cfVVLaG56PUyLsH-dySYR_KJWSQnljf", "enabled": true, "longitude": -121.900571, "latitude": 37.683915, "id": "5c81ee2b"}
+{"gym_name": "Rock Filet Fountain", "url": "http://lh5.ggpht.com/0WVqIRn9nshUVWfZndf9oKKUOle9q4TLbDeAcgFK0DjUOQcgfe3WSxv4mDBZbb3aKpeyMYE6Mt_VxWA5giSf", "enabled": true, "longitude": -121.910557, "latitude": 37.706406, "id": "72e10823"}
+{"gym_name": "Rock Fountain", "url": "http://lh6.ggpht.com/KyE7457mvaDI15yT8anEmf4ZSSnyqmiBn-TzjX_PvgFjI1sxl6mB1DRgz7JAuBRBpanwuV9bgTvq1PRIn7g", "enabled": true, "longitude": -121.901857, "latitude": 37.661445, "id": "cfb94683"}
+{"gym_name": "Rock, Paper, Scissors", "url": "http://lh6.ggpht.com/Tx1jMHRy-JnoLTaobcEMfMF6eH0ubdHo8zrA2JZRbFh_JPGcZOrW3Y1ETIA4hGDVpmoLYMtP0YjcKg38DoSr", "enabled": true, "longitude": -121.875693, "latitude": 37.663874, "id": "4c879345"}
+{"gym_name": "Rolling Water Fountain", "url": "http://lh3.ggpht.com/u9WAW_GJLOnPAktEfQFImGtghmyn_Fn_KLPTennjw8CCrkTeHTqmm06vqJavHyDwjMBs9GtImAp7Cf3lWS-Bmg", "enabled": true, "longitude": -121.924298, "latitude": 37.697988, "id": "8ed14ff2"}
+{"gym_name": "Rotary Club Bench", "url": "http://lh5.ggpht.com/mmu3asne6tW_AkkofQw6ekq2h0txOSp_STfc5eoWibc1xx_I1AtxU-BxeaxkMJGnR93oj3EaBOCQ31nFcPs", "enabled": true, "longitude": -121.846931, "latitude": 37.671424, "id": "ceaf915b"}
+{"gym_name": "Rubino Fountain", "url": "http://lh4.ggpht.com/p1xrtfBiq76ppybvAdJRkCeGZfhp1S4KV8lalTf0sygG4B7wDb3GSGJ1FrMCb8NpTXhZsEUGr_0_Cmy90PR8", "enabled": true, "longitude": -121.820843, "latitude": 37.654055, "id": "888407c2"}
+{"gym_name": "Ryan's Bench", "url": "http://lh3.ggpht.com/fJRM280O0d27dURIxp-vdqfrcFtvup5B2866rMd_9ZTrNDe2q-_sukjQafRXfRSde39gWWKjdm0VUjAzZWLWpA", "enabled": true, "longitude": -121.911843, "latitude": 37.685095, "id": "ed972920"}
+{"gym_name": "San Ramon Marker", "url": "http://lh4.ggpht.com/6o3Ut0VPVKR_JEjZigburabC_WvacXAuiAyvSuSZ2sN9OBLA7RNrqyqzJwSrFnOzphG18tu1PrUSsv0kUCon", "enabled": true, "longitude": -121.910071, "latitude": 37.731298, "id": "80424dd5"}
+{"gym_name": "San Ramon Police Badge", "url": "http://lh6.ggpht.com/cZ_YGytRw5al6u9bKWb83UVhi7QmKS1pmxGhV7GWGiHJFnhWRfZLa93cv238xhlJI8NkK1t6OGvtAUuOwCOd4g", "enabled": true, "longitude": -121.889676, "latitude": 37.744881, "id": "bf918b00"}
+{"gym_name": "San Ramon Ramona Park", "url": "http://lh3.ggpht.com/prS8xED_JF4sUv8nbd_25573YBner_9UdBtCw3uZYrlBM1NZjNbDkQtqFPFD_bofumBXg5Z1lxzYU5s-CDU", "enabled": true, "longitude": -121.887322, "latitude": 37.749718, "id": "449f6782"}
+{"gym_name": "San Ramon Sports Park", "url": "http://lh3.ggpht.com/g7w-PHF6nnVjgNE32ET1EV8bBCj4igsDxb-nGt0SGvWHT3Ivc9jbnbYx6Op56BK_yY2RNBmPgfOS2XEurxo3", "enabled": true, "longitude": -121.898131, "latitude": 37.751717, "id": "44f2cfd5"}
+{"gym_name": "Schween", "url": "http://lh4.ggpht.com/NaqNtoIwS-fxFXIbIiCML7e8VVfKKTziC9g5gY2PZ-h5ZIpz-897RIuA7Qi-6VuMKPDkCKK5XjfhAi2MZm9y", "enabled": true, "longitude": -121.879886, "latitude": 37.646332, "id": "e613fa54"}
+{"gym_name": "Secret Door", "url": "http://lh3.googleusercontent.com/k0Z3xJObyHU8c3SJsgROTfUpYG2ctC2OTO5e0UWDVgMKoPmnmDlcmV6TsS_jpCQNdwweiDNmUGyP6IlskJDM", "enabled": true, "longitude": -121.929239, "latitude": 37.709613, "id": "d446eadf"}
+{"gym_name": "Senior Center Fountain", "url": "http://lh4.ggpht.com/zhH3E-5YfFUnPUyDzCgI2wAOtTEl1QRpyh1PuTvd4bCV70zynNN36TrP6dYPPXNsfYHL1TYgQpSO_A0nSmyiyg", "enabled": true, "longitude": -121.881345, "latitude": 37.652234, "id": "d38b23bf"}
+{"gym_name": "Shadow Cliffs Regional Park Vineyard Gate", "url": "http://lh3.googleusercontent.com/_afMseOSnk2-UJrcMCpXI37QtKFscRJ4C5MxsQGMtDEXkeSgnxIgY8jEc0JuyQiWrtgjFO0bN4x0a5nZ8y8", "enabled": true, "longitude": -121.842181, "latitude": 37.665875, "id": "ac9d515f"}
+{"gym_name": "Shadow Cliffs", "url": "http://lh3.ggpht.com/1JVRS5shHOtfraSwLa6TX-VHFY0Q1eJKm84qF2_Me2bHGKrKMOkMBqrnbMUEnO8nIcWD-4A3RbMjvUiZ_6p5", "enabled": true, "longitude": -121.84071, "latitude": 37.672138, "id": "4d41f592"}
+{"gym_name": "Signal Hill Waterfalls Fountain", "url": "http://lh4.ggpht.com/as6b6ijmKnNHulhdbMcjSYDh9O39eD4TVMmKVsy2s-Qb4lg8LrCD2MQ9uQ_qa-Nnw37YGEdP5kntP_lDJUt4PA", "enabled": true, "longitude": -121.858121, "latitude": 37.726366, "id": "609a644b"}
+{"gym_name": "Skateboard Track", "url": "http://lh5.ggpht.com/ix02RDWXry_hb9z203XJz--tM2TWr7BFxjNOA5swGJ0U9XP7b6IhD-q-KLge39aShYMxYVshHgFtGl1oySx_bGELjiGdyGRzyJXiGrZHKc5hkasH", "enabled": true, "longitude": -121.898117, "latitude": 37.677504, "id": "d3e8c5d3"}
+{"gym_name": "St. Augustine Catholic Church 1", "url": "http://lh3.ggpht.com/W6pkpLFQJ8OvoAS4hb14bLwXhXgLx8oalH6vjLcnAselHPo6G6gtQuF4FaMpWGX9wmcHCTUZnP6lYlE-lZA", "enabled": true, "longitude": -121.860815, "latitude": 37.654253, "id": "78ff3a3f"}
+{"gym_name": "St. Augustine Catholic Church 2", "url": "http://lh5.ggpht.com/bc6yBP1MHc3Ha8nckj71b5dlTfsBCzTYtzG2-iup4Xe5lqmnhxYxRzyk-NEkzqeXWC_X1kD0myfcXQX1Ruvzlw", "enabled": true, "longitude": -121.863287, "latitude": 37.654271, "id": "24946efc"}
+{"gym_name": "St. Elizabeth Seton Catholic Church", "url": "http://lh3.ggpht.com/ZoARmJ4dkWQcI1gwwvVRyLBxHssqIn1LGbS6fO4hs0sg1v2OBWlM5JNcXzEMMV8U5GEOhuF8qBm4PhFjPnI", "enabled": true, "longitude": -121.873275, "latitude": 37.687864, "id": "a1a49eab"}
+{"gym_name": "Stone Ridge Creek Waterfall", "url": "http://lh6.ggpht.com/3SkDh0mOnDXKwHo2FMXche0lhBgurDPpboFcBKlIV0ktzoA2coYlP-5Iz1aCDVKVw1c7JSeCq0vWHbBKfc0", "enabled": true, "longitude": -121.855721, "latitude": 37.699158, "id": "193de014"}
+{"gym_name": "Sun Sculpture", "url": "http://lh4.ggpht.com/dhkFAt02WqCOd6tbFbl4NAXQ0QbpeDnBZ2n3bOiDtMwGm1-JexoXdgsEZVV91pTbilIOIVNolRESBcuFSrM", "enabled": true, "longitude": -121.873092, "latitude": 37.66114, "id": "fb0ca33a"}
+{"gym_name": "Super Franks Miniature Buildings", "url": "http://lh3.ggpht.com/f1ALtXgpMHEklPJfCnJXAr_zuoGZyieDtXCSWFp7_NQmjJA7eevtVRSyQ3ioik1yykGjWy_PiT_XzPA1b0kDJQ", "enabled": true, "longitude": -121.904122, "latitude": 37.700336, "id": "a12790f6"}
+{"gym_name": "Tassajara Creek Regional Park", "url": "http://lh6.ggpht.com/eEKZuzUM7d1eXMVt7j2fle8v4gNEUaiqGJdWYF-ze03j3j3q4KSSdhv469G5ZwToeBe786wfk2dsf2-RksoQ-A", "enabled": true, "longitude": -121.871662, "latitude": 37.723188, "id": "509562ba"}
+{"gym_name": "Tassajara Creek Trail", "url": "http://lh4.ggpht.com/WV93lanWI4aVhmwCoJeQhrKmHthkQf-0pGeacNpFuAd0TP3D7Z1Z90F_CFambyRi_8nR0C9DnSJBppbgcmUm", "enabled": true, "longitude": -121.88002, "latitude": 37.708492, "id": "3759c1cf"}
+{"gym_name": "Ted Fairfield Park", "url": "http://lh6.ggpht.com/hJF_q3D7Dv-2WOZaFvUQJsVoTCG0j1GqzJMljFQtPcvoCFlwuEu7Ii6zBTOR2q0dmI1lrjxEqiT4rN4SFbQsqQ", "enabled": true, "longitude": -121.865357, "latitude": 37.718321, "id": "9e07b51c"}
+{"gym_name": "That Guy on the Ladder Mural", "url": "http://lh5.ggpht.com/gRCgYI9as2wqqtE5gGIMHOScPYwm5wi4Rhs1IiRuXw_fXEN7VLhZb0HDwyZHdEaDNWM7zkSg3FS5KNkK1zhAXg", "enabled": true, "longitude": -121.925719, "latitude": 37.705475, "id": "a29c9f25"}
+{"gym_name": "The Church of Jesus Christ of Latter Day Saints", "url": "http://lh4.ggpht.com/KdGa5raf0EgSLN69k0Il5zUbAuj3gcAQeYNbpfcm8UWq3xkfu5wZhs5rbB7GzmZeakuui5BCZ0KhrpGFqARt", "enabled": true, "longitude": -121.857805, "latitude": 37.662634, "id": "cc039ba3"}
+{"gym_name": "Theory", "url": "http://lh4.ggpht.com/OclAWduTwVVG7r9MLkcd0udUxk3EfMmGTO6UvmPaehH-ritjO0TSdia1U8Amo9v1eW302KLq5DEIDS37kME", "enabled": true, "longitude": -121.846989, "latitude": 37.699102, "id": "b57f9f7f"}
+{"gym_name": "Thermo Fisher Fountain", "url": "http://lh4.ggpht.com/gK9_sbbSlDpssjUcOMGSLPZo1qqXho8gvzwqZxdJjIZ_5trjB4io8U9ohnMtVAjdmO8h9BLe1YJUQEmMzl_Vpg", "enabled": true, "longitude": -121.883964, "latitude": 37.642712, "id": "6853b23a"}
+{"gym_name": "Three Sat Dishes", "url": "http://lh4.ggpht.com/VQaDOEIsuT-yvjdccrcNSO7Jxu0Zzuw9jTE-k52pbxrCRDs6UBBybixQ4I7T_3CIcjU5WnIoFY01VMAHzE9I", "enabled": true, "longitude": -121.896727, "latitude": 37.66165, "id": "6820663d"}
+{"gym_name": "Trail Gate 16", "url": "http://lh4.ggpht.com/RxetH0HRzeJwpSQ9m8Yg1i205iALHMbY-jp16nmgrksewP7pENzDUvHhYVmYz5JTGg3RtvY6IjL4J0sJ5Lw", "enabled": true, "longitude": -121.907693, "latitude": 37.673288, "id": "af8f5465"}
+{"gym_name": "Tri-Valley Golf Center Structure", "url": "http://lh3.ggpht.com/YttNYpZ4iUF8eJTp_wQZKwlyXMDPCqFzbyvXjqg2Kj5DTk9JNR0sBFcK25ko67CQPaAMEd-q9jecSZX-cd9W", "enabled": true, "longitude": -121.83666, "latitude": 37.700647, "id": "66d9f3e1"}
+{"gym_name": "Troop 048", "url": "http://lh4.ggpht.com/UgHGsb46p0Ws7Lz55kva8xLc53pAyPYRKBEP5w753BXjyeIUEuFL2leD8RSM_fYm3b2bhvY68WBIkfE1-V8", "enabled": true, "longitude": -121.90968, "latitude": 37.634221, "id": "ce0ad3ca"}
+{"gym_name": "Tulancingo - Sister City Plaque", "url": "http://lh4.ggpht.com/-F7bSjoHSFHBeUAmzt44zGVJ7TGOwvxtAEWg_sApoROOJNv0zjDF4eWpT6i4X13d1Rm92OrPmg_-cB8eUW1i0_y_iYahFT8mgVqQY1zCGAgDtneS", "enabled": true, "longitude": -121.897301, "latitude": 37.665111, "id": "735b8d44"}
+{"gym_name": "Ulferts Center Fountain", "url": "http://lh5.ggpht.com/dbgSd9ZOeSf6YPVWknqAn9uHgoQ_PCfiESgpNyrA_zIbpJBi5jQjJag07caWVpiQz174Wy_DN2WQf-jW181z", "enabled": true, "longitude": -121.875817, "latitude": 37.704796, "id": "97204bd1"}
+{"gym_name": "Under The Sea Mural", "url": "http://lh3.googleusercontent.com/Yde3j0szinkU7Ds4jAmKzA5J10Vg8HJQVchxUoz8K6JmdKaO3crBn4C4PDmWwi9q9sqxG5wKxvmTg2UqkiJ8dQ", "enabled": true, "longitude": -121.914828, "latitude": 37.712302, "id": "4d0cfe07"}
+{"gym_name": "Val Vista Community Park", "url": "http://lh4.ggpht.com/DOQIY5p4ueCJ8NH5sR2TTUhDPAneabokQOLok8ET2aBZyouPuCInONYButbgxH4gA0TYOUEupMqi66AinqU", "enabled": true, "longitude": -121.911545, "latitude": 37.683861, "id": "d8aaa865"}
+{"gym_name": "Val Vista Park Mural", "url": "http://lh3.ggpht.com/JPa3XYjE5K7IB7kQflUAfvCAA_hxQkpqodXHO_SS_rNFruYwIpOOA5lox1_vaOpqSouu9Iyf4Zp4K_shXvQn", "enabled": true, "longitude": -121.913256, "latitude": 37.684682, "id": "60640478"}
+{"gym_name": "Valley Community Church", "url": "http://lh6.ggpht.com/7fvuF5oEWF1FEf9M9c9eGvvCxZuIP2yWn97amgWbYQwIvZLyBUtuFdNuhlFXpnIsrV61BmMegL50AMJ4hfJZ", "enabled": true, "longitude": -121.877594, "latitude": 37.666965, "id": "cf040a11"}
+{"gym_name": "Valley Oak", "url": "http://lh6.ggpht.com/qxdBL52ddlhV8SuZ5FNhEaC8gjvQFuFCOItU85Y7pXjznfNg8woLzGX6Lko7hm1BSldc6CDfzuZBwLPgUwn5", "enabled": true, "longitude": -121.817173, "latitude": 37.696862, "id": "de8bfd32"}
+{"gym_name": "Valley Trails Park", "url": "http://lh4.ggpht.com/4sG7ed96TFNhfzsHtBYb7TEY8bpk_1962cxCknCSxpGHXrNVmwkmYApE4asIzyw-KSFUC6N3Zzp6CHfUe9rW", "enabled": true, "longitude": -121.902288, "latitude": 37.67768, "id": "a58205c3"}
+{"gym_name": "Vanishing Edges", "url": "http://lh4.ggpht.com/B4Il4ZeYbAmfHARJk9ikP4ksLF_qXRIY9Y3cZ9Kp-XqeEtA5G70zORn74W9MEvBbbO8vbBan9lxrnyTgsTg", "enabled": true, "longitude": -121.882768, "latitude": 37.698536, "id": "13768f27"}
+{"gym_name": "Veeva Waffle", "url": "http://lh6.ggpht.com/JU3FhJGwqSnjtCzAVDTWCjQYip2VLv_p2OR48xn_8okFNXPY1BlitcdxErdYjV94MCPOpsHAdY_nfjbJYfPrvw", "enabled": true, "longitude": -121.900852, "latitude": 37.692305, "id": "917e4666"}
+{"gym_name": "Vegan Paradise", "url": "http://lh4.ggpht.com/JwLJG5eKRzDkaEp_q8OYxzQibbNqaAp2Rw3a5pcxs3G8ot8NCMgjG3ssCMfjGVow6S3rHR8F9xmUyyXt8sU", "enabled": true, "longitude": -121.869659, "latitude": 37.699822, "id": "2c6c4573"}
+{"gym_name": "Video Wine Party", "url": "http://lh3.googleusercontent.com/IIVcirn4wrkducknSVurZEqS0ECyZg8RTt_VifKElS4r_jbNqPoM9gbayw2-0TjpsdfgaDkd9Q6elBjfKf4", "enabled": true, "longitude": -121.926418, "latitude": 37.711562, "id": "3d62f2b3"}
+{"gym_name": "Vintage Hills Park", "url": "http://lh6.ggpht.com/0UKhlY5W17ukffpiS3TLxkp7UxJexnTjGN012mvOyZ26Kex4VQ8qs-ml1I7IWPvRvKAK-y1nL0YFDhJRy1usPQ", "enabled": true, "longitude": -121.848945, "latitude": 37.657211, "id": "dc94c0f6"}
+{"gym_name": "Wash Time Clock", "url": "http://lh3.ggpht.com/10ZgB0KEA6KYmndU2s0lkjLs8go69I04SDXTVLWdvH5lWqiFfjqFUZutu2yMLfMy4Ue-TiJpaAaYkWQ5Oig", "enabled": true, "longitude": -121.872982, "latitude": 37.665513, "id": "65398c5a"}
+{"gym_name": "Wavy Gazebo", "url": "http://lh5.ggpht.com/ollW5oBIMCGn-1JmRycEKjzZBftrkQU8bqkP7LhydwtzL9JsYkhCOhtALvhY9gH1O0FMYhd7JERj_H4ZZW9A", "enabled": true, "longitude": -121.91455, "latitude": 37.691207, "id": "38c20eab"}
+{"gym_name": "Wellspring Church", "url": "http://lh4.ggpht.com/9IELgtwPnT1WxPuwlodrfiG-dlPJkEVQ00e0xKe1Yf6o6vUHqbdupJvPXPQ4Jx2iHaj0vSuqy6zjbTejrB-Y", "enabled": true, "longitude": -121.866233, "latitude": 37.674186, "id": "4373f964"}
+{"gym_name": "West Dublin BART Station", "url": "http://lh4.ggpht.com/XKhJaJW5aX57iPqSRhrP8PvTBWI32pr5ktodGFqvSs9AoN8XFJy0MB7XVN2PgPa0UpO0tQ8Bd8u8Rsk7YN0-fQ", "enabled": true, "longitude": -121.928091, "latitude": 37.69975, "id": "1d43c2c3"}
+{"gym_name": "Wild Rose Park Sign", "url": "http://lh3.ggpht.com/txL1wgpv-F_ftLklGzOm1gwRRoBlW3rWGTaT5_x418d_hvbMQNLhYPU5bGOx8p-DWqpSw1Zmtt_ATE9nkbmp", "enabled": true, "longitude": -121.895759, "latitude": 37.655719, "id": "f7c48f46"}
+{"gym_name": "Willow Tree Water Wall", "url": "http://lh6.ggpht.com/ez5pLsTUOEOMyLY88dgnS5qRlvXxIeiCzP5JcS7-3G6QMUxNnZ03zrccRoel8HJYIpIykKEM4D12ssSvvQMz", "enabled": true, "longitude": -121.932161, "latitude": 37.700345, "id": "3349fc84"}
+{"gym_name": "Wixson Bridge", "url": "http://lh3.googleusercontent.com/dfuQF3PR6tUk_b2QvconwGub27G694kwRovKCZ_ECiMLaPUqNKXdGtosY0b8KxwOmoltu0qMDTYD3wiJrI6u", "enabled": true, "longitude": -121.884189, "latitude": 37.667741, "id": "1ec95ffe"}

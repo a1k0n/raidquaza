@@ -9,13 +9,16 @@ import (
 )
 
 type Gym struct {
+	Id        string  `json:"id"`
 	Name      string  `json:"gym_name"`
 	Latitude  float64 `json:"latitude"`
 	Longitude float64 `json:"longitude"`
+	ImageUrl  string  `json:"url"`
+	Enabled   bool    `json:"enabled"`
 }
 
 type GymDB struct {
-	Gyms    map[string]*Gym  // map of gym full name -> gym itself
+	Gyms    map[string]*Gym // map of gym full name -> gym itself
 	Matcher *closestmatch.ClosestMatch
 }
 
@@ -38,6 +41,8 @@ func NewGymDB(gymfile string) *GymDB {
 			log.Fatal(err)
 		}
 		db.Gyms[gym.Name] = &gym
+		db.Gyms[gym.Id] = &gym
+		gymNames = append(gymNames, gym.Id)
 		gymNames = append(gymNames, gym.Name)
 	}
 	db.Matcher = closestmatch.New(gymNames, []int{2, 3, 4})
@@ -45,15 +50,16 @@ func NewGymDB(gymfile string) *GymDB {
 	return db
 }
 
-func (g *GymDB) GetGym(query string) *Gym {
-	closestN := g.Matcher.ClosestN(query, 10)
-	closest := closestN[0]
-	gym, ok := g.Gyms[closest]
-	if ok {
-		log.Printf("query \"%s\" matches:", query)
-		for _, m := range closestN {
-			log.Printf("  %s\n", m)
+func (g *GymDB) GetGyms(query string, threshold float32) []*Gym {
+	closestN, scores := g.Matcher.ClosestN(query, 10)
+	var closest []*Gym
+	log.Printf("query \"%s\" matches:", query)
+	for i, m := range closestN {
+		if float32(scores[i]) < float32(scores[0]) * threshold {
+			break
 		}
+		closest = append(closest, g.Gyms[m])
+		log.Printf("  %s (%d)\n", m, scores[i])
 	}
-	return gym
+	return closest
 }

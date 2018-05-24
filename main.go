@@ -17,6 +17,24 @@ import (
 
 const snapshotPath = "rqdata.json"
 
+type Raid struct {
+	Gym       *gymdb.Gym `json:"gym"`
+	What      string     `json:"what"`
+	Emoji     string     `json:"emoji"` // latest reaction emoji, can indicate which pokemon
+	EndTime   time.Time  `json:"end_time"`
+	MessageID string     `json:"msg_id"`     // discord pinned message id
+	ChannelID string     `json:"channel_id"` // discord channel pinned in
+}
+
+func (r *Raid) genMessage() string {
+	return fmt.Sprintf("%s%s raid at %s until %s. Click ⏰ to add a raid group.",
+		r.Emoji, r.What, r.Gym.Name, r.EndTime.Format("3:04 PM"))
+}
+
+func (r *Raid) String() string {
+	return fmt.Sprintf("%s%s raid at %s until %s", r.Emoji, r.What, r.Gym.Name, r.EndTime.Format("3:05 PM"))
+}
+
 type RaidGroup struct {
 	Raid      *Raid          `json:"raid"` // parent raid
 	StartTime time.Time      `json:"start_time"`
@@ -24,16 +42,8 @@ type RaidGroup struct {
 	MessageID string         `json:"msg_id"`  // discord pinned message id
 }
 
-type Raid struct {
-	Gym       *gymdb.Gym `json:"gym"`
-	What      string     `json:"what"`
-	EndTime   time.Time  `json:"end_time"`
-	MessageID string     `json:"msg_id"`     // discord pinned message id
-	ChannelID string     `json:"channel_id"` // discord channel pinned in
-}
-
 func (rg *RaidGroup) String() string {
-	return fmt.Sprintf("%s raid at %s starting %s, ends %s", rg.Raid.What,
+	return fmt.Sprintf("%s%s raid at %s starting %s, ends %s", rg.Raid.Emoji, rg.Raid.What,
 		rg.Raid.Gym.Name, rg.StartTime.Format("3:04 PM"),
 		rg.Raid.EndTime.Format("3:04 PM"))
 }
@@ -64,10 +74,6 @@ func (rg *RaidGroup) Mentions() string {
 	return strings.Join(mentions, " ")
 }
 
-func (r *Raid) String() string {
-	return fmt.Sprintf("%s raid at %s until %s", r.What, r.Gym.Name, r.EndTime.Format("3:05 PM"))
-}
-
 func MakeRaidGroup(raid *Raid, startTime time.Time, s *discordgo.Session) *RaidGroup {
 	rg := &RaidGroup{
 		Raid:      raid,
@@ -86,6 +92,10 @@ func MakeRaidGroup(raid *Raid, startTime time.Time, s *discordgo.Session) *RaidG
 
 	s.ChannelMessagePin(raid.ChannelID, msg.ID)
 	s.MessageReactionAdd(raid.ChannelID, msg.ID, "✅")
+	/* TODO
+	s.MessageReactionAdd(raid.ChannelID, msg.ID, "2⃣")
+	s.MessageReactionAdd(raid.ChannelID, msg.ID, "4⃣")
+	*/
 
 	return rg
 }
@@ -94,12 +104,12 @@ func MakeRaidGroup(raid *Raid, startTime time.Time, s *discordgo.Session) *RaidG
 func addGymEmbed(g *gymdb.Gym, msg *discordgo.MessageSend) {
 	msg.Embed = &discordgo.MessageEmbed{
 		Title: g.Name,
-		URL:   fmt.Sprintf("https://www.google.com/maps/?q=%f,%f", g.Longitude, g.Latitude),
+		URL:   fmt.Sprintf("https://www.google.com/maps/?q=%f,%f", g.Latitude, g.Longitude),
 		Image: &discordgo.MessageEmbedImage{
 			// URL: g.ImageUrl,
 			URL: fmt.Sprintf("https://maps.googleapis.com/maps/api/staticmap?center=%f,%f&markers=%f,%f&size=300x200&zoom=14",
-				g.Longitude, g.Latitude, g.Longitude, g.Latitude),
-			Width:  320,
+				g.Latitude, g.Longitude, g.Latitude, g.Longitude),
+			Width:  300,
 			Height: 200,
 		},
 	}
@@ -467,6 +477,36 @@ func messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
 		botState.dirty = true
 		return
 	}
+
+	// all other custom emojis
+	if m.Emoji.ID != "" {
+		botState.mut.Lock()
+		defer botState.mut.Unlock()
+		raid, ok := botState.Raids[m.MessageID]
+		if !ok {
+			return
+		}
+
+		raid.Emoji = "<:" + m.Emoji.Name + ":" + m.Emoji.ID + "> "
+		for _, rg := range botState.Raidgroups {
+			if rg.Raid != raid {
+				continue
+			}
+			s.ChannelMessageEdit(rg.Raid.ChannelID, rg.MessageID, rg.genMessage())
+		}
+		log.Printf("changing raid emoji: %s", raid.String())
+		s.ChannelMessageEdit(raid.ChannelID, raid.MessageID, raid.genMessage())
+		botState.dirty = true
+
+	}
+}
+
+func formatGymMatches(gs []*gymdb.Gym) []string {
+	var matches []string
+	for _, g := range gs {
+		matches = append(matches, fmt.Sprintf(
+			"  [gym `%s`] %s <https://www.google.com/maps/?q=%f,%f>", g.Id, g.Name, g.Latitude, g.Longitude))
+	}
 }
 
 func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
@@ -496,15 +536,24 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	if splitMsg[0] == "!info" {
-		g := botState.gymdb.GetGym(strings.Join(splitMsg[1:], " "))
-		if g == nil {
+		query := strings.Join(splitMsg[1:], " ")
+		gs := botState.gymdb.GetGyms(query, 0.5)
+		if len(gs) == 0 {
 			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> couldn't find a matching gym")
 			return
 		}
-		messageData := discordgo.MessageSend{
-			Content: fmt.Sprintf("<@%s> %s", m.Author.ID, g.Name),
+
+		messageData := discordgo.MessageSend{}
+
+		if len(gs) == 1 {
+			g := gs[0]
+			messageData.Content = fmt.Sprintf("<@%s> [gym `%s`] %s", m.Author.ID, g.Id, g.Name)
+			addGymEmbed(g, &messageData)
+		} else {
+			matches := []string{fmt.Sprintf("<@%s> `%s` could be:", m.Author.ID, query)}
+			matches = append(matches, formatGymMatches(gs)...)
+			messageData.Content = strings.Join(matches, "\n")
 		}
-		addGymEmbed(g, &messageData)
 
 		_, err := s.ChannelMessageSendComplex(m.ChannelID, &messageData)
 		if err != nil {
@@ -519,7 +568,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if splitMsg[0] == "!raid" {
 		locEnd := len(splitMsg)
 		if locEnd < 6 {
-			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> use `!raid <pokemon> <location> ends [at/in] <time>`",
+			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> Use `!raid <pokemon> <location> ends [at/in] <time>`",
 				m.Author.ID))
 			return
 		}
@@ -529,14 +578,23 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			}
 		}
 		what := splitMsg[1]
-		g := botState.gymdb.GetGym(strings.Join(splitMsg[2:locEnd], " "))
-		if g == nil {
-			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> couldn't find a gym matching \"%s\"",
+		gs := botState.gymdb.GetGyms(strings.Join(splitMsg[2:locEnd], " "), 1.0)
+		if len(gs) == 0 { // no matches?
+			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> Couldn't find a gym matching \"%s\"",
 				m.Author.ID, splitMsg[1:locEnd]))
 			return
 		}
+		if len(gs) > 1 { // multiple potential matches?
+			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> Which gym did you mean?\n%s",
+				m.Author.ID, strings.Join(formatGymMatches(gs), "\n")))
+			return
+		}
+
+		// query matches just one gym:
+		g := gs[0]
+
 		if len(splitMsg) < locEnd+2 {
-			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> ends when? try \"...ends at 4:00\" or \"...ends in 15m", m.Author.ID))
+			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> ends when? Try \"...ends at 4:00\" or \"...ends in 15m", m.Author.ID))
 		}
 		endTime := time.Now()
 		if splitMsg[locEnd+1] == "at" {
@@ -565,8 +623,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		}
 
 		messageData := discordgo.MessageSend{
-			Content: fmt.Sprintf("%s raid at %s until %s. Click ⏰ to add a raid group.",
-				what, g.Name, endTime.Format("3:04 PM")),
+			Content: raid.genMessage(),
 		}
 		addGymEmbed(g, &messageData)
 
