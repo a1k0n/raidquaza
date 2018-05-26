@@ -19,17 +19,33 @@ import (
 const snapshotPath = "rqdata.json"
 
 type Raid struct {
-	Gym       *gymdb.Gym `json:"gym"`
-	What      string     `json:"what"`
-	Emoji     string     `json:"emoji"` // latest reaction emoji, can indicate which pokemon
-	EndTime   time.Time  `json:"end_time"`
-	MessageID string     `json:"msg_id"`     // discord pinned message id
-	ChannelID string     `json:"channel_id"` // discord channel pinned in
+	Gym       *gymdb.Gym   `json:"gym"`
+	What      string       `json:"what"`
+	Emoji     string       `json:"emoji"` // latest reaction emoji, can indicate which pokemon
+	EndTime   time.Time    `json:"end_time"`
+	MessageID string       `json:"msg_id"`     // discord pinned message id
+	ChannelID string       `json:"channel_id"` // discord channel pinned in
+	Groups    []*RaidGroup `json:"groups"`
 }
 
+var boxEmoji = string([]byte{226, 131, 163})
+
 func (r *Raid) genMessage() string {
-	return fmt.Sprintf("%s%s raid at %s until %s. Click ⏰ to add a raid group.",
-		r.Emoji, r.What, r.Gym.Name, r.EndTime.Format("3:04 PM"))
+	clockMsg := ""
+	if len(r.Groups) == 0 {
+		clockMsg = "\nClick ⏰ to add a raid group time."
+	} else {
+		clockMsg = "\nClick 🔢 to join group, ⏰ to add new time."
+	}
+	mapUrl := fmt.Sprintf("https://www.google.com/maps/?q=%f,%f",
+		r.Gym.Latitude, r.Gym.Longitude)
+	var groupMsgs []string
+	for n, rg := range r.Groups {
+		groupMsgs = append(groupMsgs, rg.genMessage(n+1))
+	}
+	return fmt.Sprintf("**%s%s** expires %s\n%s | %s %s%s\n%s",
+		r.Emoji, r.What, r.EndTime.Format("3:04 PM"), r.Gym.Name,
+		r.Gym.StreetAddr, mapUrl, clockMsg, groupMsgs)
 }
 
 func (r *Raid) String() string {
@@ -37,16 +53,15 @@ func (r *Raid) String() string {
 }
 
 type RaidGroup struct {
-	Raid      *Raid          `json:"raid"` // parent raid
+	raid      *Raid
 	StartTime time.Time      `json:"start_time"`
 	Members   map[string]int `json:"members"` // discord userid set
-	MessageID string         `json:"msg_id"`  // discord pinned message id
 }
 
 func (rg *RaidGroup) String() string {
-	return fmt.Sprintf("%s%s raid at %s starting %s, ends %s", rg.Raid.Emoji, rg.Raid.What,
-		rg.Raid.Gym.Name, rg.StartTime.Format("3:04 PM"),
-		rg.Raid.EndTime.Format("3:04 PM"))
+	return fmt.Sprintf("%s%s raid at %s starting %s, ends %s", rg.raid.Emoji, rg.raid.What,
+		rg.raid.Gym.Name, rg.StartTime.Format("3:04 PM"),
+		rg.raid.EndTime.Format("3:04 PM"))
 }
 
 func (rg *RaidGroup) Total() int {
@@ -57,9 +72,9 @@ func (rg *RaidGroup) Total() int {
 	return total
 }
 
-func (rg *RaidGroup) genMessage() string {
-	return fmt.Sprintf("%s\n%d attending: %s\nClick ✅ to join",
-		rg.String(), rg.Total(), rg.Mentions())
+func (rg *RaidGroup) genMessage(n int) string {
+	return fmt.Sprintf("%d%s **%s** | %d attending: %s",
+		n, boxEmoji, rg.StartTime.Format("3:04 PM"), rg.Total(), rg.Mentions())
 }
 
 func (rg *RaidGroup) Mentions() string {
@@ -76,8 +91,9 @@ func (rg *RaidGroup) Mentions() string {
 }
 
 func MakeRaidGroup(raid *Raid, startTime time.Time, s *discordgo.Session) *RaidGroup {
+	n := len(raid.Groups) + 1
 	rg := &RaidGroup{
-		Raid:      raid,
+		raid:      raid,
 		StartTime: startTime,
 		Members:   make(map[string]int),
 	}
@@ -121,8 +137,7 @@ type BotState struct {
 	channelCache map[string]string // userid -> privmsg channel id
 	gymdb        *gymdb.GymDB
 
-	Raids      map[string]*Raid      `json:"raids"`      // message id -> raid
-	Raidgroups map[string]*RaidGroup `json:"raidgroups"` // message id -> raidgroup
+	Raids map[string]*Raid `json:"raids"` // message id -> raid
 
 	channelCallbacks map[string]func(*discordgo.Session, *discordgo.MessageCreate)
 
@@ -338,10 +353,10 @@ func messageReactionRemove(s *discordgo.Session, m *discordgo.MessageReactionRem
 func (rg *RaidGroup) Expire(s *discordgo.Session) {
 	log.Printf("%s expired.", rg.String())
 	if len(rg.Members) > 0 {
-		s.ChannelMessageSend(rg.Raid.ChannelID, fmt.Sprintf("%s %s raid at %s starting now!",
-			rg.Mentions(), rg.StartTime.Format("3:04PM"), rg.Raid.Gym.Name))
+		s.ChannelMessageSend(rg.raid.ChannelID, fmt.Sprintf("%s %s raid at %s starting now!",
+			rg.Mentions(), rg.StartTime.Format("3:04PM"), rg.raid.Gym.Name))
 	}
-	s.ChannelMessageDelete(rg.Raid.ChannelID, rg.MessageID)
+	s.ChannelMessageDelete(rg.raid.ChannelID, rg.MessageID)
 	delete(botState.Raidgroups, rg.MessageID)
 	botState.dirty = true
 }
@@ -349,10 +364,10 @@ func (rg *RaidGroup) Expire(s *discordgo.Session) {
 func (rg *RaidGroup) Cancel(s *discordgo.Session) {
 	log.Printf("%s deleted.", rg.String())
 	if len(rg.Members) > 0 {
-		s.ChannelMessageSend(rg.Raid.ChannelID, fmt.Sprintf("%s %s was cancelled",
+		s.ChannelMessageSend(rg.raid.ChannelID, fmt.Sprintf("%s %s was cancelled",
 			rg.Mentions(), rg.String()))
 	}
-	delete(botState.Raidgroups, rg.MessageID)
+
 	botState.dirty = true
 }
 
@@ -370,7 +385,7 @@ func messageDelete(s *discordgo.Session, m *discordgo.MessageDelete) {
 	if raid, ok := botState.Raids[m.Message.ID]; ok {
 		log.Printf("Deleting raid %s", raid.String())
 		for msgId, rg := range botState.Raidgroups {
-			if rg.Raid == raid {
+			if rg.raid == raid {
 				rg.Cancel(s)
 				s.ChannelMessageDelete(m.ChannelID, msgId)
 			}
@@ -474,7 +489,7 @@ func messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
 		rg.Members[m.UserID] = 1
 
 		log.Printf("adding %s to raidgroup %s", m.UserID, rg.String())
-		s.ChannelMessageEdit(rg.Raid.ChannelID, rg.MessageID, rg.genMessage())
+		s.ChannelMessageEdit(rg.raid.ChannelID, rg.MessageID, rg.genMessage())
 		botState.dirty = true
 		return
 	}
@@ -490,10 +505,10 @@ func messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
 
 		raid.Emoji = "<:" + m.Emoji.Name + ":" + m.Emoji.ID + "> "
 		for _, rg := range botState.Raidgroups {
-			if rg.Raid != raid {
+			if rg.raid != raid {
 				continue
 			}
-			s.ChannelMessageEdit(rg.Raid.ChannelID, rg.MessageID, rg.genMessage())
+			s.ChannelMessageEdit(rg.raid.ChannelID, rg.MessageID, rg.genMessage())
 		}
 		log.Printf("changing raid emoji: %s", raid.String())
 		s.ChannelMessageEdit(raid.ChannelID, raid.MessageID, raid.genMessage())
