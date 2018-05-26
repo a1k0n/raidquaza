@@ -49,7 +49,7 @@ func (r *Raid) genMessage() string {
 }
 
 func (r *Raid) String() string {
-	return fmt.Sprintf("%s%s raid at %s until %s", r.Emoji, r.What, r.Gym.Name, r.EndTime.Format("3:05 PM"))
+	return fmt.Sprintf("%s%s raid at %s until %s", r.Emoji, r.What, r.Gym.Name, r.EndTime.Format("3:04 PM"))
 }
 
 func (r *Raid) SendUpdate(s *discordgo.Session) {
@@ -58,6 +58,7 @@ func (r *Raid) SendUpdate(s *discordgo.Session) {
 
 type RaidGroup struct {
 	raid      *Raid
+	number    int
 	StartTime time.Time      `json:"start_time"`
 	Members   map[string]int `json:"members"` // discord userid set
 	Expired   bool           `json:"expired"`
@@ -78,12 +79,13 @@ func (rg *RaidGroup) Total() int {
 }
 
 func (rg *RaidGroup) genMessage(n int) string {
-	st := rg.StartTime.Format("3:04 PM")
+	startTime := rg.StartTime.Format("3:04 PM")
+	strikeThru := ""
 	if rg.Expired {
-		return fmt.Sprintf("%d%s ~~**%s**~~", n, boxEmoji, st)
+		strikeThru = "~~"
 	}
-	return fmt.Sprintf("%d%s **%s** | %d attending: %s",
-		n, boxEmoji, st, rg.Total(), rg.Mentions())
+	return fmt.Sprintf("%d%s %s**%s** | %d attending: %s%s",
+		n, boxEmoji, strikeThru, startTime, rg.Total(), rg.Mentions(), strikeThru)
 }
 
 func (rg *RaidGroup) Mentions() string {
@@ -100,14 +102,17 @@ func (rg *RaidGroup) Mentions() string {
 }
 
 func (r *Raid) AddGroup(startTime time.Time, s *discordgo.Session) *RaidGroup {
+	n := len(r.Groups) + 1
 	rg := &RaidGroup{
 		raid:      r,
+		number:    n,
 		StartTime: startTime,
 		Members:   make(map[string]int),
 	}
 	r.Groups = append(r.Groups, rg)
-	n := len(r.Groups)
 	s.MessageReactionAdd(r.ChannelID, r.MessageID, fmt.Sprintf("%d%s", n, boxEmoji))
+	s.MessageReactionAdd(r.ChannelID, r.MessageID, "➕")
+	s.MessageReactionAdd(r.ChannelID, r.MessageID, "➖")
 	r.SendUpdate(s)
 
 	return rg
@@ -373,8 +378,12 @@ func (rg *RaidGroup) Expire(s *discordgo.Session) {
 	if len(rg.Members) > 0 {
 		s.ChannelMessageSend(rg.raid.ChannelID, fmt.Sprintf("%s %s raid at %s starting now!",
 			rg.Mentions(), rg.StartTime.Format("3:04PM"), rg.raid.Gym.Name))
+		emoji := fmt.Sprintf("%d%s", rg.number, boxEmoji)
+		s.MessageReactionRemove(rg.raid.ChannelID, rg.raid.MessageID, emoji, s.State.User.ID)
+		for userId := range rg.Members {
+			s.MessageReactionRemove(rg.raid.ChannelID, rg.raid.MessageID, emoji, userId)
+		}
 	}
-	rg.Members = nil
 	botState.dirty = true
 }
 
@@ -390,7 +399,8 @@ func (rg *RaidGroup) Cancel(s *discordgo.Session) {
 
 func (r *Raid) Expire(s *discordgo.Session) {
 	log.Printf("%s expired.", r.String())
-	s.ChannelMessageDelete(r.ChannelID, r.MessageID)
+	s.ChannelMessageUnpin(r.ChannelID, r.MessageID)
+	s.MessageReactionsRemoveAll(r.ChannelID, r.MessageID)
 	delete(botState.Raids, r.MessageID)
 	botState.dirty = true
 }
@@ -444,6 +454,9 @@ func messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
 		}
 		log.Print(raid.String())
 
+		// remove the reaction once processed
+		s.MessageReactionRemove(m.ChannelID, m.MessageID, m.Emoji.Name, m.UserID)
+
 		ch, err := userChannel(s, m.UserID)
 		if err != nil {
 			log.Print(err)
@@ -469,10 +482,14 @@ func messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
 				log.Printf("can't parse time %s: %s", privm.Content, err)
 				return
 			}
+			if t.Before(time.Now()) {
+				s.ChannelMessageSend(privm.ChannelID, fmt.Sprintf(
+					"%s is in the past!", t.Format("3:04 PM")))
+			}
 			if t.After(raid.EndTime) {
 				s.ChannelMessageSend(privm.ChannelID, fmt.Sprintf(
 					"%s is after the raid ends (at %s)!",
-					t.Format("3:05 PM"), raid.EndTime.Format("3:05PM")))
+					t.Format("3:04 PM"), raid.EndTime.Format("3:04PM")))
 				return
 			}
 
@@ -510,6 +527,40 @@ func messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
 		raid.SendUpdate(s)
 		botState.dirty = true
 		return
+	}
+
+	// add/subtract extras
+	if m.Emoji.Name == "➕" || m.Emoji.Name == "➖" {
+		plus := m.Emoji.Name == "➕"
+		botState.mut.Lock()
+		defer botState.mut.Unlock()
+
+		raid, ok := botState.Raids[m.MessageID]
+		if !ok {
+			return
+		}
+
+		// remove the reaction once processed
+		s.MessageReactionRemove(m.ChannelID, m.MessageID, m.Emoji.Name, m.UserID)
+
+		dirty := false
+		for _, rg := range raid.Groups {
+			if rg.Expired {
+				continue
+			}
+			if _, ok := rg.Members[m.UserID]; ok {
+				if plus {
+					rg.Members[m.UserID]++
+					dirty = true
+				} else if rg.Members[m.UserID] > 1 {
+					rg.Members[m.UserID]--
+					dirty = true
+				}
+			}
+		}
+		if dirty {
+			raid.SendUpdate(s)
+		}
 	}
 
 	// all other custom emojis
