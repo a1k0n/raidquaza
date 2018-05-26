@@ -45,17 +45,22 @@ func (r *Raid) genMessage() string {
 	}
 	return fmt.Sprintf("**%s%s** expires %s\n%s | %s %s%s\n%s",
 		r.Emoji, r.What, r.EndTime.Format("3:04 PM"), r.Gym.Name,
-		r.Gym.StreetAddr, mapUrl, clockMsg, groupMsgs)
+		r.Gym.StreetAddr, mapUrl, clockMsg, strings.Join(groupMsgs, "\n"))
 }
 
 func (r *Raid) String() string {
 	return fmt.Sprintf("%s%s raid at %s until %s", r.Emoji, r.What, r.Gym.Name, r.EndTime.Format("3:05 PM"))
 }
 
+func (r *Raid) SendUpdate(s *discordgo.Session) {
+	s.ChannelMessageEdit(r.ChannelID, r.MessageID, r.genMessage())
+}
+
 type RaidGroup struct {
 	raid      *Raid
 	StartTime time.Time      `json:"start_time"`
 	Members   map[string]int `json:"members"` // discord userid set
+	Expired   bool           `json:"expired"`
 }
 
 func (rg *RaidGroup) String() string {
@@ -73,8 +78,12 @@ func (rg *RaidGroup) Total() int {
 }
 
 func (rg *RaidGroup) genMessage(n int) string {
+	st := rg.StartTime.Format("3:04 PM")
+	if rg.Expired {
+		return fmt.Sprintf("%d%s ~~**%s**~~", n, boxEmoji, st)
+	}
 	return fmt.Sprintf("%d%s **%s** | %d attending: %s",
-		n, boxEmoji, rg.StartTime.Format("3:04 PM"), rg.Total(), rg.Mentions())
+		n, boxEmoji, st, rg.Total(), rg.Mentions())
 }
 
 func (rg *RaidGroup) Mentions() string {
@@ -90,29 +99,16 @@ func (rg *RaidGroup) Mentions() string {
 	return strings.Join(mentions, " ")
 }
 
-func MakeRaidGroup(raid *Raid, startTime time.Time, s *discordgo.Session) *RaidGroup {
-	n := len(raid.Groups) + 1
+func (r *Raid) AddGroup(startTime time.Time, s *discordgo.Session) *RaidGroup {
 	rg := &RaidGroup{
-		raid:      raid,
+		raid:      r,
 		StartTime: startTime,
 		Members:   make(map[string]int),
 	}
-
-	// construct and pin message for this raid time slot
-	msg, err := s.ChannelMessageSend(raid.ChannelID, rg.genMessage())
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	rg.MessageID = msg.ID
-	botState.Raidgroups[msg.ID] = rg
-
-	s.ChannelMessagePin(raid.ChannelID, msg.ID)
-	s.MessageReactionAdd(raid.ChannelID, msg.ID, "✅")
-	/* TODO
-	s.MessageReactionAdd(raid.ChannelID, msg.ID, "2⃣")
-	s.MessageReactionAdd(raid.ChannelID, msg.ID, "4⃣")
-	*/
+	r.Groups = append(r.Groups, rg)
+	n := len(r.Groups)
+	s.MessageReactionAdd(r.ChannelID, r.MessageID, fmt.Sprintf("%d%s", n, boxEmoji))
+	r.SendUpdate(s)
 
 	return rg
 }
@@ -177,6 +173,14 @@ func (bs *BotState) Load(path string) error {
 		log.Print(err)
 		return err
 	}
+
+	// fixup raid pointers not serialized
+	for _, raid := range bs.Raids {
+		for _, rg := range raid.Groups {
+			rg.raid = raid
+		}
+	}
+
 	log.Printf("Successfully loaded shapshot %s", path)
 	return nil
 }
@@ -185,19 +189,22 @@ func (bs *BotState) ExpireOld(s *discordgo.Session, t time.Time) {
 	bs.mut.Lock()
 	defer bs.mut.Unlock()
 
-	for k, rg := range bs.Raidgroups {
-		if t.After(rg.StartTime) {
-			rg.Expire(s)
-			delete(bs.Raidgroups, k)
-			bs.dirty = true
-		}
-	}
-
 	for k, raid := range bs.Raids {
+		needUpdate := false
+		for _, rg := range raid.Groups {
+			if !rg.Expired && t.After(rg.StartTime) {
+				rg.Expire(s)
+				needUpdate = true
+				bs.dirty = true
+			}
+		}
+
 		if t.After(raid.EndTime) {
 			raid.Expire(s)
 			delete(bs.Raids, k)
 			bs.dirty = true
+		} else if needUpdate {
+			raid.SendUpdate(s)
 		}
 	}
 }
@@ -231,7 +238,6 @@ func main() {
 		gymdb:        gymdb.NewGymDB("gymdb/gyms.txt"),
 
 		Raids:            make(map[string]*Raid),
-		Raidgroups:       make(map[string]*RaidGroup),
 		channelCallbacks: make(map[string]func(*discordgo.Session, *discordgo.MessageCreate)),
 	}
 
@@ -333,31 +339,42 @@ func messageReactionRemove(s *discordgo.Session, m *discordgo.MessageReactionRem
 
 	log.Printf("messageid %s %s reaction removed: %s(%s)", m.MessageID, m.UserID, m.Emoji.ID, m.Emoji.Name)
 
-	if m.Emoji.Name == "✅" {
+	if m.Emoji.Name[1:] == boxEmoji {
+		n := m.Emoji.Name[0] - '1'
 		botState.mut.Lock()
 		defer botState.mut.Unlock()
-		rg, ok := botState.Raidgroups[m.MessageID]
+		raid, ok := botState.Raids[m.MessageID]
 		if !ok {
 			return
 		}
 
+		if n < 0 || n >= uint8(len(raid.Groups)) {
+			return
+		}
+		rg := raid.Groups[n]
+		if rg.Expired {
+			return
+		}
 		delete(rg.Members, m.UserID)
 
 		log.Printf("removing %s from raidgroup %s", m.UserID, rg.String())
-		s.ChannelMessageEdit(m.ChannelID, m.MessageID, rg.genMessage())
+		raid.SendUpdate(s)
 		botState.dirty = true
 		return
 	}
 }
 
 func (rg *RaidGroup) Expire(s *discordgo.Session) {
+	if rg.Expired {
+		return
+	}
+	rg.Expired = true
 	log.Printf("%s expired.", rg.String())
 	if len(rg.Members) > 0 {
 		s.ChannelMessageSend(rg.raid.ChannelID, fmt.Sprintf("%s %s raid at %s starting now!",
 			rg.Mentions(), rg.StartTime.Format("3:04PM"), rg.raid.Gym.Name))
 	}
-	s.ChannelMessageDelete(rg.raid.ChannelID, rg.MessageID)
-	delete(botState.Raidgroups, rg.MessageID)
+	rg.Members = nil
 	botState.dirty = true
 }
 
@@ -384,19 +401,11 @@ func messageDelete(s *discordgo.Session, m *discordgo.MessageDelete) {
 
 	if raid, ok := botState.Raids[m.Message.ID]; ok {
 		log.Printf("Deleting raid %s", raid.String())
-		for msgId, rg := range botState.Raidgroups {
-			if rg.raid == raid {
-				rg.Cancel(s)
-				s.ChannelMessageDelete(m.ChannelID, msgId)
-			}
+		for _, rg := range raid.Groups {
+			rg.Cancel(s)
 		}
 		delete(botState.Raids, m.Message.ID)
 		botState.dirty = true
-	}
-
-	if rg, ok := botState.Raidgroups[m.Message.ID]; ok {
-		// delete this raid group
-		rg.Cancel(s)
 	}
 }
 
@@ -467,7 +476,7 @@ func messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
 				return
 			}
 
-			rg := MakeRaidGroup(raid, *t, s)
+			rg := raid.AddGroup(*t, s)
 			botState.dirty = true
 			s.ChannelMessageSend(privm.ChannelID, "Got it! Created "+rg.String())
 			// once a successful interaction has occurred, remove this callback
@@ -477,19 +486,28 @@ func messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
 		return
 	}
 
-	if m.Emoji.Name == "✅" {
+	if m.Emoji.Name[1:] == boxEmoji {
+		n := m.Emoji.Name[0] - '1'
+
 		botState.mut.Lock()
 		defer botState.mut.Unlock()
 
-		rg, ok := botState.Raidgroups[m.MessageID]
+		raid, ok := botState.Raids[m.MessageID]
 		if !ok {
 			return
 		}
 
+		if n < 0 || n >= uint8(len(raid.Groups)) {
+			return
+		}
+		rg := raid.Groups[n]
+		if rg.Expired {
+			return
+		}
 		rg.Members[m.UserID] = 1
 
 		log.Printf("adding %s to raidgroup %s", m.UserID, rg.String())
-		s.ChannelMessageEdit(rg.raid.ChannelID, rg.MessageID, rg.genMessage())
+		raid.SendUpdate(s)
 		botState.dirty = true
 		return
 	}
@@ -504,14 +522,8 @@ func messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
 		}
 
 		raid.Emoji = "<:" + m.Emoji.Name + ":" + m.Emoji.ID + "> "
-		for _, rg := range botState.Raidgroups {
-			if rg.raid != raid {
-				continue
-			}
-			s.ChannelMessageEdit(rg.raid.ChannelID, rg.MessageID, rg.genMessage())
-		}
 		log.Printf("changing raid emoji: %s", raid.String())
-		s.ChannelMessageEdit(raid.ChannelID, raid.MessageID, raid.genMessage())
+		raid.SendUpdate(s)
 		botState.dirty = true
 
 	}
