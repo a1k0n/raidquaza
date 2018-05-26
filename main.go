@@ -13,6 +13,7 @@ import (
 	"sort"
 	"sync"
 	"encoding/json"
+	"strconv"
 )
 
 const snapshotPath = "rqdata.json"
@@ -501,12 +502,27 @@ func messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
 	}
 }
 
+func expandPokemonAbbr(name string) string {
+	if _, ok := botState.emojiMap["monsterface"]; ok {
+		if len(name) == 2 && strings.ToLower(name[:1]) == "l" {
+			m := "<:monsterface:" + botState.emojiMap["monsterface"] + ">"
+			n, _ := strconv.Atoi(name[1:])
+			return strings.Repeat(m, n)
+		}
+	} else {
+		log.Printf("missing monsterface in emojimap")
+	}
+	return name
+}
+
 func formatGymMatches(gs []*gymdb.Gym) []string {
 	var matches []string
 	for _, g := range gs {
 		matches = append(matches, fmt.Sprintf(
-			"  [gym `%s`] %s <https://www.google.com/maps/?q=%f,%f>", g.Id, g.Name, g.Latitude, g.Longitude))
+			"  [gym `%s`] %s %s <https://www.google.com/maps/?q=%f,%f>",
+			g.Id, g.Name, g.StreetAddr, g.Latitude, g.Longitude))
 	}
+	return matches
 }
 
 func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
@@ -547,7 +563,8 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 		if len(gs) == 1 {
 			g := gs[0]
-			messageData.Content = fmt.Sprintf("<@%s> [gym `%s`] %s", m.Author.ID, g.Id, g.Name)
+			messageData.Content = fmt.Sprintf("<@%s> [gym `%s`] %s | %s",
+				m.Author.ID, g.Id, g.Name, g.StreetAddr)
 			addGymEmbed(g, &messageData)
 		} else {
 			matches := []string{fmt.Sprintf("<@%s> `%s` could be:", m.Author.ID, query)}
@@ -617,7 +634,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 		raid := Raid{
 			Gym:       g,
-			What:      what,
+			What:      expandPokemonAbbr(what),
 			EndTime:   endTime,
 			ChannelID: m.ChannelID,
 		}
