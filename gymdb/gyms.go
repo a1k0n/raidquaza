@@ -6,15 +6,17 @@ import (
 	"log"
 	"bufio"
 	"encoding/json"
+	"strings"
 )
 
 type Gym struct {
-	Id        string  `json:"id"`
-	Name      string  `json:"gym_name"`
-	Latitude  float64 `json:"latitude"`
-	Longitude float64 `json:"longitude"`
-	ImageUrl  string  `json:"url"`
-	Enabled   bool    `json:"enabled"`
+	Id         string  `json:"id"`
+	Name       string  `json:"gym_name"`
+	Latitude   float64 `json:"latitude"`
+	Longitude  float64 `json:"longitude"`
+	ImageUrl   string  `json:"url"`
+	StreetAddr string  `json:"street_addr"`
+	Enabled    bool    `json:"enabled"`
 }
 
 type GymDB struct {
@@ -32,7 +34,7 @@ func NewGymDB(gymfile string) *GymDB {
 	}
 	defer f.Close()
 
-	var gymNames []string
+	var gymKeys []string
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
 		gym := Gym{}
@@ -40,12 +42,13 @@ func NewGymDB(gymfile string) *GymDB {
 		if err != nil {
 			log.Fatal(err)
 		}
-		db.Gyms[gym.Name] = &gym
-		db.Gyms[gym.Id] = &gym
-		gymNames = append(gymNames, gym.Id)
-		gymNames = append(gymNames, gym.Name)
+		gym.StreetAddr = strings.Join(strings.Split(gym.StreetAddr, ",")[:2], ",")
+		// searchable index w/ ids, names, and street addresses
+		key := gym.Id + " " + gym.Name + " " + gym.StreetAddr
+		db.Gyms[key] = &gym
+		gymKeys = append(gymKeys, key)
 	}
-	db.Matcher = closestmatch.New(gymNames, []int{2, 3, 4})
+	db.Matcher = closestmatch.New(gymKeys, []int{2, 3, 4})
 
 	return db
 }
@@ -55,7 +58,7 @@ func (g *GymDB) GetGyms(query string, threshold float32) []*Gym {
 	var closest []*Gym
 	log.Printf("query \"%s\" matches:", query)
 	for i, m := range closestN {
-		if float32(scores[i]) < float32(scores[0]) * threshold {
+		if float32(scores[i]) < float32(scores[0])*threshold {
 			break
 		}
 		closest = append(closest, g.Gyms[m])

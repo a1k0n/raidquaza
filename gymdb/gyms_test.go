@@ -6,8 +6,13 @@ import (
 
 func TestNewGymDB(t *testing.T) {
 	g := NewGymDB("gyms.txt")
-	t.Log(g.GetGym("fawn hills"))
-	t.Log(g.GetGym("frogboy"))
+	t.Log(g.GetGyms("fawn hills", 0.9)[0])
+	t.Log(g.GetGyms("frogboy", 0.9)[0])
+	t.Log(g.GetGyms("denker", 0.9)[0])
+	t.Log(g.GetGyms("val vista denker", 0.9)[0])
+	t.Log(g.GetGyms("fairlands park", 0.9)[0])
+	t.Log(g.GetGyms("sprint pls", 0.9)[0])
+	t.Log(g.GetGyms("sprint dublin", 0.9)[0])
 }
 
 func TestScanGym(t *testing.T) {
@@ -30,4 +35,13 @@ func TestScanGym(t *testing.T) {
 	}
 	t.Logf("(%f,%f) -> (%f,%f) %fx%f", minlat, minlong, maxlat, maxlong, maxlat-minlat, maxlong-minlong)
 	t.Logf("center (%f,%f)", (minlat+maxlat)/2, (minlong+maxlong)/2)
+}
+
+func TestEmoji(t *testing.T) {
+	x := "1⃣"
+	b := []byte(x)
+	t.Log([]byte(x))
+	b[0] = 'A'
+	t.Log(string(b))
+	t.Log(string(b[1:]))
 }
