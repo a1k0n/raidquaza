@@ -26,16 +26,19 @@ type Raid struct {
 	MessageID string       `json:"msg_id"`     // discord pinned message id
 	ChannelID string       `json:"channel_id"` // discord channel pinned in
 	Groups    []*RaidGroup `json:"groups"`
+	expired   bool
 }
 
 var boxEmoji = string([]byte{226, 131, 163})
 
 func (r *Raid) genMessage() string {
 	clockMsg := ""
-	if len(r.Groups) == 0 {
-		clockMsg = "\nClick ⏰ to add a raid group time."
-	} else {
-		clockMsg = "\nClick 🔢 to join group, ⏰ to add new time."
+	if !r.expired {
+		if len(r.Groups) == 0 {
+			clockMsg = "\nClick ⏰ to add a raid group time."
+		} else {
+			clockMsg = "\nClick 🔢 to join group, ⏰ to add new time."
+		}
 	}
 	mapUrl := fmt.Sprintf("https://www.google.com/maps/?q=%f,%f",
 		r.Gym.Latitude, r.Gym.Longitude)
@@ -398,8 +401,13 @@ func (rg *RaidGroup) Cancel(s *discordgo.Session) {
 }
 
 func (r *Raid) Expire(s *discordgo.Session) {
+	if r.expired {
+		return
+	}
+	r.expired = true
 	log.Printf("%s expired.", r.String())
 	s.ChannelMessageUnpin(r.ChannelID, r.MessageID)
+	r.SendUpdate(s)
 	s.MessageReactionsRemoveAll(r.ChannelID, r.MessageID)
 	delete(botState.Raids, r.MessageID)
 	botState.dirty = true

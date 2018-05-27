@@ -7,16 +7,22 @@ import (
 	"bufio"
 	"encoding/json"
 	"strings"
+	"fmt"
 )
 
 type Gym struct {
-	Id         string  `json:"id"`
+	Id         string  `json:"gym_id"`
 	Name       string  `json:"gym_name"`
 	Latitude   float64 `json:"latitude"`
 	Longitude  float64 `json:"longitude"`
 	ImageUrl   string  `json:"url"`
 	StreetAddr string  `json:"street_addr"`
 	Enabled    bool    `json:"enabled"`
+}
+
+func (g *Gym) String() string {
+	return fmt.Sprintf("[gym %s] (%0.7f,%0.7f) %s | %s",
+		g.Id, g.Latitude, g.Longitude, g.Name, g.StreetAddr)
 }
 
 type GymDB struct {
