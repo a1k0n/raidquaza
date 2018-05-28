@@ -457,12 +457,12 @@ func expandPokemonAbbr(name string) string {
 	return name
 }
 
-func formatGymMatches(gs []*gymdb.Gym) []string {
+func formatGymMatches(gs []*gymdb.Gym, scores []float32) []string {
 	var matches []string
-	for _, g := range gs {
+	for i, g := range gs {
 		matches = append(matches, fmt.Sprintf(
-			"  [gym `%s`] %s %s <https://www.google.com/maps/?q=%f,%f>",
-			g.Id, g.Name, g.StreetAddr, g.Latitude, g.Longitude))
+			"  %0.1f%% [gym `%s`] %s %s <https://www.google.com/maps/?q=%f,%f>",
+			scores[i]*100.0, g.Id, g.Name, g.StreetAddr, g.Latitude, g.Longitude))
 	}
 	return matches
 }
@@ -495,7 +495,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 	if splitMsg[0] == "!info" {
 		query := strings.Join(splitMsg[1:], " ")
-		gs := botState.gymdb.GetGyms(query, 0.5)
+		gs, scores := botState.gymdb.GetGyms(query, 0.5)
 		if len(gs) == 0 {
 			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> couldn't find a matching gym")
 			return
@@ -510,7 +510,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			addGymEmbed(g, &messageData)
 		} else {
 			matches := []string{fmt.Sprintf("<@%s> `%s` could be:", m.Author.ID, query)}
-			matches = append(matches, formatGymMatches(gs)...)
+			matches = append(matches, formatGymMatches(gs, scores)...)
 			messageData.Content = strings.Join(matches, "\n")
 		}
 
@@ -537,7 +537,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			}
 		}
 		what := splitMsg[1]
-		gs := botState.gymdb.GetGyms(strings.Join(splitMsg[2:locEnd], " "), 1.0)
+		gs, scores := botState.gymdb.GetGyms(strings.Join(splitMsg[2:locEnd], " "), 1.0)
 		if len(gs) == 0 { // no matches?
 			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> Couldn't find a gym matching \"%s\"",
 				m.Author.ID, splitMsg[1:locEnd]))
@@ -545,7 +545,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		}
 		if len(gs) > 1 { // multiple potential matches?
 			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> Which gym did you mean?\n%s",
-				m.Author.ID, strings.Join(formatGymMatches(gs), "\n")))
+				m.Author.ID, strings.Join(formatGymMatches(gs, scores), "\n")))
 			return
 		}
 
