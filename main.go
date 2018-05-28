@@ -10,138 +10,22 @@ import (
 	"strings"
 	"raidquaza/gymdb"
 	"time"
-	"sort"
 	"sync"
 	"encoding/json"
 	"strconv"
+	"raidquaza/raid"
 )
 
 const snapshotPath = "rqdata.json"
 
-type Raid struct {
-	Gym       *gymdb.Gym   `json:"gym"`
-	What      string       `json:"what"`
-	Emoji     string       `json:"emoji"` // latest reaction emoji, can indicate which pokemon
-	EndTime   time.Time    `json:"end_time"`
-	MessageID string       `json:"msg_id"`     // discord pinned message id
-	ChannelID string       `json:"channel_id"` // discord channel pinned in
-	Groups    []*RaidGroup `json:"groups"`
-	expired   bool
-}
-
 var boxEmoji = string([]byte{226, 131, 163})
-
-func (r *Raid) genMessage() string {
-	clockMsg := ""
-	if !r.expired {
-		if len(r.Groups) == 0 {
-			clockMsg = "\nClick ⏰ to add a raid group time."
-		} else {
-			clockMsg = "\nClick 🔢 to join group, ⏰ to add new time."
-		}
-	}
-	mapUrl := fmt.Sprintf("https://www.google.com/maps/?q=%f,%f",
-		r.Gym.Latitude, r.Gym.Longitude)
-	var groupMsgs []string
-	for n, rg := range r.Groups {
-		groupMsgs = append(groupMsgs, rg.genMessage(n+1))
-	}
-	return fmt.Sprintf("**%s%s** expires %s\n%s | %s %s%s\n%s",
-		r.Emoji, r.What, r.EndTime.Format("3:04 PM"), r.Gym.Name,
-		r.Gym.StreetAddr, mapUrl, clockMsg, strings.Join(groupMsgs, "\n"))
-}
-
-func (r *Raid) String() string {
-	return fmt.Sprintf("%s%s raid at %s until %s", r.Emoji, r.What, r.Gym.Name, r.EndTime.Format("3:04 PM"))
-}
-
-func (r *Raid) SendUpdate(s *discordgo.Session) {
-	s.ChannelMessageEdit(r.ChannelID, r.MessageID, r.genMessage())
-}
-
-type RaidGroup struct {
-	raid      *Raid
-	number    int
-	StartTime time.Time      `json:"start_time"`
-	Members   map[string]int `json:"members"` // discord userid set
-	Expired   bool           `json:"expired"`
-}
-
-func (rg *RaidGroup) String() string {
-	return fmt.Sprintf("%s%s raid at %s starting %s, ends %s", rg.raid.Emoji, rg.raid.What,
-		rg.raid.Gym.Name, rg.StartTime.Format("3:04 PM"),
-		rg.raid.EndTime.Format("3:04 PM"))
-}
-
-func (rg *RaidGroup) Total() int {
-	total := 0
-	for _, n := range rg.Members {
-		total += n
-	}
-	return total
-}
-
-func (rg *RaidGroup) genMessage(n int) string {
-	startTime := rg.StartTime.Format("3:04 PM")
-	strikeThru := ""
-	if rg.Expired {
-		strikeThru = "~~"
-	}
-	return fmt.Sprintf("%d%s %s**%s** | %d attending: %s%s",
-		n, boxEmoji, strikeThru, startTime, rg.Total(), rg.Mentions(), strikeThru)
-}
-
-func (rg *RaidGroup) Mentions() string {
-	var mentions []string
-	for mem, n := range rg.Members {
-		if n > 1 {
-			mentions = append(mentions, fmt.Sprintf("<@%s> (x%d)", mem, n))
-		} else {
-			mentions = append(mentions, "<@"+mem+">")
-		}
-	}
-	sort.Strings(mentions)
-	return strings.Join(mentions, " ")
-}
-
-func (r *Raid) AddGroup(startTime time.Time, s *discordgo.Session) *RaidGroup {
-	n := len(r.Groups) + 1
-	rg := &RaidGroup{
-		raid:      r,
-		number:    n,
-		StartTime: startTime,
-		Members:   make(map[string]int),
-	}
-	r.Groups = append(r.Groups, rg)
-	s.MessageReactionAdd(r.ChannelID, r.MessageID, fmt.Sprintf("%d%s", n, boxEmoji))
-	s.MessageReactionAdd(r.ChannelID, r.MessageID, "➕")
-	s.MessageReactionAdd(r.ChannelID, r.MessageID, "➖")
-	r.SendUpdate(s)
-
-	return rg
-}
-
-// add embedded map to discord message
-func addGymEmbed(g *gymdb.Gym, msg *discordgo.MessageSend) {
-	msg.Embed = &discordgo.MessageEmbed{
-		Title: g.Name,
-		URL:   fmt.Sprintf("https://www.google.com/maps/?q=%f,%f", g.Latitude, g.Longitude),
-		Image: &discordgo.MessageEmbedImage{
-			// URL: g.ImageUrl,
-			URL: fmt.Sprintf("https://maps.googleapis.com/maps/api/staticmap?center=%f,%f&markers=%f,%f&size=300x200&zoom=14",
-				g.Latitude, g.Longitude, g.Latitude, g.Longitude),
-			Width:  300,
-			Height: 200,
-		},
-	}
-}
 
 type BotState struct {
 	emojiMap     map[string]string // emoji name -> emoji id
 	channelCache map[string]string // userid -> privmsg channel id
 	gymdb        *gymdb.GymDB
 
-	Raids map[string]*Raid `json:"raids"` // message id -> raid
+	Raids map[string]*raid.Raid `json:"raids"` // message id -> raid
 
 	channelCallbacks map[string]func(*discordgo.Session, *discordgo.MessageCreate)
 
@@ -183,14 +67,27 @@ func (bs *BotState) Load(path string) error {
 	}
 
 	// fixup raid pointers not serialized
-	for _, raid := range bs.Raids {
-		for _, rg := range raid.Groups {
-			rg.raid = raid
-		}
+	for _, r := range bs.Raids {
+		r.UpdateGroupPointers()
 	}
 
 	log.Printf("Successfully loaded shapshot %s", path)
 	return nil
+}
+
+// add embedded map to discord message
+func addGymEmbed(g *gymdb.Gym, msg *discordgo.MessageSend) {
+	msg.Embed = &discordgo.MessageEmbed{
+		Title: g.Name,
+		URL:   fmt.Sprintf("https://www.google.com/maps/?q=%f,%f", g.Latitude, g.Longitude),
+		Image: &discordgo.MessageEmbedImage{
+			// URL: g.ImageUrl,
+			URL: fmt.Sprintf("https://maps.googleapis.com/maps/api/staticmap?center=%f,%f&markers=%f,%f&size=300x200&zoom=14",
+				g.Latitude, g.Longitude, g.Latitude, g.Longitude),
+			Width:  300,
+			Height: 200,
+		},
+	}
 }
 
 func (bs *BotState) ExpireOld(s *discordgo.Session, t time.Time) {
@@ -245,7 +142,7 @@ func main() {
 		channelCache: make(map[string]string),
 		gymdb:        gymdb.NewGymDB("gymdb/gyms.txt"),
 
-		Raids:            make(map[string]*Raid),
+		Raids:            make(map[string]*raid.Raid),
 		channelCallbacks: make(map[string]func(*discordgo.Session, *discordgo.MessageCreate)),
 	}
 
@@ -370,47 +267,6 @@ func messageReactionRemove(s *discordgo.Session, m *discordgo.MessageReactionRem
 		botState.dirty = true
 		return
 	}
-}
-
-func (rg *RaidGroup) Expire(s *discordgo.Session) {
-	if rg.Expired {
-		return
-	}
-	rg.Expired = true
-	log.Printf("%s expired.", rg.String())
-	if len(rg.Members) > 0 {
-		s.ChannelMessageSend(rg.raid.ChannelID, fmt.Sprintf("%s %s raid at %s starting now!",
-			rg.Mentions(), rg.StartTime.Format("3:04PM"), rg.raid.Gym.Name))
-		emoji := fmt.Sprintf("%d%s", rg.number, boxEmoji)
-		s.MessageReactionRemove(rg.raid.ChannelID, rg.raid.MessageID, emoji, s.State.User.ID)
-		for userId := range rg.Members {
-			s.MessageReactionRemove(rg.raid.ChannelID, rg.raid.MessageID, emoji, userId)
-		}
-	}
-	botState.dirty = true
-}
-
-func (rg *RaidGroup) Cancel(s *discordgo.Session) {
-	log.Printf("%s deleted.", rg.String())
-	if len(rg.Members) > 0 {
-		s.ChannelMessageSend(rg.raid.ChannelID, fmt.Sprintf("%s %s was cancelled",
-			rg.Mentions(), rg.String()))
-	}
-
-	botState.dirty = true
-}
-
-func (r *Raid) Expire(s *discordgo.Session) {
-	if r.expired {
-		return
-	}
-	r.expired = true
-	log.Printf("%s expired.", r.String())
-	s.ChannelMessageUnpin(r.ChannelID, r.MessageID)
-	r.SendUpdate(s)
-	s.MessageReactionsRemoveAll(r.ChannelID, r.MessageID)
-	delete(botState.Raids, r.MessageID)
-	botState.dirty = true
 }
 
 func messageDelete(s *discordgo.Session, m *discordgo.MessageDelete) {
@@ -718,7 +574,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			endTime = endTime.Add(dur)
 		}
 
-		raid := Raid{
+		raid := raid.Raid{
 			Gym:       g,
 			What:      expandPokemonAbbr(what),
 			EndTime:   endTime,
@@ -726,7 +582,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		}
 
 		messageData := discordgo.MessageSend{
-			Content: raid.genMessage(),
+			Content: raid.GenMessage(),
 		}
 		addGymEmbed(g, &messageData)
 
