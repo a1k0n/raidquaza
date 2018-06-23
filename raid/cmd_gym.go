@@ -38,6 +38,23 @@ func (bs *BotState) gymCommand(s *discordgo.Session, m *discordgo.MessageCreate,
 			m.Author.ID, gym.Id, gym.Name, gym.StreetAddr)
 		addGymEmbed(gym, &messageData)
 		s.ChannelMessageSendComplex(m.ChannelID, &messageData)
+	case "remove":
+		gs, _ := bs.gymdb.GetGyms(query, 1.0)
+		if len(gs) == 0 {
+			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> couldn't find a matching gym")
+			return
+		}
+		if len(gs) != 1 {
+			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> Which gym did you mean?\n%s",
+				m.Author.ID, strings.Join(formatGymMatches(gs, nil), "\n")))
+			return
+		}
+		err := bs.gymdb.RemoveGym(gs[0])
+		if err != nil {
+			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> error: " + err.Error())
+			return
+		}
+		s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> gym deleted: " + gs[0].String())
 	case "save": // undocumented
 		log.Print("Resaving gymdb")
 		err := bs.gymdb.UpdateDiskDB()

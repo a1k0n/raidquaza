@@ -13,6 +13,7 @@ import (
 	"encoding/binary"
 	"io"
 	"sort"
+	"errors"
 )
 
 type Gym struct {
@@ -94,6 +95,9 @@ func (g *GymDB) SaveGyms(w io.Writer) error {
 		sortedGyms = append(sortedGyms, gym)
 	}
 	sort.Slice(sortedGyms, func(i, j int) bool {
+		if sortedGyms[i].Name == sortedGyms[j].Name {
+			return sortedGyms[i].Id < sortedGyms[j].Id
+		}
 		return sortedGyms[i].Name < sortedGyms[j].Name
 	})
 	for _, gym := range sortedGyms {
@@ -179,4 +183,19 @@ func (g *GymDB) AddGym(lat, lon float64, name string) (*Gym, error) {
 	}
 
 	return gym, nil
+}
+
+func (g *GymDB) RemoveGym(gym *Gym) error {
+	key := gym.Id + " " + gym.Name + " " + gym.StreetAddr
+	_, ok := g.Gyms[key]
+	if !ok {
+		return errors.New("can't find gym in DB")
+	}
+	delete(g.Gyms, key)
+	g.UpdateSearchDB()
+	err := g.UpdateDiskDB()
+	if err != nil {
+		return err
+	}
+	return nil
 }

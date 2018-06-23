@@ -468,7 +468,8 @@ func (bs *BotState) maybeProcessCommand(s *discordgo.Session, m *discordgo.Messa
 		bs.gymCommand(s, m, splitMsg[1])
 	case "gymhelp":
 		_, err := s.ChannelMessageSend(m.ChannelID, "Syntax:\n"+
-			"`!gym new <lat,lon> Gym Name` - Create a new gym")
+			"`!gym new <lat,lon> Gym Name` - Create a new gym\n"+
+			"`!gym remove <gym name/id>` - Remove a gym")
 		if err != nil {
 			log.Print(err)
 		}
