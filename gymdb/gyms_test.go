@@ -2,6 +2,7 @@ package gymdb
 
 import (
 	"testing"
+	"bytes"
 )
 
 func TestNewGymDB(t *testing.T) {
@@ -47,4 +48,23 @@ func TestEmoji(t *testing.T) {
 	b[0] = 'A'
 	t.Log(string(b))
 	t.Log(string(b[1:]))
+}
+
+func TestGymDB_SaveGyms(t *testing.T) {
+	g := NewGymDB("gyms.txt")
+	t.Log(len(g.Gyms))
+	buf := bytes.NewBuffer(make([]byte, 0))
+	g.SaveGyms(buf)
+	roundTrip1 := buf.String()
+
+	g = &GymDB{Gyms: make(map[string]*Gym)}
+	g.LoadGyms(buf)
+	t.Log(len(g.Gyms))
+
+	buf = bytes.NewBuffer(make([]byte, 0))
+	g.SaveGyms(buf)
+	roundTrip2 := buf.String()
+	if roundTrip1 != roundTrip2 {
+		t.Fail()
+	}
 }

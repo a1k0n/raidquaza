@@ -19,7 +19,7 @@ type ActiveMessage interface {
 	OnMessageDelete(bs *BotState, s *discordgo.Session, m *discordgo.MessageDelete)
 }
 
-const commandLeader = "!" // all commands to the botbegin with this character
+const commandLeader = "$" // all commands to the botbegin with this character
 
 type BotState struct {
 	emojiMap     map[string]string // emoji name -> emoji id
@@ -464,6 +464,14 @@ func (bs *BotState) maybeProcessCommand(s *discordgo.Session, m *discordgo.Messa
 		log.Print(string(m))
 	case "scan":
 		bs.scanCommand(s, m, splitMsg[1])
+	case "gym":
+		bs.gymCommand(s, m, splitMsg[1])
+	case "gymhelp":
+		_, err := s.ChannelMessageSend(m.ChannelID, "Syntax:\n"+
+			"`!gym new <lat,lon> Gym Name` - Create a new gym")
+		if err != nil {
+			log.Print(err)
+		}
 	}
 }
 

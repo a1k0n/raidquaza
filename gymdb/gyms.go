@@ -8,6 +8,11 @@ import (
 	"encoding/json"
 	"strings"
 	"fmt"
+	"encoding/hex"
+	"math/rand"
+	"encoding/binary"
+	"io"
+	"sort"
 )
 
 type Gym struct {
@@ -25,6 +30,14 @@ type Gym struct {
 func canonicalizeName(q string) string {
 	q = strings.Replace(q, "'", "’", -1)
 	return q
+}
+
+func genId() string {
+	var hexBytes [8]byte
+	var valueBytes [4]byte
+	binary.LittleEndian.PutUint32(valueBytes[:], uint32(rand.Int63() & 0xffffffff))
+	hex.Encode(hexBytes[:], valueBytes[:])
+	return string(hexBytes[:])
 }
 
 func (g *Gym) String() string {
@@ -47,24 +60,77 @@ func NewGymDB(gymfile string) *GymDB {
 	}
 	defer f.Close()
 
-	var gymKeys []string
-	scanner := bufio.NewScanner(f)
+	err = db.LoadGyms(f)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return db
+}
+
+func (g *GymDB) LoadGyms(r io.Reader) error {
+	scanner := bufio.NewScanner(r)
 	for scanner.Scan() {
 		gym := Gym{}
 		err := json.Unmarshal(scanner.Bytes(), &gym)
 		if err != nil {
-			log.Fatal(err)
+			return err
 		}
 		gym.Name = canonicalizeName(gym.Name)
 		gym.StreetAddr = strings.Join(strings.Split(gym.StreetAddr, ",")[:2], ",")
 		// searchable index w/ ids, names, and street addresses
 		key := gym.Id + " " + gym.Name + " " + gym.StreetAddr
-		db.Gyms[key] = &gym
-		gymKeys = append(gymKeys, key)
+		g.Gyms[key] = &gym
 	}
-	db.Matcher = closestmatch.New(gymKeys, []int{2, 3, 4})
+	g.UpdateSearchDB()
 
-	return db
+	return nil
+}
+
+func (g *GymDB) SaveGyms(w io.Writer) error {
+	sortedGyms := make([]*Gym, 0, len(g.Gyms))
+	for _, gym := range g.Gyms {
+		sortedGyms = append(sortedGyms, gym)
+	}
+	sort.Slice(sortedGyms, func(i, j int) bool {
+		return sortedGyms[i].Name < sortedGyms[j].Name
+	})
+	for _, gym := range sortedGyms {
+		data, err := json.Marshal(&gym)
+		if err != nil {
+			return err
+		}
+		w.Write(data)
+		w.Write([]byte("\n"))
+	}
+	return nil
+}
+
+func (g *GymDB) UpdateDiskDB(fname string) error {
+	tmpName := fname + ".tmp"
+	f, err := os.Create(tmpName)
+	if err != nil {
+		return err
+	}
+	err = g.SaveGyms(f)
+	if err != nil {
+		return err
+	}
+	f.Close()
+
+	os.Remove(fname)
+	err = os.Rename(tmpName, fname)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (g *GymDB) UpdateSearchDB() {
+	gymKeys := make([]string, 0, len(g.Gyms))
+	for k := range g.Gyms {
+		gymKeys = append(gymKeys, k)
+	}
+	g.Matcher = closestmatch.New(gymKeys, []int{2, 3, 4})
 }
 
 func (g *GymDB) GetGyms(query string, threshold float32) ([]*Gym, []float32) {
@@ -86,4 +152,25 @@ func (g *GymDB) GetGyms(query string, threshold float32) ([]*Gym, []float32) {
 		normScores[i] /= normSum
 	}
 	return closest, normScores
+}
+
+func (g *GymDB) AddGym(lat, lon float64, name string) (*Gym, error) {
+	streetAddr, err := GetStreetAddress(lat, lon)
+	if err != nil {
+		return nil, err
+	}
+	gym := &Gym{
+		Id: genId(),
+		Latitude: lat,
+		Longitude: lon,
+		StreetAddr: strings.Join(strings.Split(streetAddr, ",")[:2], ","),
+		Name: canonicalizeName(name),
+		Enabled: true,
+	}
+	key := gym.Id + " " + gym.Name + " " + gym.StreetAddr
+	g.Gyms[key] = gym
+
+	g.UpdateSearchDB()
+
+	return gym, nil
 }

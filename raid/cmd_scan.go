@@ -5,18 +5,15 @@ import (
 	"fmt"
 	"strings"
 	"log"
-	"strconv"
 	"raidquaza/gymdb"
+	"raidquaza/util"
 )
 
 func (bs *BotState) scanCommand(s *discordgo.Session, m *discordgo.MessageCreate, query string) {
-	q := strings.Split(query, ",")
-	if len(q) < 2 {
-		s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> use !scan latitude,longitude")
-		return
+	lat, lon, _, err := util.ParseLatLong(strings.Split(query, " "))
+	if err != nil {
+		s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> can't parse your lat/lon; example: -37.123,121.85")
 	}
-	lat, err := strconv.ParseFloat(strings.TrimSpace(q[0]), 64)
-	lon, err := strconv.ParseFloat(strings.TrimSpace(q[1]), 64)
 
 	gyms, err := gymdb.ScrapeGymhuntr(lat, lon)
 	if err != nil {

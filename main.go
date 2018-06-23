@@ -7,28 +7,14 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"strings"
 	"raidquaza/raid"
+	"raidquaza/util"
 )
 
 const snapshotPath = "rqdata.json"
 
-func loadAuthToken() string {
-	f, err := os.Open("authtoken.txt")
-	if err != nil {
-		log.Fatal("authtoken.txt", err)
-	}
-	defer f.Close()
-	buf := make([]byte, 256)
-	n, err := f.Read(buf)
-	if err != nil {
-		log.Fatal(err)
-	}
-	return strings.TrimSpace(string(buf[:n]))
-}
-
 func main() {
-	dg, err := discordgo.New("Bot " + loadAuthToken())
+	dg, err := discordgo.New("Bot " + util.LoadAuthToken("authtoken.txt"))
 
 	if err != nil {
 		log.Fatal(err)
