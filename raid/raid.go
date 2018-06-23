@@ -10,16 +10,19 @@ import (
 )
 
 type Raid struct {
-	Gym       *gymdb.Gym `json:"gym"`
-	What      string     `json:"what"`
-	Emoji     string     `json:"emoji"` // latest reaction emoji, can indicate which pokemon
-	EndTime   time.Time  `json:"end_time"`
-	MessageID string     `json:"msg_id"`     // discord pinned message id
-	ChannelID string     `json:"channel_id"` // discord channel pinned in
-	Groups    []*Group   `json:"groups"`
-	expired   bool
+	Gym          *gymdb.Gym `json:"gym"`
+	What         string     `json:"what"`
+	Emoji        string     `json:"emoji"` // latest reaction emoji, can indicate which pokemon
+	EndTime      time.Time  `json:"end_time"`
+	MessageID    string     `json:"msg_id"`     // discord pinned message id
+	ChannelID    string     `json:"channel_id"` // discord channel pinned in
+	Groups       []*Group   `json:"groups"`
+	Hatched      bool       `json:"hatched"`
+	RequestMsgID string     `json:"req_msg_id"`
+	expired      bool
 }
 
+// unicode to draw a box around the preceding character; with 1..9 forms a number emoji
 var boxEmoji = string([]byte{226, 131, 163})
 
 func (r *Raid) GenMessage() string {
@@ -47,7 +50,10 @@ func (r *Raid) String() string {
 }
 
 func (r *Raid) SendUpdate(s *discordgo.Session) {
-	s.ChannelMessageEdit(r.ChannelID, r.MessageID, r.GenMessage())
+	_, err := s.ChannelMessageEdit(r.ChannelID, r.MessageID, r.GenMessage())
+	if err != nil {
+		log.Print(err)
+	}
 }
 
 func (r *Raid) AddGroup(startTime time.Time, s *discordgo.Session) *Group {
@@ -59,9 +65,11 @@ func (r *Raid) AddGroup(startTime time.Time, s *discordgo.Session) *Group {
 		Members:   make(map[string]int),
 	}
 	r.Groups = append(r.Groups, rg)
+	if n == 1 {
+		s.MessageReactionAdd(r.ChannelID, r.MessageID, "➕")
+		s.MessageReactionAdd(r.ChannelID, r.MessageID, "➖")
+	}
 	s.MessageReactionAdd(r.ChannelID, r.MessageID, fmt.Sprintf("%d%s", n, boxEmoji))
-	s.MessageReactionAdd(r.ChannelID, r.MessageID, "➕")
-	s.MessageReactionAdd(r.ChannelID, r.MessageID, "➖")
 	r.SendUpdate(s)
 
 	return rg
@@ -81,5 +89,11 @@ func (r *Raid) Expire(s *discordgo.Session) {
 func (r *Raid) UpdateGroupPointers() {
 	for _, rg := range r.Groups {
 		rg.raid = r
+	}
+}
+
+func (r *Raid) OnReactionAdd(bs *BotState, s *discordgo.Session, m *discordgo.MessageReactionAdd) {
+	if m.Emoji.Name == "⏰" {
+		// start private message session to add a time
 	}
 }

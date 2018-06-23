@@ -6,13 +6,16 @@ import (
 
 func TestNewGymDB(t *testing.T) {
 	g := NewGymDB("gyms.txt")
-	t.Log(g.GetGyms("fawn hills", 0.9)[0])
+	gyms, _ := g.GetGyms("fawn hills", 0.9)
+	t.Log(gyms[0])
+	/*
 	t.Log(g.GetGyms("frogboy", 0.9)[0])
 	t.Log(g.GetGyms("denker", 0.9)[0])
 	t.Log(g.GetGyms("val vista denker", 0.9)[0])
 	t.Log(g.GetGyms("fairlands park", 0.9)[0])
 	t.Log(g.GetGyms("sprint pls", 0.9)[0])
 	t.Log(g.GetGyms("sprint dublin", 0.9)[0])
+	*/
 }
 
 func TestScanGym(t *testing.T) {
