@@ -6,6 +6,8 @@ import (
 	"errors"
 	"time"
 	"fmt"
+	"strconv"
+	"log"
 )
 
 const RaidDuration = 45 * time.Minute // time raid lasts after hatching
@@ -15,6 +17,19 @@ var (
 	ErrNoMatches = errors.New("no matches for gym query")
 	ErrNonUnique = errors.New("too many gyms match query")
 )
+
+func expandPokemonAbbr(name string) string {
+	if _, ok := globalEmojiMap["monsterface"]; ok {
+		if len(name) == 2 && strings.ToLower(name[:1]) == "l" {
+			m := "<:monsterface:" + globalEmojiMap["monsterface"] + ">"
+			n, _ := strconv.Atoi(name[1:])
+			return strings.Repeat(m, n)
+		}
+	} else {
+		log.Printf("missing monsterface in emojimap")
+	}
+	return name
+}
 
 func fuzzyTime(query string, beginTime time.Time) (time.Time, error) {
 	// interpret query time as the latest time before endTime
@@ -139,7 +154,7 @@ func (r *Raid) ParseRaidRequest(req string, gdb *gymdb.GymDB, timebase time.Time
 	}
 	r.Hatched = endTime.Add(-RaidDuration).After(timebase)
 	r.Gym = matches[0]
-	r.What = strings.Join(pokemon, " ")
+	r.What = expandPokemonAbbr(strings.Join(pokemon, " "))
 
 	if startSpec != nil {
 		startTime, err := parseTimeSpec(startSpec, timebase)
