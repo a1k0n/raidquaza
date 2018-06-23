@@ -19,7 +19,7 @@ type ActiveMessage interface {
 	OnMessageDelete(bs *BotState, s *discordgo.Session, m *discordgo.MessageDelete)
 }
 
-const commandLeader = "$" // all commands to the botbegin with this character
+const commandLeader = "!" // all commands to the botbegin with this character
 
 type BotState struct {
 	emojiMap     map[string]string // emoji name -> emoji id
