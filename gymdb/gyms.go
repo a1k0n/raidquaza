@@ -39,6 +39,10 @@ func canonicalizeName(q string) string {
 	return q
 }
 
+func canonicalizeQuery(q string) string {
+	return strings.ToLower(canonicalizeName(q))
+}
+
 func genId() string {
 	var hexBytes [8]byte
 	var valueBytes [4]byte
@@ -50,6 +54,10 @@ func genId() string {
 func (g *Gym) String() string {
 	return fmt.Sprintf("[gym %s] (%0.7f,%0.7f) %s | %s",
 		g.Id, g.Latitude, g.Longitude, g.Name, g.StreetAddr)
+}
+
+func (g *Gym) SearchKey() string {
+	return g.Id + " " + strings.ToLower(g.Name) + " " + strings.ToLower(g.StreetAddr)
 }
 
 func NewGymDB(gymfile string) *GymDB {
@@ -81,7 +89,7 @@ func (g *GymDB) LoadGyms(r io.Reader) error {
 		gym.Name = canonicalizeName(gym.Name)
 		gym.StreetAddr = strings.Join(strings.Split(gym.StreetAddr, ",")[:2], ",")
 		// searchable index w/ ids, names, and street addresses
-		key := gym.Id + " " + gym.Name + " " + gym.StreetAddr
+		key := gym.SearchKey()
 		g.Gyms[key] = &gym
 	}
 	g.UpdateSearchDB()
@@ -140,7 +148,7 @@ func (g *GymDB) UpdateSearchDB() {
 }
 
 func (g *GymDB) GetGyms(query string, threshold float32) ([]*Gym, []float32) {
-	closestN, scores := g.Matcher.ClosestN(canonicalizeName(query), 10)
+	closestN, scores := g.Matcher.ClosestN(canonicalizeQuery(query), 10)
 	var closest []*Gym
 	var normScores []float32
 	var normSum float32
@@ -173,7 +181,7 @@ func (g *GymDB) AddGym(lat, lon float64, name string) (*Gym, error) {
 		Name:       canonicalizeName(name),
 		Enabled:    true,
 	}
-	key := gym.Id + " " + gym.Name + " " + gym.StreetAddr
+	key := gym.SearchKey()
 	g.Gyms[key] = gym
 
 	g.UpdateSearchDB()
@@ -186,7 +194,7 @@ func (g *GymDB) AddGym(lat, lon float64, name string) (*Gym, error) {
 }
 
 func (g *GymDB) RemoveGym(gym *Gym) error {
-	key := gym.Id + " " + gym.Name + " " + gym.StreetAddr
+	key := gym.SearchKey()
 	_, ok := g.Gyms[key]
 	if !ok {
 		return errors.New("can't find gym in DB")
@@ -194,6 +202,51 @@ func (g *GymDB) RemoveGym(gym *Gym) error {
 	delete(g.Gyms, key)
 	g.UpdateSearchDB()
 	err := g.UpdateDiskDB()
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (g *GymDB) RenameGym(gym *Gym, name string) error {
+	oldKey := gym.SearchKey()
+	_, ok := g.Gyms[oldKey]
+	if !ok {
+		return errors.New("can't find gym in DB")
+	}
+	delete(g.Gyms, oldKey)
+	gym.Name = canonicalizeName(name)
+	key := gym.SearchKey()
+	g.Gyms[key] = gym
+	g.UpdateSearchDB()
+	err := g.UpdateDiskDB()
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (g *GymDB) MoveGym(gym *Gym, lat, lon float64) error {
+	newStreetAddr, err := GetStreetAddress(lat, lon)
+	if err != nil {
+		return err
+	}
+
+	oldKey := gym.SearchKey()
+	_, ok := g.Gyms[oldKey]
+	if !ok {
+		return errors.New("can't find gym in DB")
+	}
+	delete(g.Gyms, oldKey)
+	gym.Latitude = lat
+	gym.Longitude = lon
+	gym.StreetAddr = strings.Join(strings.Split(
+		newStreetAddr, ",")[:2], ",")
+
+	key := gym.SearchKey()
+	g.Gyms[key] = gym
+	g.UpdateSearchDB()
+	err = g.UpdateDiskDB()
 	if err != nil {
 		return err
 	}

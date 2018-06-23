@@ -29,7 +29,7 @@ func (bs *BotState) gymCommand(s *discordgo.Session, m *discordgo.MessageCreate,
 		}
 		gym, err := bs.gymdb.AddGym(lat, lon, strings.Join(tokens[1+n:], " "))
 		if err != nil {
-			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> " + err.Error())
+			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> "+err.Error())
 			log.Print("AddGym error: ", err.Error())
 			return
 		}
@@ -51,15 +51,71 @@ func (bs *BotState) gymCommand(s *discordgo.Session, m *discordgo.MessageCreate,
 		}
 		err := bs.gymdb.RemoveGym(gs[0])
 		if err != nil {
-			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> error: " + err.Error())
+			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> error: "+err.Error())
 			return
 		}
-		s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> gym deleted: " + gs[0].String())
+		s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> gym deleted: "+gs[0].String())
+	case "edit":
+		q := strings.Split(query, " ")
+		var gymquery []string
+		var newname []string
+		var newloc []string
+		for i := len(q) - 1; i >= 0; i-- {
+			if q[i] == "name" {
+				gymquery = q[:i]
+				newname = q[i+1:]
+			} else if q[i] == "location" {
+				gymquery = q[:i]
+				newloc = q[i+1:]
+			}
+		}
+		if gymquery == nil {
+			s.ChannelMessageSend(m.ChannelID, "<@" + m.Author.ID+
+				"> use `!gym edit <gym name/id> name <new name>`\n"+
+				" or `!gym edit <gym name/id> location <lat,lon>")
+			return
+		}
+		gs, _ := bs.gymdb.GetGyms(strings.Join(gymquery, " "), 1.0)
+		if len(gs) == 0 {
+			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> couldn't find a matching gym")
+			return
+		}
+		if len(gs) != 1 {
+			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> Which gym did you mean?\n%s",
+				m.Author.ID, strings.Join(formatGymMatches(gs, nil), "\n")))
+			return
+		}
+		if newname != nil {
+			oldName := gs[0].Name
+			err := bs.gymdb.RenameGym(gs[0], strings.Join(newname, " "))
+			if err != nil {
+				s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> "+err.Error())
+				return
+			}
+			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<%s> Renamed `%s` to `%s`!",
+				m.Author.ID, oldName, gs[0].Name))
+		}
+		if newloc != nil {
+			lat, lon, _, err := util.ParseLatLong(newloc)
+			if err != nil {
+				s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> couldn't understand the new location")
+				return
+			}
+			oldLoc := fmt.Sprintf("%f,%f (%s)", gs[0].Latitude, gs[0].Longitude, gs[0].StreetAddr)
+			err = bs.gymdb.MoveGym(gs[0], lat, lon)
+			if err != nil {
+				s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> "+err.Error())
+				return
+			}
+			newLoc := fmt.Sprintf("%f,%f (%s)", gs[0].Latitude, gs[0].Longitude, gs[0].StreetAddr)
+			s.ChannelMessageSend(m.ChannelID, "<@" + m.Author.ID + "> Moved "+
+				gs[0].Name+ " from "+ oldLoc+ " to "+ newLoc)
+		}
 	case "save": // undocumented
 		log.Print("Resaving gymdb")
 		err := bs.gymdb.UpdateDiskDB()
 		if err != nil {
-			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> " + err.Error())
+			s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> "+err.Error())
 			return
 		}
 		s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> gym DB saved.")
