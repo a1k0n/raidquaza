@@ -590,6 +590,8 @@ func (bs *BotState) maybeProcessCommand(s *discordgo.Session, m *discordgo.Messa
 			log.Print(err)
 		}
 		log.Print(string(m))
+	case "scan":
+		bs.scanCommand(s, m, splitMsg[1])
 	}
 }
 
