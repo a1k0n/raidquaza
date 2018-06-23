@@ -25,6 +25,12 @@ type Gym struct {
 	Enabled    bool    `json:"enabled"`
 }
 
+type GymDB struct {
+	Gyms     map[string]*Gym // map of gym full name -> gym itself
+	Matcher  *closestmatch.ClosestMatch
+	Filename string
+}
+
 // we need to fix the apostrophes in the names and in the queries so that
 // fancy apostrophes don't prevent matches
 func canonicalizeName(q string) string {
@@ -35,7 +41,7 @@ func canonicalizeName(q string) string {
 func genId() string {
 	var hexBytes [8]byte
 	var valueBytes [4]byte
-	binary.LittleEndian.PutUint32(valueBytes[:], uint32(rand.Int63() & 0xffffffff))
+	binary.LittleEndian.PutUint32(valueBytes[:], uint32(rand.Int63()&0xffffffff))
 	hex.Encode(hexBytes[:], valueBytes[:])
 	return string(hexBytes[:])
 }
@@ -45,14 +51,10 @@ func (g *Gym) String() string {
 		g.Id, g.Latitude, g.Longitude, g.Name, g.StreetAddr)
 }
 
-type GymDB struct {
-	Gyms    map[string]*Gym // map of gym full name -> gym itself
-	Matcher *closestmatch.ClosestMatch
-}
-
 func NewGymDB(gymfile string) *GymDB {
 	db := &GymDB{
-		Gyms: make(map[string]*Gym),
+		Gyms:     make(map[string]*Gym),
+		Filename: gymfile,
 	}
 	f, err := os.Open(gymfile)
 	if err != nil {
@@ -105,8 +107,8 @@ func (g *GymDB) SaveGyms(w io.Writer) error {
 	return nil
 }
 
-func (g *GymDB) UpdateDiskDB(fname string) error {
-	tmpName := fname + ".tmp"
+func (g *GymDB) UpdateDiskDB() error {
+	tmpName := g.Filename + ".tmp"
 	f, err := os.Create(tmpName)
 	if err != nil {
 		return err
@@ -117,8 +119,8 @@ func (g *GymDB) UpdateDiskDB(fname string) error {
 	}
 	f.Close()
 
-	os.Remove(fname)
-	err = os.Rename(tmpName, fname)
+	os.Remove(g.Filename)
+	err = os.Rename(tmpName, g.Filename)
 	if err != nil {
 		return err
 	}
@@ -160,17 +162,21 @@ func (g *GymDB) AddGym(lat, lon float64, name string) (*Gym, error) {
 		return nil, err
 	}
 	gym := &Gym{
-		Id: genId(),
-		Latitude: lat,
-		Longitude: lon,
+		Id:         genId(),
+		Latitude:   lat,
+		Longitude:  lon,
 		StreetAddr: strings.Join(strings.Split(streetAddr, ",")[:2], ","),
-		Name: canonicalizeName(name),
-		Enabled: true,
+		Name:       canonicalizeName(name),
+		Enabled:    true,
 	}
 	key := gym.Id + " " + gym.Name + " " + gym.StreetAddr
 	g.Gyms[key] = gym
 
 	g.UpdateSearchDB()
+	err = g.UpdateDiskDB()
+	if err != nil {
+		return gym, err
+	}
 
 	return gym, nil
 }
