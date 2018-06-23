@@ -84,6 +84,7 @@ func (r *Raid) Expire(s *discordgo.Session) {
 	s.ChannelMessageUnpin(r.ChannelID, r.MessageID)
 	r.SendUpdate(s)
 	s.MessageReactionsRemoveAll(r.ChannelID, r.MessageID)
+	s.MessageReactionsRemoveAll(r.ChannelID, r.RequestMsgID)
 }
 
 func (r *Raid) UpdateGroupPointers() {
