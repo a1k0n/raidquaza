@@ -7,8 +7,9 @@ import (
 
 func TestNewGymDB(t *testing.T) {
 	g := NewGymDB("gyms.txt")
-	gyms, _ := g.GetGyms("fawn hills", 0.9)
-	t.Log(gyms[0])
+	gyms, scores := g.GetGyms("valley trails", 0.9)
+	t.Log(gyms)
+	t.Log(scores)
 	/*
 	t.Log(g.GetGyms("frogboy", 0.9)[0])
 	t.Log(g.GetGyms("denker", 0.9)[0])

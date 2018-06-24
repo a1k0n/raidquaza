@@ -92,7 +92,7 @@ func (bs *BotState) gymCommand(s *discordgo.Session, m *discordgo.MessageCreate,
 				s.ChannelMessageSend(m.ChannelID, "<@"+m.Author.ID+"> "+err.Error())
 				return
 			}
-			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<%s> Renamed `%s` to `%s`!",
+			s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> Renamed `%s` to `%s`!",
 				m.Author.ID, oldName, gs[0].Name))
 		}
 		if newloc != nil {
