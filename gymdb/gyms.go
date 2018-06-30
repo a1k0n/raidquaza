@@ -1,7 +1,7 @@
 package gymdb
 
 import (
-	"github.com/schollz/closestmatch"
+	"github.com/manveru/closestmatch"
 	"os"
 	"log"
 	"bufio"
@@ -140,27 +140,27 @@ func (g *GymDB) UpdateDiskDB() error {
 }
 
 func (g *GymDB) UpdateSearchDB() {
-	gymKeys := make([]string, 0, len(g.Gyms))
-	for k := range g.Gyms {
-		gymKeys = append(gymKeys, k)
+	gymKeys := make(map[string]interface{}, len(g.Gyms))
+	for k, v := range g.Gyms {
+		gymKeys[k] = v
 	}
 	g.Matcher = closestmatch.New(gymKeys, []int{2, 3, 4})
 }
 
 func (g *GymDB) GetGyms(query string, threshold float32) ([]*Gym, []float32) {
-	closestN, scores := g.Matcher.ClosestN(canonicalizeQuery(query), 10)
+	matches := g.Matcher.ClosestN(canonicalizeQuery(query), 10)
 	var closest []*Gym
 	var normScores []float32
 	var normSum float32
 	log.Printf("query \"%s\" matches:", query)
-	for i, m := range closestN {
-		if float32(scores[i]) < float32(scores[0])*threshold {
+	for _, m := range matches {
+		if float32(m.Score) < float32(matches[0].Score)*threshold {
 			break
 		}
-		closest = append(closest, g.Gyms[m])
-		normScores = append(normScores, float32(scores[i]))
-		normSum += float32(scores[i])
-		log.Printf("  %s (%d)\n", m, scores[i])
+		closest = append(closest, m.Data.(*Gym))
+		normScores = append(normScores, float32(m.Score))
+		normSum += float32(m.Score)
+		log.Printf("  %s (%d)\n", m.Data.(*Gym).String(), m.Score)
 	}
 	for i := range normScores {
 		normScores[i] /= normSum
