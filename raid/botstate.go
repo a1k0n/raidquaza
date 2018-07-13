@@ -267,14 +267,11 @@ func (bs *BotState) userChannel(s *discordgo.Session, userID string) (string, er
 }
 
 func (bs *BotState) messageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
-	ch, _ := s.Channel(m.ChannelID)
-	u, _ := s.User(m.UserID)
-
 	if m.UserID == s.State.User.ID {
 		return
 	}
 
-	log.Printf("reaction add: %s %s %s %s(%s)\n", ch.Name, m.MessageID, u.Username, m.Emoji.ID, m.Emoji.Name)
+	log.Printf("reaction add: %s %s %s %s(%s)\n", m.ChannelID, m.MessageID, m.UserID, m.Emoji.ID, m.Emoji.Name)
 
 	if m.Emoji.Name == "⏰" {
 		bs.mut.Lock()
